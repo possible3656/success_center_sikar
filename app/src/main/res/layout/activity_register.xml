@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ScrollView android:background="@color/bg_color" android:scrollbars="none" android:fitsSystemWindows="true" android:layout_height="fill_parent" android:layout_width="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <RelativeLayout android:layout_height="match_parent" android:layout_width="match_parent">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/logo"
+            android:layout_centerHorizontal="true"/>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingRight="24dp"
+            android:paddingTop="26dp"
+            android:layout_below="@id/logo"
+            android:paddingLeft="24dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="vertical" android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:textSize="24sp"
+                    android:textColor="#3c4b5d"
+                    android:text="Register Now"
+                    android:gravity="center"
+                    android:fontFamily="@font/proximanovaregular"
+                    android:id="@+id/titletxt"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/userinfo_tab">
+
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:id="@+id/namell"
+                    android:layout_marginTop="20dp"
+                    android:padding="12dp">
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="18sp"
+                        android:textColor="@color/edit_text"
+                        android:fontFamily="@font/proximanovaregular"
+                        android:id="@+id/editTextUsername"
+                        android:inputType="text"
+                        android:textColorHint="@color/edit_text"
+                        android:hint="Name"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:padding="12dp">
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="18sp"
+                        android:textColor="@color/edit_text"
+                        android:id="@+id/editTextPhone"
+                        android:inputType="phone"
+                        android:textColorHint="@color/edit_text"
+                        android:hint="@string/phone"
+                        android:singleLine="true"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:id="@+id/emailll"
+                    android:layout_marginTop="10dp"
+                    android:padding="12dp">
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="18sp"
+                        android:textColor="@color/edit_text"
+                        android:fontFamily="@font/proximanovaregular"
+                        android:id="@+id/editTextEmail"
+                        android:inputType="textEmailAddress"
+                        android:textColorHint="@color/edit_text"
+                        android:hint="Email"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:padding="12dp">
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="18sp"
+                        android:textColor="@color/edit_text"
+                        android:fontFamily="@font/proximanovaregular"
+                        android:id="@+id/editTextPassword"
+                        android:inputType="textPassword"
+                        android:textColorHint="@color/edit_text"
+                        android:hint="Password"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:padding="12dp">
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="18sp"
+                        android:textColor="@color/edit_text"
+                        android:fontFamily="@font/proximanovaregular"
+                        android:id="@+id/editTextre_Password"
+                        android:inputType="textPassword"
+                        android:textColorHint="@color/edit_text"
+                        android:hint=" Re-enter Password"/>
+
+                </LinearLayout>
+
+
+
+                <Button
+                    android:background="@drawable/circularbluebordersolid"
+                    android:layout_height="wrap_content"
+                    android:layout_width="150dp"
+                    android:layout_marginBottom="14dp"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:text="Register"
+                    android:fontFamily="@font/proximanovaregular"
+                    android:id="@+id/buttonRegister"
+                    android:layout_marginTop="24dp"
+                    android:padding="16dp"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="horizontal" android:layout_marginBottom="24dp" android:gravity="center" android:id="@+id/link_login" android:padding="10dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textSize="16dip"
+                    android:textColor="#3c4b5d"
+                    android:text="Already a member?"
+                    android:gravity="center"
+                    android:fontFamily="@font/proximanovaregular"/>
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textSize="16dip"
+                    android:textColor="#8e9cfe"
+                    android:text=" Login"
+                    android:gravity="center"
+                    android:fontFamily="@font/proximanovaregular"
+                    android:id="@+id/textViewLogin"
+                    android:onClick="loginactivity"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ProgressBar android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/progressBar" android:visibility="gone" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+</ScrollView>

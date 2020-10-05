@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:background="#f3f7fa"
+    tools:context=".YouTubeVideoList">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/main_layout"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/title_bar_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/header"
+                    android:layout_alignParentTop="true">
+                    <ImageView
+                        android:id="@+id/WebsiteHome"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/ic_baseline_menu_24"
+                        />
+
+                    <ImageView
+                        android:id="@+id/sideBarHome"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/WebsiteHome"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/logo" />
+
+
+                    <ImageView
+                        android:id="@+id/img_share"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/ic_share_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/titleHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        style="@style/viewParent.headerText"
+                        android:text="SDA LEARNING APP"
+                        android:layout_marginStart="30dp"
+                        android:fontFamily="@font/hindbold"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+
+                </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/image_layout"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_below="@id/title_bar_home"
+                android:layout_marginBottom="65dp">
+
+                <ImageView
+                    android:layout_height="200dp"
+                    android:layout_width="match_parent"
+                    android:id="@+id/payment_image"
+                    android:elevation="1dp" />
+
+                <RelativeLayout
+                    android:id="@+id/Course_layout_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:elevation="1dp">
+                    <TextView
+                        android:id="@+id/course_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="CourseName"/>
+                    <TextView
+                        android:id="@+id/txt_course_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="17sp"
+                        android:textColor="#f2f3f4"
+                        android:layout_below="@id/course_name"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Price"/>
+                    <ImageView
+                        android:id="@+id/img_rupee1"
+                        android:layout_height="15dp"
+                        android:layout_width="20dp"
+                        android:layout_marginTop="20dp"
+                        android:visibility="visible"
+                        android:src="@drawable/ic_rupee2"
+                        android:layout_marginStart="5dp"
+                        android:layout_below="@id/course_name"
+                        android:layout_toRightOf="@id/txt_course_price"/>
+                    <TextView
+                        android:id="@+id/course_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="17sp"
+                        android:textColor="#f2f3f4"
+                        android:layout_below="@id/course_name"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@id/img_rupee1"
+                        android:text="Price"/>
+                    <TextView
+                        android:id="@+id/txt_buy_course"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="17sp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_below="@id/txt_course_price"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Buy Course"/>
+                    <ImageView
+                        android:id="@+id/img_rupee2"
+                        android:layout_height="15dp"
+                        android:layout_width="20dp"
+                        android:layout_marginTop="12dp"
+                        android:visibility="visible"
+                        android:src="@drawable/ic_rupee2"
+                        android:layout_below="@id/course_price"
+                        android:layout_toRightOf="@id/txt_buy_course"/>
+                    <TextView
+                        android:id="@+id/buy_course"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="17sp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_toRightOf="@id/img_rupee2"
+                        android:layout_below="@id/txt_course_price"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Buy Course"/>
+
+                    <Button
+                        android:id="@+id/buy_now"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:text="Buy Now"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_below="@id/txt_buy_course"
+                        android:layout_marginTop="13dp"
+                        android:background="#F3D268"/>
+                    <Button
+                        android:id="@+id/btn_demo"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:text="DEMO"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/white"
+                        android:layout_below="@id/buy_course"
+                        android:layout_toRightOf="@id/buy_now"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="13dp"
+                        android:background="@color/header"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/white"
+                        android:layout_below="@id/buy_now"
+                        android:text="Course is available on WEB application as well"/>
+
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/layout_demo"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:layout_below="@id/payment_image">
+
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/description_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:elevation="1dp"
+                    android:layout_below="@id/layout_demo">
+
+                    <TextView
+                        android:id="@+id/txt_discription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textSize="16sp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/header" />
+                    <TextView
+                        android:id="@+id/txt_discription_click"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textSize="16sp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginStart="5dp"
+                        android:visibility="gone"
+                        android:textStyle="bold"
+                        android:textColor="#F3D268" />
+                    <ImageView
+                        android:id="@+id/image_expand_more"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:visibility="visible"
+                        android:layout_marginTop="7dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/ic_baseline_expand_more_24"
+                        android:layout_centerHorizontal="true"/>
+                    <ImageView
+                        android:id="@+id/image_expand_less"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="5dp"
+                        android:visibility="gone"
+                        android:src="@drawable/ic_baseline_expand_less_24"
+                        android:layout_centerHorizontal="true"/>
+
+                    <RelativeLayout
+                        android:id="@+id/layout_discription_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_below="@id/txt_discription">
+
+
+                    <TextView
+                        android:id="@+id/txt_course_discription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="discrption is here about the course"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:visibility="visible"
+                        android:textSize="15sp"
+                        android:textColor="@color/edit_text"/>
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/txt_study"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Study Material"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#08496e"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/hindbold"
+                    android:textSize="22sp"
+                    android:layout_below="@+id/description_layout"/>
+                <RelativeLayout
+                    android:id="@+id/total_video_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:elevation="1dp"
+                    android:layout_below="@id/txt_study">
+
+                    <TextView
+                        android:id="@+id/txt_total_videos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="total video"
+                        android:textSize="15sp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/edit_text"/>
+                    <Button
+                        android:id="@+id/btn_course_demo_vedio"
+                        android:layout_width="120dp"
+                        android:layout_height="35dp"
+                        android:text="DEMO VIDEO"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/white"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@id/image_expand_more_video"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/header"/>
+
+                    <ImageView
+                        android:id="@+id/image_expand_more_video"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:visibility="visible"
+                        android:layout_marginTop="7dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_centerHorizontal="true"/>
+                    <ImageView
+                        android:id="@+id/image_expand_less_video"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="5dp"
+                        android:visibility="gone"
+                        android:src="@drawable/ic_baseline_expand_less_24"
+                        android:layout_centerHorizontal="true"/>
+                    <RelativeLayout
+                        android:id="@+id/layout_video_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_below="@id/txt_total_videos">
+
+
+                        <TextView
+                            android:id="@+id/txt_course_videos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="discrption is here about the course"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:visibility="visible"
+                            android:textSize="15sp"
+                            android:textColor="@color/edit_text"/>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/total_pdf_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:elevation="1dp"
+                    android:layout_below="@id/total_video_layout">
+
+                    <TextView
+                        android:id="@+id/txt_total_pdf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="total pdf"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/edit_text"/>
+                    <Button
+                        android:id="@+id/btn_course_demo_pdf"
+                        android:layout_width="120dp"
+                        android:layout_height="35dp"
+                        android:text="DEMO NOTES"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/white"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@id/image_expand_more_pdf"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/header"/>
+                    <ImageView
+                        android:id="@+id/image_expand_more_pdf"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:visibility="visible"
+                        android:layout_marginTop="7dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_centerHorizontal="true"/>
+                    <ImageView
+                        android:id="@+id/image_expand_less_pdf"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="5dp"
+                        android:visibility="gone"
+                        android:src="@drawable/ic_baseline_expand_less_24"
+                        android:layout_centerHorizontal="true"/>
+                    <RelativeLayout
+                        android:id="@+id/layout_pdf_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_below="@id/txt_total_pdf">
+
+
+                        <TextView
+                            android:id="@+id/txt_course_pdf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="discrption is here about the course"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:visibility="visible"
+                            android:textSize="15sp"
+                            android:textColor="@color/edit_text"/>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/total_test_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:elevation="1dp"
+                    android:layout_below="@id/total_pdf_layout">
+                    <TextView
+                        android:id="@+id/txt_total_test"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ONLINE TEST"
+                        android:textSize="15sp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/edit_text"/>
+                    <Button
+                        android:id="@+id/btn_test_demo"
+                        android:layout_width="120dp"
+                        android:layout_height="35dp"
+                        android:text="DEMO TEST"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/white"
+                       android:layout_toLeftOf="@id/image_expand_more_test"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/header"/>
+                    <ImageView
+                        android:id="@+id/image_expand_more_test"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:visibility="visible"
+                        android:layout_marginTop="7dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_centerHorizontal="true"/>
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@color/header"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:text="BUY COURSE"
+        android:visibility="visible"
+        android:id="@+id/btn_buy_course"/>
+
+    <RelativeLayout
+        android:id="@+id/layout_success"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:elevation="4dp"
+        android:background="@drawable/bottom_layout"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:id="@+id/txt_complete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transaction Success"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/header"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"/>
+        <ImageView
+            android:layout_height="20dp"
+            android:layout_width="20dp"
+            android:src="@drawable/success_image"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@id/txt_complete"/>
+        <TextView
+            android:id="@+id/txt_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your payment has been received Successfully"
+            android:textSize="15sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/txt_complete"
+            android:textColor="@color/edit_text"/>
+        <RelativeLayout
+            android:id="@+id/layout_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/payment_border"
+            android:layout_below="@id/txt_success"
+            android:layout_margin="10dp">
+            <TextView
+                android:id="@+id/txt_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                android:textColor="@color/edit_text"
+                android:text="amount"/>
+            <TextView
+                android:id="@+id/txt_course"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="amount"
+                android:textSize="15sp"
+                android:layout_marginStart="5dp"
+                android:layout_below="@id/txt_amount"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/edit_text"/>
+            <TextView
+                android:id="@+id/txt_txn_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_course"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="15sp"
+                android:textColor="@color/edit_text"
+                android:text="amount"/>
+        </RelativeLayout>
+        <Button
+            android:id="@+id/go_back"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:text="GO BACK"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@id/layout_id"
+            android:layout_toLeftOf="@id/btn_course"
+            android:layout_marginTop="7dp"
+            android:background="#F3D268"/>
+        <Button
+            android:id="@+id/btn_course"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:text="VIEW COURSES"
+            android:textSize="12sp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/white"
+            android:layout_below="@id/layout_id"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="7dp"
+            android:background="@color/header"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/layout_failed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="@drawable/bottom_layout"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:id="@+id/txt_incomplete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transaction Failed"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/header"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"/>
+        <ImageView
+            android:id="@+id/img_cancel"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/failed_image"
+            android:layout_toRightOf="@id/txt_incomplete"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/txt_failed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_cancel"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/edit_text"
+            android:text="If by mistake clicked on back / cancel button , Kindly try again."/>
+
+        <TextView
+            android:id="@+id/txt_failed1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_failed"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/edit_text"
+            android:text="If amount has been deducted from bank account, please contact to organization"/>
+        <Button
+            android:id="@+id/go_back_failed"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:text="GO BACK"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_below="@id/txt_failed1"
+            android:layout_marginTop="7dp"
+            android:background="#F3D268"/>
+    </RelativeLayout>
+</RelativeLayout>

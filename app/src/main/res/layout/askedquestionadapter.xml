@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginTop="5dp"
+android:layout_marginBottom="5dp"
+android:id="@+id/branch_live1"
+    android:padding="6dp"
+android:elevation="4dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+android:clickable="true"
+android:background="@drawable/shadow"
+android:layout_marginRight="15dp">
+<RelativeLayout
+    android:id="@+id/branch_live"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/bottom_layout">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/question_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_businessman" />
+    <TextView
+        android:id="@+id/txt_user"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="6dp"
+        android:text="Amit"
+        android:fontFamily="@font/hindsemibold"
+        android:layout_toRightOf="@id/question_image"/>
+    <TextView
+        android:id="@+id/txt_query"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="5dp"
+        android:text="Doubt"
+        android:textColor="#F1D369"
+        android:layout_below="@id/txt_user"
+        android:fontFamily="@font/hindsemibold"
+        android:layout_toRightOf="@id/question_image"/>
+    <TextView
+        android:id="@+id/txt_time"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="15dp"
+        android:text="18 days"
+        android:textColor="@color/edit_text"
+        android:layout_below="@id/txt_user"
+        android:fontFamily="@font/hindsemibold"
+        android:layout_toRightOf="@id/txt_query"/>
+
+    <TextView
+        android:id="@+id/txt_ask_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What would you like to ask?"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/hindbold"
+        android:textSize="16sp"
+        android:layout_below="@id/question_image"
+        android:layout_marginStart="10dp"/>
+    <TextView
+        android:id="@+id/txt_ask_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What would you like to ask?"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/hindregular"
+        android:textSize="16sp"
+        android:layout_below="@id/txt_ask_title"
+        android:layout_marginStart="10dp"/>
+    <TextView
+        android:id="@+id/txt_commments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_ask_question"
+        android:text="0 Comment"
+        android:textColor="#002718"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="12sp"/>
+
+
+
+
+</RelativeLayout>
+</RelativeLayout>

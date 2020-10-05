@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
+    android:layout_marginBottom="4dp"
+    android:layout_marginLeft="5dp"
+    android:id="@+id/branch_live1"
+    android:elevation="4dp"
+    android:clickable="true"
+    android:background="@drawable/shadow"
+    android:layout_marginRight="15dp">
+    <RelativeLayout
+        android:id="@+id/branch_live"
+        android:layout_width="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/img_user"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="7dp"
+            android:src="@drawable/ic_businessman"/>
+        <TextView
+            android:id="@+id/text_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginRight="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_toRightOf="@id/img_user"
+            android:fontFamily="@font/hindbold"
+            android:layout_marginTop="9dp"
+            android:textColor="#111"
+            android:text="amit kumar jalan"/>
+        <ImageView
+            android:id="@+id/img_user_answer"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginBottom="7dp"
+            android:layout_below="@id/img_user"
+            android:src="@drawable/ic_question"/>
+
+        <TextView
+            android:id="@+id/text_user_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/hindsemibold"
+            android:layout_below="@id/text_user"
+            android:layout_toRightOf="@id/img_user_answer"
+
+            android:textColor="#111"
+            android:text="yes"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/img_user_answer"
+            android:background="#A5C3F3"/>
+        <ImageView
+            android:id="@+id/img_user_message"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="7dp"
+            android:layout_below="@id/img_user_answer"
+            android:src="@drawable/ic_trophy"/>
+
+        <TextView
+            android:id="@+id/text_user_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/hindregular"
+            android:layout_below="@id/text_user_answer"
+            android:layout_toRightOf="@id/img_user_message"
+            android:textColor="#111"
+            android:text="yes"/>
+        <TextView
+            android:id="@+id/text_user_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/hindregular"
+            android:layout_below="@id/text_user_message"
+            android:textColor="#111"
+            android:text="yes"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

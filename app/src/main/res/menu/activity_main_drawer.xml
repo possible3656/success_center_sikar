@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/menu_top"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/menu_home" />
+    </group>
+    <group
+        android:id="@+id/menu_top1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_menu_profile"
+            android:title="@string/menu_profile" />
+    </group>
+    <group
+        android:id="@+id/menu_top2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_course"
+            android:icon="@drawable/ic_baseline_local_library_24"
+            android:title="My Course" />
+    </group>
+    <group
+        android:id="@+id/menu_top3"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_test_series"
+            android:icon="@drawable/ic_baseline_list_alt_24"
+            android:title="My Test Series"/>
+    </group>
+    <group
+        android:id="@+id/menu_top4"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_live_class"
+            android:icon="@drawable/ic_baseline_videocam_24"
+            android:title="My Live Class"/>
+    </group>
+    <group
+        android:id="@+id/menu_top5"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_txn"
+            android:icon="@drawable/ic_baseline_receipt_24"
+            android:title="My Transaction"/>
+    </group>
+    <group
+        android:id="@+id/menu_top6"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_about"
+            android:title="@string/menu_about"/>
+    </group>
+    <group
+        android:id="@+id/menu_top7"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_rate"
+            android:icon="@drawable/ic_menu_rate"
+            android:title="@string/menu_rate" />
+    </group>
+    <group
+        android:id="@+id/menu_top8"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_share_black_24dp"
+            android:title="@string/menu_share" />
+    </group>
+    <group
+        android:id="@+id/menu_top9"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/menu_invite"/>
+    </group>
+
+
+</menu>

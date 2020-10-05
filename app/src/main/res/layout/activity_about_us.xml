@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/title_bar_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/header"
+        android:layout_alignParentTop="true">
+        <ImageView
+            android:id="@+id/WebsiteHome"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_keyboard_backspace_black_24dp"
+            />
+
+
+
+        <ImageView
+            android:id="@+id/img_share"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_share_black_24dp" />
+
+        <TextView
+            android:id="@+id/titleHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            style="@style/viewParent.headerText"
+            android:text="About Us"
+            android:fontFamily="@font/hindbold"
+            android:layout_marginStart="25dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_bar_home">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+            <ImageView
+                android:id="@+id/companylogo"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/logo"/>
+
+            <RelativeLayout
+                android:id="@+id/layout_about"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:elevation="1dp"
+                android:padding="10dp"
+                android:layout_below="@id/companylogo">
+
+
+
+                <me.biubiubiu.justifytext.library.JustifyTextView
+                android:id="@+id/aboutus_textview1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:lineSpacingExtra="2dp"
+                    android:layout_marginStart="5dp"
+                android:textColor="#111"
+                android:text="Welcome to Shekhawati Defence Academy be brave, be bold, dare and do. Nothing is impossible. No obstacle is insurmountable. Once your mind is made up and you stand firm as a rock, no one can stop you from gaining your goal and crowing yourself with success.
+Success comes when you know what you want or desire. The starting point, then is to know what you want in life.
+If you don’t know what you want, the question of getting it does not arise at all. Visualise the image of what you would like to become in life. Do you want to be NDA Officer, a Pilot, a skilled Naval Engineer, a petty officer, a Airmen or a sailor ? Let your ambition surface. Never mind and never fear. What appeared impossible today will become a reality tomorrow with your determination, dedication and application. The man who wins is the man who thinks he can.
+
+ Shekhawati Defence Academy is Shekhawati's oldest and successful Defense Academy Whos fabricate history Of selection. The state's leading coaching institute, which has 1500+ selection from the last 15 years in Navy and Air Force in Rajasthan"
+                android:textSize="18sp"
+                />
+
+            </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/layout_about_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            android:elevation="1dp"
+            android:layout_below="@id/layout_about">
+
+        <TextView
+                android:id="@+id/aboutus_textview6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginStart="5dp"
+                android:paddingTop="10dp"
+                android:text="CONTACT US:"
+                android:textStyle="bold"
+                android:textSize="18sp"
+
+                android:textColor="#111"/>
+
+            <TextView
+                android:id="@+id/aboutus_textview7"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:lineSpacingExtra="2dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:text="Sekhawati Defence Academy"
+                android:textSize="16sp"
+                android:layout_below="@id/aboutus_textview6"
+                android:textColor="#111"/>
+            <TextView
+                android:id="@+id/aboutus_textview8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:lineSpacingExtra="2dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:text="Near Chirawa Railway Station,Ardawata, Road, Chirawa, Rajasthan 333026"
+                android:textSize="16sp"
+                android:layout_below="@id/aboutus_textview7"
+                android:textColor="#111"/>
+            <TextView
+                android:id="@+id/aboutus_textview9"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:lineSpacingExtra="2dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:text="Write Us:"
+                android:textSize="16sp"
+                android:layout_below="@id/aboutus_textview8"
+                android:textColor="#111"/>
+            <TextView
+                android:id="@+id/aboutus_textview10"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:lineSpacingExtra="2dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="info@shekhawatiacademy.com"
+                android:textSize="15sp"
+                android:layout_toRightOf="@id/aboutus_textview9"
+                android:layout_below="@id/aboutus_textview8"
+                android:textColor="#03A9F4"/>
+
+            <TextView
+                android:id="@+id/aboutus_textview11"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:lineSpacingExtra="2dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:text="Website:"
+                android:textSize="16sp"
+                android:layout_below="@id/aboutus_textview10"
+                android:textColor="#111"/>
+            <TextView
+                android:id="@+id/aboutus_textview12"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="60dp"
+                android:layout_marginTop="5dp"
+                android:lineSpacingExtra="2dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="www.shekhawatiacademy.com"
+                android:textSize="15sp"
+                android:layout_toRightOf="@id/aboutus_textview11"
+                android:layout_below="@id/aboutus_textview10"
+                android:textColor="#03A9F4"/>
+            <TextView
+                android:id="@+id/aboutus_textview13"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:lineSpacingExtra="2dp"
+                android:paddingLeft="15dp"
+                android:text="Education Portal:"
+                android:textSize="16sp"
+                android:layout_below="@id/aboutus_textview11"
+                android:textColor="#111"/>
+            <TextView
+                android:id="@+id/aboutus_textview14"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="60dp"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginStart="15dp"
+                android:text="https://edu.shekhawatiacademy.com"
+                android:textSize="15sp"
+                android:layout_below="@id/aboutus_textview13"
+                android:textColor="#03A9F4"/>
+
+
+
+</RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>

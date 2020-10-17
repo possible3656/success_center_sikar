@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,80 +32,53 @@ import retrofit2.Response;
 
 public class ViewResultActivity extends AppCompatActivity {
 
-    private TextView tv_paper_name,tv_section_name,tv_total_question,tv_total_attempt,tv_total_correct,tv_total_review,tv_total_wrong,tv_total_marks;
-    private Button backbtn,btn_solution;
+    private TextView tv_paper_name,tv_section_name,tv_total_question,tv_total_attempt,tv_total_correct,
+            tv_total_review,tv_total_wrong,tv_total_marks,tv_user_name,backbtn,btn_solution;
+    RelativeLayout layout_home,layout_solution;
     String UserID;
-    ImageView WebsiteHome,img_share;
+    PieChart pieChart;
     private ViewResult viewResult;
     private List<ViewResult> list;
     private RecyclerView view_result_recycle;
-    PieChart pieChart;
     //private ViewResultAdapter viewResultAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_result);
-       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
-        try {
-            WebsiteHome=findViewById(R.id.WebsiteHome);
-            WebsiteHome.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(ViewResultActivity.this,MainActivity.class);
-                    startActivity(intent);
-                }
-            });
-            img_share=findViewById(R.id.img_share);
-            img_share.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    try {
-                        Intent shareIntent = new Intent(Intent.ACTION_SEND);
-                        shareIntent.setType("text/plain");
-                        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Success Center Sikar");
-                        String shareMessage= "\nSuccess Center Sikar download the application.\n ";
-                        shareMessage = shareMessage + "\nhttps://play.google.com/store/apps/details?id="+getPackageName() ;
-                        shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
-                        startActivity(Intent.createChooser(shareIntent, "choose one"));
-                    } catch(Exception e) {
-                    }
-                }
-            });
-            pieChart = findViewById(R.id.piechart);
-            tv_paper_name=findViewById(R.id.tv_paper_name);
-            tv_section_name=findViewById(R.id.tv_section_name);
-            tv_total_question=findViewById(R.id.tv_total_question);
-            tv_total_attempt=findViewById(R.id.tv_total_attempt);
-            tv_total_correct=findViewById(R.id.tv_total_correct);
-            tv_total_review=findViewById(R.id.tv_total_review);
-            tv_total_wrong=findViewById(R.id.tv_total_wrong);
-            tv_total_marks=findViewById(R.id.tv_total_marks);
-            UserID = SharedPrefManager.getInstance(this).refCode().getUserId();
-            backbtn=findViewById(R.id.backbtn);
-            backbtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent =new Intent(ViewResultActivity.this,MainActivity.class);
-                    startActivity(intent);
-                }
-            });
-            btn_solution=findViewById(R.id.btn_solution);
-            btn_solution.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent =new Intent(ViewResultActivity.this,TestSolutionActivity.class);
-                    startActivity(intent);
-                }
-            });
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+
+        tv_paper_name=findViewById(R.id.tv_paper_name);
+        layout_home=findViewById(R.id.layout_home);
+        layout_solution=findViewById(R.id.layout_solution);
+        pieChart = findViewById(R.id.piechart);
+        tv_user_name=findViewById(R.id.tv_user_name);
+        tv_total_question=findViewById(R.id.tv_total_question);
+        tv_total_attempt=findViewById(R.id.tv_total_attempt);
+        tv_total_correct=findViewById(R.id.tv_total_correct);
+        tv_total_review=findViewById(R.id.tv_total_review);
+        tv_total_wrong=findViewById(R.id.tv_total_wrong);
+        tv_total_marks=findViewById(R.id.tv_total_marks);
+        UserID = SharedPrefManager.getInstance(this).refCode().getUserId();
+        backbtn=findViewById(R.id.backbtn);
+        btn_solution=findViewById(R.id.btn_solution);
+        layout_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(ViewResultActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        layout_solution.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(ViewResultActivity.this,TestSolutionActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
-            callApiService();
-
-
-        }catch (Exception e){
-            CrashReporter.logException(e);
-        }
+        callApiService();
 
     }
 
@@ -118,15 +93,15 @@ public class ViewResultActivity extends AppCompatActivity {
                 if(statusCode==200 && response.body()!=null){
                     System.out.println("Suree body: "+response.body());
                     OnlineTestData.PaperID=response.body().getPaperID();
-                    String Question= String.valueOf(response.body().getTotalQuestion());
+                    String Question=String.valueOf(response.body().getTotalQuestion());
                     tv_total_question.setText(Question);
-                    String Attempt= String.valueOf(response.body().getAttempt());
+                    String Attempt=String.valueOf(response.body().getAttempt());
                     tv_total_attempt.setText(Attempt);
-                    String Correct= String.valueOf(response.body().getCorrect());
+                    String Correct=String.valueOf(response.body().getCorrect());
                     tv_total_correct.setText(Correct);
-                    String Review= String.valueOf(response.body().getReview());
+                    String Review=String.valueOf(response.body().getReview());
                     tv_total_review.setText(Review);
-                    String Wrong= String.valueOf(response.body().getWrong());
+                    String Wrong=String.valueOf(response.body().getWrong());
                     tv_total_wrong.setText(Wrong);
                     String Total=response.body().getTotalMarks();
                     String ReviewQ=String.valueOf(response.body().getReview());
@@ -158,19 +133,19 @@ public class ViewResultActivity extends AppCompatActivity {
                 }
                 else{
                     System.out.println("Suree: response code"+response.message());
-                    Toast.makeText(getApplicationContext(),"Ërror due to" + response.message(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Ërror due to" + response.message(),Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<ViewResult> call, Throwable t) {
-                Toast.makeText(getApplicationContext(),"Failed" + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Failed" + t.getMessage(),Toast.LENGTH_SHORT).show();
 
                 System.out.println("Suree: Error "+t.getMessage());
             }
         });
         tv_paper_name.setText(OnlineTestData.paperName);
-        tv_section_name.setText(OnlineTestData.paperName);
+        tv_user_name.setText(SharedPrefManager.getInstance(this).refCode().getName());
     }
 
 }

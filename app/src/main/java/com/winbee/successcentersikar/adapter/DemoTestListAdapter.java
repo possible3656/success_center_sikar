@@ -6,14 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.api.Distribution;
 import com.winbee.successcentersikar.InstructionsActivity;
 import com.winbee.successcentersikar.R;
+import com.winbee.successcentersikar.TestRankActivity;
 import com.winbee.successcentersikar.TestSolutionActivity;
 import com.winbee.successcentersikar.Utils.OnlineTestData;
 import com.winbee.successcentersikar.model.SIACDetailsDataModel;
@@ -64,10 +67,12 @@ public class DemoTestListAdapter extends RecyclerView.Adapter<DemoTestListAdapte
             viewHolder.layout_pervious.setVisibility(View.VISIBLE);
             viewHolder.layout_start.setVisibility(View.VISIBLE);
             viewHolder.layout_new_start.setVisibility(View.GONE);
+            viewHolder.layout_rank.setVisibility(View.VISIBLE);
         }else if (!siacDetailsDataModel.getIsAttempted()){
             viewHolder.layout_pervious.setVisibility(View.GONE);
             viewHolder.layout_start.setVisibility(View.GONE);
             viewHolder.layout_new_start.setVisibility(View.VISIBLE);
+            viewHolder.layout_rank.setVisibility(View.GONE);
         }
 
 
@@ -113,6 +118,15 @@ public class DemoTestListAdapter extends RecyclerView.Adapter<DemoTestListAdapte
 
                 }
             });
+            viewHolder.layout_rank.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    OnlineTestData.paperID = siacDetailsDataModel.getPaperID();
+                    OnlineTestData.paperName = siacDetailsDataModel.getPaperName();
+                    Intent intent = new Intent(context, TestRankActivity.class);
+                    context.startActivity(intent);
+                }
+            });
 
 
             //  viewHolder.layout_pervious.setVisibility(View.VISIBLE);
@@ -145,7 +159,8 @@ public class DemoTestListAdapter extends RecyclerView.Adapter<DemoTestListAdapte
     }
     static class CustomViewHolder extends RecyclerView.ViewHolder {
         RelativeLayout branch_live1;
-        RelativeLayout layout_start,layout_pervious,layout_new_start;
+        LinearLayout layout_start,layout_pervious,layout_rank;
+        RelativeLayout layout_new_start;
         ImageView live_image,img_lock,img_Unlock;
         TextView online_testname,total_question,total_time,txt_closed_message,txt_closed_date;
         CustomViewHolder(@NonNull View itemView) {
@@ -153,6 +168,7 @@ public class DemoTestListAdapter extends RecyclerView.Adapter<DemoTestListAdapte
             branch_live1=itemView.findViewById(R.id.branch_live1);
             layout_start=itemView.findViewById(R.id.layout_start);
             layout_new_start=itemView.findViewById(R.id.layout_new_start);
+            layout_rank=itemView.findViewById(R.id.layout_rank);
             layout_pervious=itemView.findViewById(R.id.layout_pervious);
             live_image=itemView.findViewById(R.id.live_image);
             online_testname=itemView.findViewById(R.id.online_testname);

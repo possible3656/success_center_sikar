@@ -18,11 +18,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.winbee.successcentersikar.LocalData;
 import com.winbee.successcentersikar.NewModels.PdfContentArray;
 import com.winbee.successcentersikar.NewModels.TopicContentArray;
+import com.winbee.successcentersikar.PdfWebActivity;
 import com.winbee.successcentersikar.ProgressBarUtil;
 import com.winbee.successcentersikar.R;
 import com.winbee.successcentersikar.StudyMaterial;
 import com.winbee.successcentersikar.VimeoActivity;
 import com.winbee.successcentersikar.YoutubeLibaray;
+import com.winbee.successcentersikar.YoutubePlayer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,118 +48,62 @@ public class AllTopicAdapter extends RecyclerView.Adapter<AllTopicAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
-        if (list.get(position).getAccessType().equalsIgnoreCase("2")){
+        if (list.get(position).getAccessType().equalsIgnoreCase("2")) {
             holder.img_lock.setVisibility(View.VISIBLE);
             holder.img_Unlock.setVisibility(View.GONE);
-            holder.view_height.setVisibility(View.GONE);
-            holder.view_width.setVisibility(View.GONE);
-            holder.layout_pdf.setVisibility(View.GONE);
-            holder.layout_video.setVisibility(View.GONE);
-        }else if (list.get(position).getAccessType().equalsIgnoreCase("1")){
+        } else if (list.get(position).getAccessType().equalsIgnoreCase("1")) {
             holder.img_lock.setVisibility(View.GONE);
             holder.img_Unlock.setVisibility(View.GONE);
-            holder.view_height.setVisibility(View.VISIBLE);
-            holder.view_width.setVisibility(View.VISIBLE);
-            holder.layout_pdf.setVisibility(View.VISIBLE);
-            holder.layout_video.setVisibility(View.VISIBLE);
         }
-
-
 
 
         holder.subject.setText(list.get(position).getSubject());
         holder.teacher.setText(list.get(position).getFaculty());
-       if (list.get(position).getAccessType().equalsIgnoreCase("1")){
-            if (list.get(position).getType().equalsIgnoreCase("YouTube")){
-                holder.txt_video.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        LocalData.VideoUrl=list.get(position).getURL();
-                        LocalData.TopicDocumentId=list.get(position).getDocumentId();
-                        LocalData.SubjectName=list.get(position).getSubject();
-                        LocalData.TopicName=list.get(position).getTopic();
-                        LocalData.TeacherName=list.get(position).getFaculty();
-                        Intent intent = new Intent(context, YoutubeLibaray.class);
-                        context.startActivity(intent);
 
-                    }
-                });
-                holder.txt_pdf.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        LocalData.TopicDocumentId=list.get(position).getDocumentId();
-                        Intent intent = new Intent(context, StudyMaterial.class);
-                        context.startActivity(intent);
-                    }
-                });
-            }else if (list.get(position).getType().equalsIgnoreCase("Vimeo")){
-                holder.txt_video.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        LocalData.VideoUrl=list.get(position).getURL();
-                        LocalData.TopicDocumentId=list.get(position).getDocumentId();
-                        LocalData.SubjectName=list.get(position).getSubject();
-                        LocalData.TopicName=list.get(position).getTopic();
-                        LocalData.TeacherName=list.get(position).getFaculty();
-                        Intent intent = new Intent(context, VimeoActivity.class);
-                        context.startActivity(intent);
-                    }
-                });
-
-                holder.branch_sem_topic.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        LocalData.VideoUrl=list.get(position).getURL();
-                        LocalData.TopicDocumentId=list.get(position).getDocumentId();
-                        Intent intent = new Intent(context, VimeoActivity.class);
-                        context.startActivity(intent);
-                    }
-                });
-                holder.txt_pdf.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        LocalData.TopicDocumentId=list.get(position).getDocumentId();
-                        Intent intent = new Intent(context, StudyMaterial.class);
-                        context.startActivity(intent);
-                    }
-                });
-            }
-
-        }else if (list.get(position).getAccessType().equalsIgnoreCase("2")){
-            holder.txt_video.setOnClickListener(new View.OnClickListener() {
+        if (list.get(position).getType().equalsIgnoreCase("YouTube")){
+            holder.document_type_image.setImageResource(R.drawable.ic_clapperboard);
+            holder.branch_sem_topic.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                    builder.setTitle("Sekhawati Defence Academy");
-                    builder.setMessage("To View Please Purchased Course");
-                    builder.setCancelable(false);
+                    LocalData.VideoUrl=list.get(position).getURL();
+                    LocalData.VideoUrl=list.get(position).getURL();
+                    LocalData.SubjectName=list.get(position).getSubject();
+                    LocalData.TopicName=list.get(position).getTopic();
+                    LocalData.TeacherName=list.get(position).getFaculty();
+                    LocalData.TopicDocumentId=list.get(position).getDocumentId();
+                    Intent intent = new Intent(context, YoutubeLibaray.class);
+                    context.startActivity(intent);
+                }
+            });
 
-                    builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-
-                            dialogInterface.cancel();
-
-                        }
-                    });
-
-                    builder.show();
+        }else if (list.get(position).getType().equalsIgnoreCase("Vimeo"))
+        {
+            holder.document_type_image.setImageResource(R.drawable.ic_clapperboard);
+            holder.branch_sem_topic.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    LocalData.VideoUrl=list.get(position).getURL();
+                    LocalData.SubjectName=list.get(position).getSubject();
+                    LocalData.TopicName=list.get(position).getTopic();
+                    LocalData.TeacherName=list.get(position).getFaculty();
+                    LocalData.TopicDocumentId=list.get(position).getDocumentId();
+                    Intent intent = new Intent(context, YoutubeLibaray.class);
+                    context.startActivity(intent);
                 }
             });
         }
-//            holder.branch_sem_topic.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    Intent intent= new Intent(context, DriveVideoPlayerActivity.class);
-//                    intent.putExtra("dURL",list.get(position).getURL());
-//                    context.startActivity(intent);
-//                    Log.i("ïnfo","Launching new activity");
-//                        }
-//
-//
-//            });
-
-
+        else if (list.get(position).getType().equalsIgnoreCase("Pdf")){
+            holder.document_type_image.setImageResource(R.drawable.ic_pdf);
+            holder.branch_sem_topic.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    LocalData.PdfUrl=list.get(position).getURL();
+                    LocalData.TopicDocumentId=list.get(position).getDocumentId();
+                    Intent intent = new Intent(context, PdfWebActivity.class);
+                    context.startActivity(intent);
+                }
+            });
+        }
 
 
     }
@@ -171,11 +117,8 @@ public class AllTopicAdapter extends RecyclerView.Adapter<AllTopicAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView subject, teacher, released_date, document_type_text;
-        ImageView img_lock, img_Unlock,txt_video,txt_pdf;
-        View view_width,view_height;
-        private RelativeLayout branch_sem_topic, layout_onclick,layout_video,layout_pdf;
-        private ProgressBarUtil progressBarUtil;
-        private ArrayList<PdfContentArray> list;
+        ImageView img_lock, img_Unlock,txt_video,txt_pdf,document_type_image;
+        private RelativeLayout branch_sem_topic;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -187,6 +130,7 @@ public class AllTopicAdapter extends RecyclerView.Adapter<AllTopicAdapter.ViewHo
             txt_video = itemView.findViewById(R.id.txt_video);
             branch_sem_topic = itemView.findViewById(R.id.branch_sem_topic);
             txt_pdf = itemView.findViewById(R.id.txt_pdf);
+            document_type_image = itemView.findViewById(R.id.document_type_image);
         }
 
     }

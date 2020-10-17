@@ -3,6 +3,7 @@ package com.winbee.successcentersikar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +43,7 @@ public class TestRankActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_rank);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         rank_reycle=findViewById(R.id.rank_reycle);
         progressBarUtil   =  new ProgressBarUtil(this);
         test_name=findViewById(R.id.test_name);

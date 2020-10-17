@@ -33,10 +33,11 @@
             android:layout_height="30dp"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
+            android:src="@drawable/logo"
             android:layout_toRightOf="@id/WebsiteHome"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/logo" />
+             />
 
 
         <ImageView
@@ -50,7 +51,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/ic_share_black_24dp" />
+            android:src="@drawable/ic_baseline_share_24" />
 
         <TextView
             android:id="@+id/titleHome"
@@ -80,11 +81,12 @@
         android:layout_height="wrap_content"
         android:text="View Study Material"
         android:layout_below="@id/youtube_player"
-        android:background="@drawable/buton"
         android:layout_centerInParent="true"
         android:layout_margin="10dp"
+        android:background="@drawable/btn_login"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:visibility="gone"
         android:fontFamily="@font/hindsemibold"
         android:padding="16dp"
         android:textColor="#ffffff"/>
@@ -133,8 +135,8 @@
             android:id="@+id/editTextMessageLive"
             />
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginBottom="60dp"
             android:layout_marginEnd="10dp"
             android:layout_alignParentBottom="true"
@@ -153,9 +155,9 @@
         android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="@drawable/bottom_layout"
         android:layout_alignParentBottom="true"
-        android:weightSum="5"
-        android:background="@drawable/bottom_layout">
+        android:weightSum="5">
         <LinearLayout
             android:id="@+id/layout_user"
             android:layout_width="wrap_content"
@@ -167,8 +169,8 @@
                 android:id="@+id/image_user"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_speedometer"
+                android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_user"
@@ -194,8 +196,8 @@
                 android:id="@+id/image_test"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_list"
+                android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_test"
@@ -221,8 +223,8 @@
                 android:id="@+id/image_home"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_home"
+                android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_home"
@@ -248,8 +250,9 @@
                 android:id="@+id/image_doubt"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_questions"
+                android:layout_gravity="center"
+
                 />
             <TextView
                 android:id="@+id/text_doubt"
@@ -275,8 +278,8 @@
                 android:id="@+id/image_notification"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_bell"
+                android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_notification"

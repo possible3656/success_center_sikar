@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -55,6 +56,7 @@ public class StudyMaterial extends AppCompatActivity implements NavigationView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study_material);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         progressBarUtil   =  new ProgressBarUtil(this);
         all_study_material = findViewById(R.id.all_study_material);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -238,7 +240,12 @@ public class StudyMaterial extends AppCompatActivity implements NavigationView.O
         } else if (id == R.id.nav_live_class) {
             Intent live = new Intent(StudyMaterial.this,YouTubeVideoList.class);
             startActivity(live);
-
+        } else if (id == R.id.nav_pdf) {
+            Intent pdf = new Intent(StudyMaterial.this,AllPurchasedPdfActivity.class);
+            startActivity(pdf);
+        } else if (id == R.id.nav_contact) {
+            Intent intent = new Intent(StudyMaterial.this,ContactUsActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_about) {
             Intent intent = new Intent(StudyMaterial.this,AboutUsActivity.class);
             startActivity(intent);

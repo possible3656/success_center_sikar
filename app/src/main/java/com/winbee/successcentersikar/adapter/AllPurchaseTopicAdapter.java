@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.winbee.successcentersikar.LocalData;
 import com.winbee.successcentersikar.NewModels.PdfContentArray;
 import com.winbee.successcentersikar.NewModels.TopicContentArray;
+import com.winbee.successcentersikar.PdfWebActivity;
 import com.winbee.successcentersikar.ProgressBarUtil;
 import com.winbee.successcentersikar.R;
 import com.winbee.successcentersikar.StudyMaterial;
@@ -48,65 +49,55 @@ public class AllPurchaseTopicAdapter extends RecyclerView.Adapter<AllPurchaseTop
             holder.img_Unlock.setVisibility(View.GONE);
             holder.subject.setText(list.get(position).getSubject());
             holder.teacher.setText(list.get(position).getFaculty());
-            if (list.get(position).getType().equalsIgnoreCase("YouTube")){
-                holder.txt_video.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        LocalData.VideoUrl=list.get(position).getURL();
-                        LocalData.TopicDocumentId=list.get(position).getDocumentId();
-                        LocalData.SubjectName=list.get(position).getSubject();
-                        LocalData.TopicName=list.get(position).getTopic();
-                        LocalData.TeacherName=list.get(position).getFaculty();
-                        Intent intent = new Intent(context, YoutubeLibaray.class);
-                        context.startActivity(intent);
 
-                    }
-                });
-                holder.txt_pdf.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        LocalData.TopicDocumentId=list.get(position).getDocumentId();
-                        Intent intent = new Intent(context, StudyMaterial.class);
-                        context.startActivity(intent);
-                    }
-                });
-            }else if (list.get(position).getType().equalsIgnoreCase("Vimeo")){
-                holder.txt_video.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        LocalData.VideoUrl=list.get(position).getURL();
-                        LocalData.TopicDocumentId=list.get(position).getDocumentId();
-                        LocalData.SubjectName=list.get(position).getSubject();
-                        LocalData.TopicName=list.get(position).getTopic();
-                        LocalData.TeacherName=list.get(position).getFaculty();
-                        Intent intent = new Intent(context, VimeoActivity.class);
-                        context.startActivity(intent);
-                    }
-                });
+        if (list.get(position).getType().equalsIgnoreCase("YouTube")){
+            holder.document_type_image.setImageResource(R.drawable.ic_clapperboard);
+            holder.branch_sem_topic.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    LocalData.VideoUrl=list.get(position).getURL();
+                    LocalData.VideoUrl=list.get(position).getURL();
+                    LocalData.SubjectName=list.get(position).getSubject();
+                    LocalData.TopicName=list.get(position).getTopic();
+                    LocalData.TeacherName=list.get(position).getFaculty();
+                    LocalData.TopicDocumentId=list.get(position).getDocumentId();
+                    Intent intent = new Intent(context, YoutubeLibaray.class);
+                    context.startActivity(intent);
+                }
+            });
 
-
-                holder.branch_sem_topic.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        LocalData.VideoUrl=list.get(position).getURL();
-                        LocalData.TopicDocumentId=list.get(position).getDocumentId();
-                        LocalData.SubjectName=list.get(position).getSubject();
-                        LocalData.TopicName=list.get(position).getTopic();
-                        LocalData.TeacherName=list.get(position).getFaculty();
-                        Intent intent = new Intent(context, VimeoActivity.class);
-                        context.startActivity(intent);
-                    }
-                });
-
-                holder.txt_pdf.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        LocalData.TopicDocumentId=list.get(position).getDocumentId();
-                        Intent intent = new Intent(context, StudyMaterial.class);
-                        context.startActivity(intent);
-                    }
-                });
+        }else if (list.get(position).getType().equalsIgnoreCase("Vimeo"))
+        {
+            holder.document_type_image.setImageResource(R.drawable.ic_clapperboard);
+            holder.branch_sem_topic.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    LocalData.VideoUrl=list.get(position).getURL();
+                    LocalData.SubjectName=list.get(position).getSubject();
+                    LocalData.TopicName=list.get(position).getTopic();
+                    LocalData.TeacherName=list.get(position).getFaculty();
+                    LocalData.TopicDocumentId=list.get(position).getDocumentId();
+                    Intent intent = new Intent(context, YoutubeLibaray.class);
+                    context.startActivity(intent);
+                }
+            });
         }
+        else if (list.get(position).getType().equalsIgnoreCase("Pdf")){
+            holder.document_type_image.setImageResource(R.drawable.ic_pdf);
+            holder.branch_sem_topic.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    LocalData.PdfUrl=list.get(position).getURL();
+                    LocalData.TopicDocumentId=list.get(position).getDocumentId();
+                    Intent intent = new Intent(context, PdfWebActivity.class);
+                    context.startActivity(intent);
+                }
+            });
+        }
+
+
+
+
     }
 
 
@@ -118,7 +109,7 @@ public class AllPurchaseTopicAdapter extends RecyclerView.Adapter<AllPurchaseTop
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView subject, teacher, released_date, document_type_text;
-        ImageView img_lock, img_Unlock,txt_video, txt_pdf;
+        ImageView img_lock, img_Unlock,txt_video, txt_pdf,document_type_image;
         private RelativeLayout branch_sem_topic, layout_onclick;
         private ProgressBarUtil progressBarUtil;
         private ArrayList<PdfContentArray> list;
@@ -133,6 +124,7 @@ public class AllPurchaseTopicAdapter extends RecyclerView.Adapter<AllPurchaseTop
             txt_video = itemView.findViewById(R.id.txt_video);
             branch_sem_topic = itemView.findViewById(R.id.branch_sem_topic);
             txt_pdf = itemView.findViewById(R.id.txt_pdf);
+            document_type_image = itemView.findViewById(R.id.document_type_image);
         }
 
     }

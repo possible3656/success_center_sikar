@@ -4,8 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="@dimen/card_itemcourse_elevation"
-    android:layout_marginStart="5dp"
-    android:layout_marginEnd="5dp"
+    android:elevation="3dp"
     android:layout_marginBottom="5dp">
 
 <!--    app:cardElevation="10dp"-->
@@ -14,17 +13,16 @@
         android:id="@+id/Course_layout"
         android:layout_width="match_parent"
         android:visibility="visible"
-        android:background="@drawable/course_background"
+      android:background="@drawable/course_background"
         android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/course_image"
-            android:layout_width="135dp"
-            android:layout_height="85dp"
+            android:layout_width="170dp"
+            android:layout_height="120dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:layout_marginStart="5dp"
-            android:src="@drawable/logo" />
+            android:layout_marginStart="5dp" />
         <TextView
             android:id="@+id/txt_course"
             android:layout_width="wrap_content"
@@ -43,11 +41,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
             android:text="Test Series"
+            android:maxLines="2"
+            android:ellipsize="end"
             android:visibility="visible"
             android:layout_below="@id/txt_course"
             android:layout_toRightOf="@id/course_image"
-            android:textColor="#111"
+            android:textColor="#EE535353"
             android:textSize="12dp" />
         <RelativeLayout
             android:id="@+id/layout_purchased"
@@ -55,12 +56,12 @@
             android:layout_height="30dp"
             android:layout_alignParentEnd="true"
             android:visibility="visible"
-            android:layout_below="@id/txt_course"
+            android:layout_below="@id/txt_type"
+            android:background="@drawable/purchased_bg"
             android:layout_marginTop="25dp"
             android:layout_marginBottom="5dp"
             android:layout_marginEnd="10dp"
-            android:gravity="center"
-            android:background="@drawable/purchased_bg">
+            android:gravity="center">
             <TextView
                 android:id="@+id/txt_purchased"
                 android:layout_width="match_parent"
@@ -78,12 +79,12 @@
         android:layout_height="30dp"
         android:layout_alignParentEnd="true"
         android:visibility="visible"
+        android:background="@drawable/comingsoon_bg"
         android:layout_below="@id/txt_course"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="5dp"
         android:layout_marginEnd="10dp"
-        android:gravity="center"
-        android:background="@drawable/comingsoon_bg">
+        android:gravity="center">
         <TextView
             android:id="@+id/txt_coming_soon"
             android:layout_width="match_parent"
@@ -100,13 +101,13 @@
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_alignParentEnd="true"
-            android:layout_below="@id/txt_course"
+            android:layout_below="@id/txt_type"
             android:layout_marginTop="25dp"
             android:layout_marginBottom="5dp"
+            android:background="@drawable/free_bg"
             android:visibility="visible"
             android:layout_marginEnd="10dp"
-            android:gravity="center"
-            android:background="@drawable/free_bg">
+            android:gravity="center">
             <TextView
                 android:id="@+id/txt_free"
                 android:layout_width="match_parent"
@@ -120,39 +121,68 @@
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/layout_buy"
-            android:layout_width="100dp"
-            android:layout_height="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
             android:layout_alignParentEnd="true"
-            android:layout_below="@id/txt_course"
+            android:layout_below="@id/txt_discount"
             android:visibility="visible"
-            android:layout_marginTop="25dp"
+            android:background="@drawable/buynow_bg"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
-            android:layout_marginEnd="10dp"
-            android:gravity="center"
-            android:background="@drawable/buynow_bg">
+            android:layout_marginEnd="10dp">
             <TextView
                 android:id="@+id/txt_buy"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="center"
                 android:textColor="@color/header"
                 android:visibility="visible"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_centerVertical="true"
                 android:textSize="12sp"
                 android:fontFamily="@font/hindbold"
-                android:text="Buy Now"/>
+                android:text="Buy "/>
+            <ImageView
+                android:id="@+id/img_rupee1"
+                android:layout_height="12dp"
+                android:layout_width="10dp"
+                android:layout_marginTop="10dp"
+                android:visibility="visible"
+                android:layout_toRightOf="@id/txt_buy"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/ic_rupee_buy"
+                />
+
+            <TextView
+                android:id="@+id/txt_actual_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/hindbold"
+                android:layout_toRightOf="@id/img_rupee1"
+                android:text="5000"
+                android:textColor="@color/header"
+                android:textSize="12dp"
+                android:visibility="visible" />
+
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/layout_view"
             android:layout_width="100dp"
             android:layout_height="35dp"
             android:layout_alignParentEnd="true"
-            android:layout_below="@id/txt_course"
+            android:layout_below="@id/txt_type"
             android:visibility="visible"
             android:layout_marginTop="20dp"
+            android:background="@drawable/buynow_bg"
             android:layout_marginBottom="5dp"
             android:layout_marginEnd="10dp"
-            android:gravity="center"
-            android:background="@drawable/buynow_bg">
+            android:gravity="center">
             <TextView
                 android:id="@+id/txt_view"
                 android:layout_width="match_parent"
@@ -173,11 +203,12 @@
             android:layout_width="10dp"
             android:layout_marginTop="5dp"
             android:visibility="visible"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="15dp"
             android:layout_marginBottom="5dp"
-            android:src="@drawable/ic_rupee"
             android:layout_marginLeft="15dp"
-            android:layout_below="@id/course_image"/>
+            android:src="@drawable/ic_rupee"
+            android:layout_toRightOf="@id/course_image"
+            android:layout_below="@id/txt_type"/>
 
         <TextView
             android:id="@+id/txt_discount"
@@ -186,35 +217,11 @@
             android:visibility="visible"
             android:textSize="15dp"
             android:layout_marginBottom="5dp"
-            android:textColor="#ea2d22"
-            android:text=""
-            android:layout_below="@id/course_image"
+            android:textColor="#AEACAC"
+            android:text="500"
+            android:layout_below="@id/txt_type"
             android:layout_toRightOf="@id/img_rupee"
             android:layout_marginRight="5dp"/>
-        <ImageView
-            android:id="@+id/img_rupee1"
-            android:layout_height="12dp"
-            android:layout_width="10dp"
-            android:layout_marginTop="5dp"
-            android:visibility="visible"
-            android:layout_marginStart="10dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/ic_rupee"
-            android:layout_below="@id/course_image"
-            android:layout_toRightOf="@id/txt_discount"/>
-
-        <TextView
-            android:id="@+id/txt_actual_price"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:visibility="visible"
-            android:textSize="15dp"
-            android:textColor="#08496e"
-            android:layout_marginBottom="5dp"
-            android:text="0"
-            android:layout_toRightOf="@id/img_rupee1"
-            android:layout_below="@id/course_image"
-            android:layout_marginRight="10dp"/>
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

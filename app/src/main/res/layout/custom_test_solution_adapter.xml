@@ -8,8 +8,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/bottom_layout">
+        android:background="@drawable/bottom_layout"
+        android:layout_marginBottom="10dp">
 
         <TextView
             android:id="@+id/text_title"
@@ -33,10 +33,10 @@
             android:id="@+id/edit_option1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bottom_layout"
             android:gravity="center"
             android:visibility="visible"
             android:clickable="true"
+            android:background="@drawable/bottom_layout"
             android:layout_below="@id/img_solution_title"
             android:layout_marginTop="15dp"
             android:layout_marginStart="10dp"
@@ -44,16 +44,16 @@
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="5dp"
-            android:src="@drawable/a_letter"/>
+            android:src="@drawable/a_letter"
+            android:layout_marginStart="5dp" />
 
         <TextView
             android:id="@+id/editTextOtion1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bottom_layout"
             android:fontFamily="@font/proximanovaregular"
             android:text=""
+            android:background="@drawable/bottom_layout"
             android:textColor="@color/edit_text"
             android:textColorHint="@color/edit_text"
             android:inputType="text"
@@ -79,9 +79,9 @@
                 android:id="@+id/editTextOtion1_wrong"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/option_selected"
                 android:fontFamily="@font/proximanovaregular"
                 android:text=""
+                android:background="@drawable/option_selected"
                 android:textColor="@color/edit_text"
                 android:textColorHint="@color/edit_text"
                 android:inputType="text"
@@ -93,9 +93,9 @@
                 android:id="@+id/editTextOtion1_unselected"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/option_flag"
                 android:fontFamily="@font/proximanovaregular"
                 android:text=""
+                android:background="@drawable/option_flag"
                 android:textColor="@color/edit_text"
                 android:textColorHint="@color/edit_text"
                 android:inputType="text"
@@ -116,8 +116,7 @@
                 android:id="@+id/img_solution_option1"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:visibility="visible"
-                android:src="@drawable/ic_businessman"/>
+                android:visibility="visible" />
 
         </RelativeLayout>
 
@@ -125,10 +124,10 @@
             android:id="@+id/edit_option2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bottom_layout"
             android:gravity="center"
             android:visibility="visible"
             android:clickable="true"
+            android:background="@drawable/bottom_layout"
             android:layout_below="@id/layout_img1"
             android:layout_marginTop="15dp"
             android:layout_marginStart="10dp"
@@ -146,6 +145,7 @@
                 android:background="@drawable/bottom_layout"
                 android:fontFamily="@font/proximanovaregular"
                 android:text=""
+
                 android:textColor="@color/edit_text"
                 android:textColorHint="@color/edit_text"
                 android:inputType="text"
@@ -171,9 +171,9 @@
                 android:id="@+id/editTextOtion2_wrong"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/option_selected"
                 android:fontFamily="@font/proximanovaregular"
                 android:text=""
+                android:background="@drawable/option_selected"
                 android:textColor="@color/edit_text"
                 android:textColorHint="@color/edit_text"
                 android:inputType="text"
@@ -185,8 +185,8 @@
                 android:id="@+id/editTextOtion2_unselected"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/option_flag"
                 android:fontFamily="@font/proximanovaregular"
+                android:background="@drawable/option_flag"
                 android:text=""
                 android:textColor="@color/edit_text"
                 android:textColorHint="@color/edit_text"
@@ -208,8 +208,7 @@
                 android:id="@+id/img_solution_option2"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:visibility="visible"
-                android:src="@drawable/ic_businessman"/>
+                android:visibility="visible" />
 
         </RelativeLayout>
         <LinearLayout
@@ -227,16 +226,16 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="5dp"
-                android:src="@drawable/c_letter"/>
+                android:src="@drawable/c_letter"
+                android:layout_marginStart="5dp" />
 
             <TextView
                 android:id="@+id/editTextOtion3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bottom_layout"
                 android:fontFamily="@font/proximanovaregular"
                 android:text=""
+                android:background="@drawable/bottom_layout"
                 android:textColor="@color/edit_text"
                 android:textColorHint="@color/edit_text"
                 android:inputType="text"
@@ -248,9 +247,9 @@
                 android:id="@+id/editTextOtion3_correct"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/option_correct"
                 android:fontFamily="@font/proximanovaregular"
                 android:text=""
+                android:background="@drawable/option_correct"
                 android:textColor="@color/edit_text"
                 android:textColorHint="@color/edit_text"
                 android:inputType="text"
@@ -262,9 +261,9 @@
                 android:id="@+id/editTextOtion3_wrong"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/option_selected"
                 android:fontFamily="@font/proximanovaregular"
                 android:text=""
+                android:background="@drawable/option_selected"
                 android:textColor="@color/edit_text"
                 android:textColorHint="@color/edit_text"
                 android:inputType="text"
@@ -299,18 +298,17 @@
                 android:id="@+id/img_solution_option3"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:visibility="visible"
-                android:src="@drawable/ic_businessman"/>
+                android:visibility="visible" />
 
         </RelativeLayout>
         <LinearLayout
             android:id="@+id/edit_option4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bottom_layout"
             android:gravity="center"
             android:visibility="visible"
             android:clickable="true"
+            android:background="@drawable/bottom_layout"
             android:layout_marginBottom="7dp"
             android:layout_below="@id/layout_img3"
             android:layout_marginTop="15dp"
@@ -320,15 +318,16 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="5dp"
-                android:src="@drawable/d_letter"/>
+                android:src="@drawable/d_letter"
+               />
 
             <TextView
                 android:id="@+id/editTextOtion4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bottom_layout"
                 android:fontFamily="@font/proximanovaregular"
                 android:text=""
+                android:background="@drawable/bottom_layout"
                 android:textColor="@color/edit_text"
                 android:textColorHint="@color/edit_text"
                 android:inputType="text"
@@ -340,8 +339,8 @@
             <TextView
                 android:id="@+id/editTextOtion4_correct"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:background="@drawable/option_correct"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/proximanovaregular"
                 android:text=""
                 android:textColor="@color/edit_text"
@@ -355,9 +354,9 @@
                 android:id="@+id/editTextOtion4_wrong"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/option_selected"
                 android:fontFamily="@font/proximanovaregular"
                 android:text=""
+                android:background="@drawable/option_selected"
                 android:textColor="@color/edit_text"
                 android:textColorHint="@color/edit_text"
                 android:inputType="text"
@@ -369,9 +368,9 @@
                 android:id="@+id/editTextOtion4_unselected"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/option_flag"
                 android:fontFamily="@font/proximanovaregular"
                 android:text=""
+                android:background="@drawable/option_flag"
                 android:textColor="@color/edit_text"
                 android:textColorHint="@color/edit_text"
                 android:inputType="text"
@@ -392,8 +391,7 @@
                 android:id="@+id/img_solution_option4"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:visibility="visible"
-                android:src="@drawable/ic_businessman"/>
+                android:visibility="visible" />
 
         </RelativeLayout>
 
@@ -429,7 +427,7 @@
                 android:layout_height="100dp"
                 android:layout_below="@id/text_discription"
                 android:visibility="visible"
-                android:src="@drawable/ic_businessman"/>
+                />
 
         </RelativeLayout>
 

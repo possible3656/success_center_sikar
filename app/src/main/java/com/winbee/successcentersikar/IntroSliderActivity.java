@@ -27,7 +27,8 @@ public class IntroSliderActivity extends AppCompatActivity {
     private LinearLayout dotsLayout;
     private TextView[] dots;
     private int[] layouts;
-    private Button btnSkip, btnNext;
+    private Button btnSkip;
+    private TextView btnNext;
     private PrefManager prefManager;
 
     @Override
@@ -48,13 +49,12 @@ public class IntroSliderActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
         btnSkip = (Button) findViewById(R.id.btn_skip);
-        btnNext = (Button) findViewById(R.id.btn_next);
+        btnNext = (TextView) findViewById(R.id.btn_next);
 
 
         // layouts of welcome sliders
         layouts = new int[]{
-                R.layout.welcome_slide1,
-                R.layout.welcome_slide2
+                R.layout.welcome_slide1
         };
 
         // adding bottom dots

@@ -7,6 +7,7 @@ package com.winbee.successcentersikar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,7 +20,7 @@ public class DashboardCourseActivity extends AppCompatActivity {
 
   private TextView studentNameMyProfile,mobile,email;
   String Name,Mobile,Email;
-  RelativeLayout layout_purchase,layout_test,layout_txn;
+  RelativeLayout layout_purchase,layout_test,layout_txn,layout_pdf;
   Button btn_courses;
     LinearLayout layout_user,layout_test_series,layout_home,layout_doubt,layout_notification;
     ImageView WebsiteHome,img_share;
@@ -27,6 +28,7 @@ public class DashboardCourseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_course);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         Name=SharedPrefManager.getInstance(this).refCode().getName();
         Mobile=SharedPrefManager.getInstance(this).refCode().getUsername();
         Email=SharedPrefManager.getInstance(this).refCode().getEmail();
@@ -36,6 +38,15 @@ public class DashboardCourseActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DashboardCourseActivity.this,MyTransactionActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        layout_pdf=findViewById(R.id.layout_pdf);
+        layout_pdf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DashboardCourseActivity.this,AllPurchasedPdfActivity.class);
                 startActivity(intent);
                 finish();
             }

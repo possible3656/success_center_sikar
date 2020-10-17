@@ -6,12 +6,11 @@
    >
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="wrap_content"
         android:id="@+id/branch_live1"
         android:clickable="true"
         android:elevation="3dp"
         android:background="@drawable/shadow"
-
        >
     <ImageView
         android:id="@+id/live_image"
@@ -50,8 +49,8 @@
         android:visibility="visible"
         android:layout_marginRight="15dp"
         android:fontFamily="@font/hindbold"
-        android:layout_alignParentBottom="true"
         android:layout_marginLeft="25dp"
+        android:layout_below="@id/live_image"
         android:layout_height="40dp"
         android:src="@drawable/giphy"/>
         <RelativeLayout
@@ -64,8 +63,8 @@
             android:layout_marginTop="25dp"
             android:layout_marginBottom="5dp"
             android:layout_marginEnd="10dp"
-            android:gravity="center"
-            android:background="@drawable/purchased_bg">
+            android:background="@drawable/purchased_bg"
+            android:gravity="center">
             <TextView
                 android:id="@+id/txt_purchased"
                 android:layout_width="match_parent"
@@ -88,7 +87,8 @@
             android:visibility="visible"
             android:layout_marginEnd="10dp"
             android:gravity="center"
-            android:background="@drawable/free_bg">
+            android:background="@drawable/free_bg"
+            >
             <TextView
                 android:id="@+id/txt_free"
                 android:layout_width="match_parent"
@@ -110,8 +110,9 @@
             android:layout_marginTop="25dp"
             android:layout_marginBottom="5dp"
             android:layout_marginEnd="10dp"
+            android:background="@drawable/buynow_bg"
             android:gravity="center"
-            android:background="@drawable/buynow_bg">
+           >
             <TextView
                 android:id="@+id/txt_buy"
                 android:layout_width="match_parent"
@@ -129,18 +130,18 @@
             android:layout_width="25dp"
             android:id="@+id/img_lock"
             android:layout_marginBottom="5dp"
-            android:src="@drawable/ic_lock"
             android:layout_marginRight="5dp"
             android:layout_alignParentEnd="true"
             android:visibility="visible"
+            android:src="@drawable/ic_lock"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="5dp" />
         <ImageView
             android:layout_height="20dp"
             android:layout_width="25dp"
             android:id="@+id/img_Unlock"
-            android:layout_marginBottom="5dp"
             android:src="@drawable/ic_unlock"
+            android:layout_marginBottom="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
             android:layout_alignParentEnd="true"

@@ -2,6 +2,7 @@ package com.winbee.successcentersikar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
@@ -26,17 +27,18 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.balsikandar.crashreporter.CrashReporter.getContext;
+
 public class RegisterActivity extends AppCompatActivity {
 
     EditText editTextname, editTextEmail, editTextPassword,editTextPhone,editTextRePassword;
-    TextView editTextReferalCode;
     Button register;
     private ProgressBarUtil progressBarUtil;
 
     private FirebaseAuth mAuth;
     private FirebaseUser currrentUser;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mcallback;
-    private String username;
+    private String username,android_id;
     private String email;
     private String password;
     private String phone;
@@ -68,6 +70,8 @@ public class RegisterActivity extends AppCompatActivity {
         editTextPassword =  findViewById(R.id.editTextPassword);
         editTextPhone = findViewById(R.id.editTextPhone);
         editTextRePassword  = findViewById(R.id.editTextre_Password);
+        android_id = Settings.Secure.getString(getContext().getContentResolver(),Settings.Secure.ANDROID_ID);
+
 
         mAuth = FirebaseAuth.getInstance();
         currrentUser = mAuth.getCurrentUser();
@@ -144,7 +148,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void CallSignupApi(final RefUser refUser) {
         progressBarUtil.showProgress();
        ClientApi mService = ApiClient.getClient().create(ClientApi.class);
-        Call<RefUser> call = mService.refUserSignIn(2, refUser.getName(),refUser.getEmail(),refUser.getMobile(),"SCS001", refUser.getPassword());
+        Call<RefUser> call = mService.refUserSignIn(2, refUser.getName(),refUser.getEmail(),refUser.getMobile(),"SCS001", refUser.getPassword(),android_id);
         call.enqueue(new Callback<RefUser>() {
             @Override
             public void onResponse(Call<RefUser> call, Response<RefUser> response) {

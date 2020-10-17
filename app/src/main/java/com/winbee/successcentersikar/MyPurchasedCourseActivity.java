@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -52,6 +53,7 @@ public class MyPurchasedCourseActivity extends AppCompatActivity implements Navi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_purchased_course);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         progressBarUtil = new ProgressBarUtil(this);
@@ -174,13 +176,18 @@ public class MyPurchasedCourseActivity extends AppCompatActivity implements Navi
         } else if (id == R.id.nav_test_series) {
             Intent test = new Intent(MyPurchasedCourseActivity.this,AllPurchasedTestActivity.class);
             startActivity(test);
+        } else if (id == R.id.nav_pdf) {
+            Intent pdf = new Intent(MyPurchasedCourseActivity.this,AllPurchasedPdfActivity.class);
+            startActivity(pdf);
         } else if (id == R.id.nav_txn) {
         Intent txn = new Intent(MyPurchasedCourseActivity.this,MyTransactionActivity.class);
             startActivity(txn);
         } else if (id == R.id.nav_live_class) {
             Intent live = new Intent(MyPurchasedCourseActivity.this,YouTubeVideoList.class);
             startActivity(live);
-
+        } else if (id == R.id.nav_contact) {
+            Intent intent = new Intent(MyPurchasedCourseActivity.this,ContactUsActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_about) {
             Intent intent = new Intent(MyPurchasedCourseActivity.this,AboutUsActivity.class);
             startActivity(intent);

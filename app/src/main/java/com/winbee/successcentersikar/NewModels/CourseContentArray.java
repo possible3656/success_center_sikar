@@ -26,7 +26,7 @@ public class CourseContentArray implements Serializable {
     private Integer total_discount;
     @SerializedName("Total_Video")
     @Expose
-    private String total_Video;
+    private Integer total_Video;
     @SerializedName("Total_Document")
     @Expose
     private Integer total_Document;
@@ -38,16 +38,19 @@ public class CourseContentArray implements Serializable {
     private String description;
     @SerializedName("Videos_Details")
     @Expose
-    private String videos_Details;
+    private Object videos_Details;
     @SerializedName("Notes_Details")
     @Expose
-    private String notes_Details;
+    private Object notes_Details;
     @SerializedName("release_status")
     @Expose
     private Integer release_status;
     @SerializedName("course_show")
     @Expose
     private Integer course_show;
+    @SerializedName("course_item")
+    @Expose
+    private Object course_item;
     @SerializedName("Bucket_Image")
     @Expose
     private String bucket_Image;
@@ -60,6 +63,9 @@ public class CourseContentArray implements Serializable {
     @SerializedName("ExamSectionId")
     @Expose
     private String examSectionId;
+    @SerializedName("TotalPapers")
+    @Expose
+    private String totalPapers;
 
     public String getBucket_ID() {
         return bucket_ID;
@@ -109,11 +115,11 @@ public class CourseContentArray implements Serializable {
         this.total_discount = total_discount;
     }
 
-    public String getTotal_Video() {
+    public Integer getTotal_Video() {
         return total_Video;
     }
 
-    public void setTotal_Video(String total_Video) {
+    public void setTotal_Video(Integer total_Video) {
         this.total_Video = total_Video;
     }
 
@@ -141,19 +147,19 @@ public class CourseContentArray implements Serializable {
         this.description = description;
     }
 
-    public String getVideos_Details() {
+    public Object getVideos_Details() {
         return videos_Details;
     }
 
-    public void setVideos_Details(String videos_Details) {
+    public void setVideos_Details(Object videos_Details) {
         this.videos_Details = videos_Details;
     }
 
-    public String getNotes_Details() {
+    public Object getNotes_Details() {
         return notes_Details;
     }
 
-    public void setNotes_Details(String notes_Details) {
+    public void setNotes_Details(Object notes_Details) {
         this.notes_Details = notes_Details;
     }
 
@@ -171,6 +177,14 @@ public class CourseContentArray implements Serializable {
 
     public void setCourse_show(Integer course_show) {
         this.course_show = course_show;
+    }
+
+    public Object getCourse_item() {
+        return course_item;
+    }
+
+    public void setCourse_item(Object course_item) {
+        this.course_item = course_item;
     }
 
     public String getBucket_Image() {
@@ -203,6 +217,14 @@ public class CourseContentArray implements Serializable {
 
     public void setExamSectionId(String examSectionId) {
         this.examSectionId = examSectionId;
+    }
+
+    public String getTotalPapers() {
+        return totalPapers;
+    }
+
+    public void setTotalPapers(String totalPapers) {
+        this.totalPapers = totalPapers;
     }
 
 }

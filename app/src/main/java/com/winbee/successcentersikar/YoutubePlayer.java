@@ -228,7 +228,7 @@ public class YoutubePlayer extends YouTubeBaseActivity implements YouTubePlayer.
                 /** Start buffering **/
                 if (!wasRestored) {
                         //player.cueVideo(topicName.getURL());
-                        player.cueVideo(LocalData.ContentLink);
+                        player.cueVideo(LocalData.VideoUrl);
                         // player.cueVideo(VIDEO_ID);
                 }
         }
@@ -434,7 +434,6 @@ public class YoutubePlayer extends YouTubeBaseActivity implements YouTubePlayer.
         public boolean onNavigationItemSelected(MenuItem item) {
                 // Handle navigation view item clicks here.
                 int id = item.getItemId();
-
                 if (id == R.id.nav_home) {
                         Intent home=new Intent(YoutubePlayer.this,MainActivity.class);
                         startActivity(home);
@@ -442,31 +441,43 @@ public class YoutubePlayer extends YouTubeBaseActivity implements YouTubePlayer.
                         Intent profile = new Intent(YoutubePlayer.this,DashboardCourseActivity.class);
                         startActivity(profile);
 
-
+                } else if (id == R.id.nav_course) {
+                        Intent course = new Intent(YoutubePlayer.this,MyPurchasedCourseActivity.class);
+                        startActivity(course);
+                } else if (id == R.id.nav_test_series) {
+                        Intent test = new Intent(YoutubePlayer.this,AllPurchasedTestActivity.class);
+                        startActivity(test);
+                } else if (id == R.id.nav_txn) {
+                        Intent txn = new Intent(YoutubePlayer.this,MyTransactionActivity.class);
+                        startActivity(txn);
+                } else if (id == R.id.nav_live_class) {
+                        Intent live = new Intent(YoutubePlayer.this,YouTubeVideoList.class);
+                        startActivity(live);
+                } else if (id == R.id.nav_pdf) {
+                        Intent pdf = new Intent(YoutubePlayer.this,AllPurchasedPdfActivity.class);
+                        startActivity(pdf);
                 } else if (id == R.id.nav_about) {
                         Intent intent = new Intent(YoutubePlayer.this,AboutUsActivity.class);
                         startActivity(intent);
-
                 } else if (id == R.id.nav_rate) {
                         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" +getPackageName())));
+                } else if (id == R.id.nav_contact) {
+                        Intent intent = new Intent(YoutubePlayer.this,ContactUsActivity.class);
+                        startActivity(intent);
+
                 } else if (id == R.id.nav_share) {
                         try {
                                 Intent shareIntent = new Intent(Intent.ACTION_SEND);
                                 shareIntent.setType("text/plain");
-                                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Sekhawati Defence Academy");
-                                String shareMessage= "\nSekhawati Defence Academy download the application.\n ";
+                                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Success Center Sikar");
+                                String shareMessage= "\nSuccess Center Sikar download the application.\n ";
                                 shareMessage = shareMessage + "\nhttps://play.google.com/store/apps/details?id="+getPackageName() ;
                                 shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
                                 startActivity(Intent.createChooser(shareIntent, "choose one"));
-                        } catch(Exception e) {
-                                //e.toString();
-                                //+ BuildConfig.APPLICATION_ID +"\n\n"
-                        }
+                        } catch(Exception e) { }
 
                 } else if (id == R.id.nav_logout) {
                         forceLogout();
-
-
                 }
 
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -35,7 +35,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/ic_share_black_24dp" />
+            android:src="@drawable/ic_baseline_share_24" />
 
         <TextView
             android:id="@+id/titleHome"
@@ -57,7 +57,7 @@
         android:layout_height="50dp"
         android:id="@+id/linearDisscussion"
         android:layout_below="@id/title_bar_home"
-        android:background="@drawable/doubt_header"
+        android:background="#039BE5"
         android:weightSum="2">
 
         <TextView

@@ -7,258 +7,269 @@ import java.io.Serializable;
 
 public class LiveClass implements Serializable {
 
-@SerializedName("ContentLink")
-@Expose
-private String contentLink;
-@SerializedName("ParentBucketId")
-@Expose
-private String parentBucketId;
-@SerializedName("CT_type_name")
-@Expose
-private String cT_type_name;
-@SerializedName("CT_type_code")
-@Expose
-private Integer cT_type_code;
-@SerializedName("Teacher")
-@Expose
-private String teacher;
-@SerializedName("Subject")
-@Expose
-private String subject;
-@SerializedName("Topic")
-@Expose
-private String topic;
-@SerializedName("Content_Info")
-@Expose
-private String content_Info;
-@SerializedName("Uploaded_by")
-@Expose
-private String uploaded_by;
-@SerializedName("DT_type_name")
-@Expose
-private String dT_type_name;
-@SerializedName("DT_type_code")
-@Expose
-private Integer dT_type_code;
-@SerializedName("RS_type_name")
-@Expose
-private String rS_type_name;
-@SerializedName("RS_type_code")
-@Expose
-private Integer rS_type_code;
-@SerializedName("CS_type_name")
-@Expose
-private String cS_type_name;
-@SerializedName("CS_type_code")
-@Expose
-private Integer cS_type_code;
-@SerializedName("Live_Date")
-@Expose
-private String live_Date;
-@SerializedName("Start_Time")
-@Expose
-private String start_Time;
-@SerializedName("Audience")
-@Expose
-private String audience;
-@SerializedName("Duration")
-@Expose
-private String duration;
-@SerializedName("LiveClassID")
-@Expose
-private String liveClassID;
-@SerializedName("thumnails")
-@Expose
-private String thumnails;
-@SerializedName("IsClassToday")
-@Expose
-private Integer isClassToday;
-@SerializedName("thumbnails")
-@Expose
-private String thumbnails;
+    @SerializedName("ContentLink")
+    @Expose
+    private String contentLink;
+    @SerializedName("ParentBucketId")
+    @Expose
+    private String parentBucketId;
+    @SerializedName("ChildId")
+    @Expose
+    private String childId;
+    @SerializedName("CT_type_name")
+    @Expose
+    private String cT_type_name;
+    @SerializedName("CT_type_code")
+    @Expose
+    private Integer cT_type_code;
+    @SerializedName("Teacher")
+    @Expose
+    private String teacher;
+    @SerializedName("Subject")
+    @Expose
+    private String subject;
+    @SerializedName("Topic")
+    @Expose
+    private String topic;
+    @SerializedName("Content_Info")
+    @Expose
+    private String content_Info;
+    @SerializedName("Uploaded_by")
+    @Expose
+    private String uploaded_by;
+    @SerializedName("DT_type_name")
+    @Expose
+    private String dT_type_name;
+    @SerializedName("DT_type_code")
+    @Expose
+    private Integer dT_type_code;
+    @SerializedName("RS_type_name")
+    @Expose
+    private String rS_type_name;
+    @SerializedName("RS_type_code")
+    @Expose
+    private Integer rS_type_code;
+    @SerializedName("CS_type_name")
+    @Expose
+    private String cS_type_name;
+    @SerializedName("CS_type_code")
+    @Expose
+    private Integer cS_type_code;
+    @SerializedName("Live_Date")
+    @Expose
+    private String live_Date;
+    @SerializedName("Start_Time")
+    @Expose
+    private String start_Time;
+    @SerializedName("Audience")
+    @Expose
+    private String audience;
+    @SerializedName("Duration")
+    @Expose
+    private String duration;
+    @SerializedName("LiveClassID")
+    @Expose
+    private String liveClassID;
+    @SerializedName("version")
+    @Expose
+    private String version;
+    @SerializedName("IsClassToday")
+    @Expose
+    private Integer isClassToday;
+    @SerializedName("thumbnails")
+    @Expose
+    private String thumbnails;
 
-public String getContentLink() {
-return contentLink;
-}
+    public String getContentLink() {
+        return contentLink;
+    }
 
-public void setContentLink(String contentLink) {
-this.contentLink = contentLink;
-}
+    public void setContentLink(String contentLink) {
+        this.contentLink = contentLink;
+    }
 
-public String getParentBucketId() {
-return parentBucketId;
-}
+    public String getParentBucketId() {
+        return parentBucketId;
+    }
 
-public void setParentBucketId(String parentBucketId) {
-this.parentBucketId = parentBucketId;
-}
+    public void setParentBucketId(String parentBucketId) {
+        this.parentBucketId = parentBucketId;
+    }
 
-public String getCT_type_name() {
-return cT_type_name;
-}
+    public String getChildId() {
+        return childId;
+    }
 
-public void setCT_type_name(String cT_type_name) {
-this.cT_type_name = cT_type_name;
-}
+    public void setChildId(String childId) {
+        this.childId = childId;
+    }
 
-public Integer getCT_type_code() {
-return cT_type_code;
-}
+    public String getCT_type_name() {
+        return cT_type_name;
+    }
 
-public void setCT_type_code(Integer cT_type_code) {
-this.cT_type_code = cT_type_code;
-}
+    public void setCT_type_name(String cT_type_name) {
+        this.cT_type_name = cT_type_name;
+    }
 
-public String getTeacher() {
-return teacher;
-}
+    public Integer getCT_type_code() {
+        return cT_type_code;
+    }
 
-public void setTeacher(String teacher) {
-this.teacher = teacher;
-}
+    public void setCT_type_code(Integer cT_type_code) {
+        this.cT_type_code = cT_type_code;
+    }
 
-public String getSubject() {
-return subject;
-}
+    public String getTeacher() {
+        return teacher;
+    }
 
-public void setSubject(String subject) {
-this.subject = subject;
-}
+    public void setTeacher(String teacher) {
+        this.teacher = teacher;
+    }
 
-public String getTopic() {
-return topic;
-}
+    public String getSubject() {
+        return subject;
+    }
 
-public void setTopic(String topic) {
-this.topic = topic;
-}
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
 
-public String getContent_Info() {
-return content_Info;
-}
+    public String getTopic() {
+        return topic;
+    }
 
-public void setContent_Info(String content_Info) {
-this.content_Info = content_Info;
-}
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
 
-public String getUploaded_by() {
-return uploaded_by;
-}
+    public String getContent_Info() {
+        return content_Info;
+    }
 
-public void setUploaded_by(String uploaded_by) {
-this.uploaded_by = uploaded_by;
-}
+    public void setContent_Info(String content_Info) {
+        this.content_Info = content_Info;
+    }
 
-public String getDT_type_name() {
-return dT_type_name;
-}
+    public String getUploaded_by() {
+        return uploaded_by;
+    }
 
-public void setDT_type_name(String dT_type_name) {
-this.dT_type_name = dT_type_name;
-}
+    public void setUploaded_by(String uploaded_by) {
+        this.uploaded_by = uploaded_by;
+    }
 
-public Integer getDT_type_code() {
-return dT_type_code;
-}
+    public String getDT_type_name() {
+        return dT_type_name;
+    }
 
-public void setDT_type_code(Integer dT_type_code) {
-this.dT_type_code = dT_type_code;
-}
+    public void setDT_type_name(String dT_type_name) {
+        this.dT_type_name = dT_type_name;
+    }
 
-public String getRS_type_name() {
-return rS_type_name;
-}
+    public Integer getDT_type_code() {
+        return dT_type_code;
+    }
 
-public void setRS_type_name(String rS_type_name) {
-this.rS_type_name = rS_type_name;
-}
+    public void setDT_type_code(Integer dT_type_code) {
+        this.dT_type_code = dT_type_code;
+    }
 
-public Integer getRS_type_code() {
-return rS_type_code;
-}
+    public String getRS_type_name() {
+        return rS_type_name;
+    }
 
-public void setRS_type_code(Integer rS_type_code) {
-this.rS_type_code = rS_type_code;
-}
+    public void setRS_type_name(String rS_type_name) {
+        this.rS_type_name = rS_type_name;
+    }
 
-public String getCS_type_name() {
-return cS_type_name;
-}
+    public Integer getRS_type_code() {
+        return rS_type_code;
+    }
 
-public void setCS_type_name(String cS_type_name) {
-this.cS_type_name = cS_type_name;
-}
+    public void setRS_type_code(Integer rS_type_code) {
+        this.rS_type_code = rS_type_code;
+    }
 
-public Integer getCS_type_code() {
-return cS_type_code;
-}
+    public String getCS_type_name() {
+        return cS_type_name;
+    }
 
-public void setCS_type_code(Integer cS_type_code) {
-this.cS_type_code = cS_type_code;
-}
+    public void setCS_type_name(String cS_type_name) {
+        this.cS_type_name = cS_type_name;
+    }
 
-public String getLive_Date() {
-return live_Date;
-}
+    public Integer getCS_type_code() {
+        return cS_type_code;
+    }
 
-public void setLive_Date(String live_Date) {
-this.live_Date = live_Date;
-}
+    public void setCS_type_code(Integer cS_type_code) {
+        this.cS_type_code = cS_type_code;
+    }
 
-public String getStart_Time() {
-return start_Time;
-}
+    public String getLive_Date() {
+        return live_Date;
+    }
 
-public void setStart_Time(String start_Time) {
-this.start_Time = start_Time;
-}
+    public void setLive_Date(String live_Date) {
+        this.live_Date = live_Date;
+    }
 
-public String getAudience() {
-return audience;
-}
+    public String getStart_Time() {
+        return start_Time;
+    }
 
-public void setAudience(String audience) {
-this.audience = audience;
-}
+    public void setStart_Time(String start_Time) {
+        this.start_Time = start_Time;
+    }
 
-public String getDuration() {
-return duration;
-}
+    public String getAudience() {
+        return audience;
+    }
 
-public void setDuration(String duration) {
-this.duration = duration;
-}
+    public void setAudience(String audience) {
+        this.audience = audience;
+    }
 
-public String getLiveClassID() {
-return liveClassID;
-}
+    public String getDuration() {
+        return duration;
+    }
 
-public void setLiveClassID(String liveClassID) {
-this.liveClassID = liveClassID;
-}
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
 
-public String getThumnails() {
-return thumnails;
-}
+    public String getLiveClassID() {
+        return liveClassID;
+    }
 
-public void setThumnails(String thumnails) {
-this.thumnails = thumnails;
-}
+    public void setLiveClassID(String liveClassID) {
+        this.liveClassID = liveClassID;
+    }
 
-public Integer getIsClassToday() {
-return isClassToday;
-}
+    public String getVersion() {
+        return version;
+    }
 
-public void setIsClassToday(Integer isClassToday) {
-this.isClassToday = isClassToday;
-}
+    public void setVersion(String version) {
+        this.version = version;
+    }
 
-public String getThumbnails() {
-return thumbnails;
-}
+    public Integer getIsClassToday() {
+        return isClassToday;
+    }
 
-public void setThumbnails(String thumbnails) {
-this.thumbnails = thumbnails;
-}
+    public void setIsClassToday(Integer isClassToday) {
+        this.isClassToday = isClassToday;
+    }
+
+    public String getThumbnails() {
+        return thumbnails;
+    }
+
+    public void setThumbnails(String thumbnails) {
+        this.thumbnails = thumbnails;
+    }
 
 }

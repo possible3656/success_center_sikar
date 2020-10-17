@@ -2,12 +2,16 @@ package com.winbee.successcentersikar.WebApi;
 
 
 
+import com.winbee.successcentersikar.NewModels.AboutModel;
+import com.winbee.successcentersikar.NewModels.ContentSyllabu;
 import com.winbee.successcentersikar.NewModels.CourseContent;
+import com.winbee.successcentersikar.NewModels.CourseModel;
 import com.winbee.successcentersikar.NewModels.LiveChatMessage;
 import com.winbee.successcentersikar.NewModels.LiveMessage;
 import com.winbee.successcentersikar.NewModels.LogOut;
 import com.winbee.successcentersikar.NewModels.PaymentModel;
 import com.winbee.successcentersikar.NewModels.PdfContent;
+import com.winbee.successcentersikar.NewModels.PdfSell;
 import com.winbee.successcentersikar.NewModels.SubjectContent;
 import com.winbee.successcentersikar.NewModels.TestSeriesPayment;
 import com.winbee.successcentersikar.NewModels.TestSubscription;
@@ -56,10 +60,13 @@ import retrofit2.http.Query;
 public interface ClientApi {
 
     @POST("fetch-cover-banner.php")
-    Call<BannerModel> getBanner(
+    Call<ArrayList<BannerModel>> getBanner(
             @Query("org_id") String org_id
     );
 
+    @POST("about.php")
+    Call<AboutModel> getAbout(
+    );
     @POST("fetch_bucket_cover_information.php")
     Call<CourseContent> getBranchId(
             @Query("SubURL") int SubURL,
@@ -76,6 +83,11 @@ public interface ClientApi {
             @Query("ORG_ID") String ORG_ID,
             @Query("PARENT_ID") String PARENT_ID,
             @Query("DEVICE_ID") String DEVICE_ID
+    );
+    @POST("fetch-course-syllabus.php")
+    Call<ArrayList<ContentSyllabu>> getCourseContent(
+            @Query("org_id") String org_id,
+            @Query("parent_id") String parent_id
     );
 
     @POST("fetch_bucket_cover_information.php")
@@ -136,7 +148,9 @@ public interface ClientApi {
             @Query("email") String email,
             @Query("mobile") String mobile,
             @Query("refcode") String refcode,
-            @Query("password") String password);
+            @Query("password") String password,
+            @Query("DEVICE_ID") String DEVICE_ID
+    );
 
     @POST("send-otp.php")
     Call<ForgetMobile> getForgetMobile(
@@ -167,10 +181,7 @@ public interface ClientApi {
 
 
     @POST("fetch-all-live-classes.php")
-    Call<ArrayList<LiveClass>> getLive(
-            @Query("filter_type") long filter_type,
-            @Query("filter_value") String filter_value
-    );
+    Call<ArrayList<LiveClass>> getLive();
 
     @POST("fetch-notes-of-live-class.php")
     Call<ArrayList<NotesModel>> getNotes(
@@ -190,9 +201,29 @@ public interface ClientApi {
             @Field("userid") String userid
     );
 
+    //for quiz
+    @FormUrlEncoded
+    @POST("ask-doubt-quiz.php")
+    Call<NewDoubtQuestion> getQuizQuestion(
+            @Field("title") String title,
+            @Field("question") String question,
+            @Field("userid") String userid
+    );
 
     @POST("beta-doubt-storage.php")
     Call<ArrayList<AskDoubtQuestion>> getQuestion();
+
+    @POST("beta-doubt-storage-quiz.php")
+    Call<ArrayList<AskDoubtQuestion>> getQuizQuestion();
+
+    @FormUrlEncoded
+    @POST("ask-doubt-quiz.php")
+    Call<SolutionDoubtQuestion> getQuizSolutionText(
+            @Field("userid") String userid,
+            @Field("filename") String filename,
+            @Field("answer") String answer,
+            @Field("solutionType") String solutionType
+    );
 
     @FormUrlEncoded
     @POST("ask-doubt.php")
@@ -212,10 +243,25 @@ public interface ClientApi {
             @Field("solutionType") String solutionType
     );
 
+    @FormUrlEncoded
+    @POST("ask-doubt-quiz.php")
+    Call<SolutionDoubtQuestion> getQuizSolutionImage(
+            @Field("userid") String userid,
+            @Field("filename") String filename,
+            @Field("answer") String answer,
+            @Field("solutionType") String solutionType
+    );
+
     @POST("beta-doubt-storage.php")
     Call<ArrayList<SolutionQuestion>> getSolution(
             @Query("filename") String filename
     );
+
+    @POST("beta-doubt-storage-quiz.php")
+    Call<ArrayList<SolutionQuestion>> getQuizSolution(
+            @Query("filename") String filename
+    );
+
 
 
     @POST("fetch-section-details.php")
@@ -223,6 +269,12 @@ public interface ClientApi {
             @Query("org_code") String org_code,
             @Query("auth_code") String auth_code,
             @Query("userId") String userId
+    );
+    @POST("fetch_pdf_data.php")
+    Call<PdfSell> fetchPdf(
+            @Query("ORG_ID") String ORG_ID,
+            @Query("USER_ID") String USER_ID,
+            @Query("DEVICE_ID") String DEVICE_ID
     );
 
     @POST("fetch-section-subscription-plan.php")
@@ -370,6 +422,16 @@ public interface ClientApi {
             @Field("user_id") String user_id,
             @Field("amount_org_id") String amount_org_id,
             @Field("org_id") String org_id
+    );
+
+    @POST("get-order-id-api.php")
+    @FormUrlEncoded
+    Call<PaymentModel> fetchPaymentDataPdf(
+            @Field("course_id") String course_id,
+            @Field("user_id") String user_id,
+            @Field("amount_org_id") String amount_org_id,
+            @Field("org_id") String org_id,
+            @Field("type") String type
     );
     @POST("insert-exam-payment-initiated-ots.php")
     @FormUrlEncoded

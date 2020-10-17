@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
+import com.winbee.successcentersikar.AllPurchasedCourseTestActivity;
 import com.winbee.successcentersikar.CourseDetailsActivity;
 import com.winbee.successcentersikar.LocalData;
 import com.winbee.successcentersikar.MyPurchaseSubjectActivity;
@@ -96,13 +97,14 @@ public class AllCourseAdapter extends RecyclerView.Adapter<AllCourseAdapter.View
                     LocalData.CourseName = list1.get(position).getBucket_Name();
                     LocalData.CourseImage = list1.get(position).getBucket_Cover_Image();
                     LocalData.CoursePrice = list1.get(position).getDiscount_price();
-                    LocalData.CourseDiscription = list1.get(position).getDescription();
+                    LocalData.CourseDiscription = (String) list1.get(position).getDescription();
                     LocalData.CourseChildLink = list1.get(position).getChild_Link();
                     LocalData.CourseTotalVideos = list1.get(position).getTotal_Video();
+                    LocalData.CourseTotalTest = list1.get(position).getTotalPapers();
                     LocalData.CourseTotalPdf = list1.get(position).getTotal_Document();
                     LocalData.CourseDiscountPrice = list1.get(position).getDisplay_price();
                     LocalData.CourseId = list1.get(position).getBucket_ID();
-                    Intent intent = new Intent(context, MyPurchaseSubjectActivity.class);
+                    Intent intent = new Intent(context, AllPurchasedCourseTestActivity.class);
                     context.startActivity(intent);
                 }
             });
@@ -111,7 +113,7 @@ public class AllCourseAdapter extends RecyclerView.Adapter<AllCourseAdapter.View
         if (list1.get(position).getCourse_show().equals(1)) {
             holder.Course_layout.setVisibility(View.VISIBLE);
             holder.txt_course.setText(list1.get(position).getBucket_Name());
-            holder.txt_type.setText("Course");
+            holder.txt_type.setText(String.valueOf(list1.get(position).getDescription()));
             holder.txt_discount.setText(String.valueOf(list1.get(position).getDisplay_price()));
             holder.txt_discount.setPaintFlags(holder.txt_discount.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
             holder.txt_actual_price.setText(String.valueOf(list1.get(position).getDiscount_price()));
@@ -129,11 +131,12 @@ public class AllCourseAdapter extends RecyclerView.Adapter<AllCourseAdapter.View
                         LocalData.CourseName = list1.get(position).getBucket_Name();
                         LocalData.CourseImage = list1.get(position).getBucket_Cover_Image();
                         LocalData.CoursePrice = list1.get(position).getDiscount_price();
-                        LocalData.CourseDiscription = list1.get(position).getDescription();
+                        LocalData.CourseDiscription = (String) list1.get(position).getDescription();
                         LocalData.CourseChildLink = list1.get(position).getChild_Link();
                         LocalData.CourseTotalVideos = list1.get(position).getTotal_Video();
-                        LocalData.CourseInternalTotalVideos = list1.get(position).getVideos_Details();
-                        LocalData.NotesDetails = list1.get(position).getNotes_Details();
+                        LocalData.CourseTotalTest = list1.get(position).getTotalPapers();
+//                        LocalData.CourseInternalTotalVideos = list1.get(position).getVideos_Details();
+//                        LocalData.NotesDetails = list1.get(position).getNotes_Details();
                         LocalData.CourseTotalPdf = list1.get(position).getTotal_Document();
                         LocalData.CourseDiscountPrice = list1.get(position).getDisplay_price();
                         LocalData.TotalDiscount = list1.get(position).getTotal_discount();
@@ -153,11 +156,13 @@ public class AllCourseAdapter extends RecyclerView.Adapter<AllCourseAdapter.View
                         LocalData.CourseName = list1.get(position).getBucket_Name();
                         LocalData.CourseImage = list1.get(position).getBucket_Cover_Image();
                         LocalData.CoursePrice = list1.get(position).getDiscount_price();
-                        LocalData.CourseDiscription = list1.get(position).getDescription();
+                        LocalData.CourseDiscription = (String) list1.get(position).getDescription();
                         LocalData.CourseChildLink = list1.get(position).getChild_Link();
                         LocalData.CourseTotalVideos = list1.get(position).getTotal_Video();
                         LocalData.CourseTotalPdf = list1.get(position).getTotal_Document();
                         LocalData.CourseDiscountPrice = list1.get(position).getDisplay_price();
+                        LocalData.CourseTotalTest = list1.get(position).getTotalPapers();
+
                         LocalData.CourseId = list1.get(position).getBucket_ID();
                         Intent intent = new Intent(context, MyPurchaseSubjectActivity.class);
                         context.startActivity(intent);
@@ -172,11 +177,12 @@ public class AllCourseAdapter extends RecyclerView.Adapter<AllCourseAdapter.View
                     LocalData.CourseName = list1.get(position).getBucket_Name();
                     LocalData.CourseImage = list1.get(position).getBucket_Cover_Image();
                     LocalData.CoursePrice = list1.get(position).getDiscount_price();
-                    LocalData.CourseDiscription = list1.get(position).getDescription();
+                    LocalData.CourseDiscription = (String) list1.get(position).getDescription();
                     LocalData.CourseChildLink = list1.get(position).getChild_Link();
                     LocalData.CourseTotalVideos = list1.get(position).getTotal_Video();
                     LocalData.CourseTotalPdf = list1.get(position).getTotal_Document();
                     LocalData.CourseDiscountPrice = list1.get(position).getDisplay_price();
+                    LocalData.CourseTotalTest = list1.get(position).getTotalPapers();
                     LocalData.CourseId = list1.get(position).getBucket_ID();
                     Intent intent = new Intent(context, MyPurchaseSubjectActivity.class);
                     context.startActivity(intent);

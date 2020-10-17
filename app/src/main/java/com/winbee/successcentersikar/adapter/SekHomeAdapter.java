@@ -49,7 +49,7 @@ public class SekHomeAdapter extends RecyclerView.Adapter<SekHomeAdapter.ViewHold
       //  Picasso.get().load(courseDatumList.get(position).getItemAttachment()).into(holder.branch_image);
         Picasso.get()
                 .load(courseDatumList.get(position).getItemAttachment())
-                .placeholder(R.drawable.dummyimage)
+                .placeholder(R.drawable.dummyimage1)
                 .into(holder.branch_image);
         holder.btn_share.setOnClickListener(new View.OnClickListener() {
             @Override

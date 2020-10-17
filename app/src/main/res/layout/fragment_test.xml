@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".TestFragment">
+
+    <io.supercharge.shimmerlayout.ShimmerLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:shimmer_animation_duration="1200"
+        android:layout_below="@id/title_bar_home"
+        android:id="@+id/shimmerLayout">
+
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/item_place_holder_layout"/>
+
+        </LinearLayout>
+
+    </io.supercharge.shimmerlayout.ShimmerLayout>
+    <TextView
+        android:id="@+id/txt_no_subject"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       android:gravity="center"
+        android:text="No Test Available"
+        android:visibility="gone"
+        android:textColor="@color/edit_text"
+        android:textSize="24sp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/recycle_test"
+        android:layout_marginBottom="65dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/title_bar_home" />
+
+</FrameLayout>

@@ -29,7 +29,7 @@ public class SplashPageActivity extends AppCompatActivity {
                     prefManager = new PrefManager(SplashPageActivity.this);
                     if (prefManager.isFirstTimeLaunch()) {
 
-                        startActivity(new Intent(getApplicationContext(), IntroSliderActivity.class));
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                         finish();
                     } else {
                         launchHomeScreen();

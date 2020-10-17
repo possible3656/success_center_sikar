@@ -12,15 +12,17 @@
         android:layout_marginStart="5dp"
         android:layout_marginBottom="5dp"
         android:clipToPadding="false"
+        android:background="@drawable/shadow"
         android:clickable="true"
-        android:background="@drawable/shadow">
+       >
             <ImageView
                 android:id="@+id/document_type"
                 android:layout_width="60dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
+                android:src="@drawable/logo"
                 android:layout_marginBottom="5dp"
-                android:src="@drawable/logo" />
+                />
 
             <TextView
                 android:id="@+id/gec_subject"
@@ -49,7 +51,6 @@
             android:layout_width="25dp"
             android:id="@+id/img_lock"
             android:layout_marginBottom="5dp"
-            android:src="@drawable/ic_lock"
             android:layout_marginRight="5dp"
             android:layout_alignParentEnd="true"
             android:visibility="gone"
@@ -60,7 +61,7 @@
             android:layout_width="25dp"
             android:id="@+id/img_Unlock"
             android:layout_marginBottom="5dp"
-            android:src="@drawable/ic_unlock"
+
             android:layout_marginRight="5dp"
             android:layout_alignParentEnd="true"
             android:visibility="gone"

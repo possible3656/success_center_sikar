@@ -39,17 +39,26 @@
                     android:layout_marginLeft="20dp"
                     android:src="@drawable/ic_baseline_menu_24"
                     />
-
-                <ImageView
-                    android:id="@+id/sideBarHome"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_toRightOf="@id/WebsiteHome"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:src="@drawable/logo" />
+<de.hdodenhof.circleimageview.CircleImageView
+    android:id="@+id/sideBarHome"
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginLeft="20dp"
+    android:src="@drawable/logo"
+    android:layout_toRightOf="@id/WebsiteHome"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"/>
+<!--                <ImageView-->
+<!--                    android:id="@+id/sideBarHome"-->
+<!--                    android:layout_width="30dp"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:src="@drawable/logo"-->
+<!--                    android:layout_toRightOf="@id/WebsiteHome"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginBottom="10dp" />-->
 
 
                 <ImageView
@@ -63,7 +72,7 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="10dp"
-                    android:src="@drawable/ic_share_black_24dp" />
+                    android:src="@drawable/ic_baseline_share_24" />
 
                 <TextView
                     android:id="@+id/titleHome"
@@ -71,7 +80,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     style="@style/viewParent.headerText"
-                    android:text="SDA LEARNING APP"
+                    android:text="SUCCESS CENTER "
                     android:layout_marginStart="30dp"
                     android:fontFamily="@font/hindbold"
                     android:textColor="@color/white"
@@ -85,32 +94,31 @@
                 android:fontFamily="@font/hindlight"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="5dp"
+                android:visibility="gone"
                 android:layout_below="@id/title_bar_home"
                 style="@style/viewParent.headerText" />
-            <pl.droidsonroids.gif.GifImageView
-                android:id="@+id/image_gif"
-                android:layout_width="50dp"
-                android:visibility="visible"
-                android:layout_marginRight="15dp"
-                android:layout_below="@id/title_bar_home"
-                android:fontFamily="@font/hindbold"
-                android:layout_alignParentEnd="true"
-                android:layout_marginLeft="25dp"
-                android:layout_height="40dp"
-                android:src="@drawable/giphy"/>
+
 
             <RelativeLayout
                 android:id="@+id/layout_live"
                 android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
                 android:elevation="2dp"
                 android:layout_below="@id/user_name"
                 android:layout_height="wrap_content">
-                    <ImageView
-                        android:id="@+id/img_video_thumbails"
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        />
+<!--                    <ImageView-->
+<!--                        android:id="@+id/img_video_thumbails"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="200dp"-->
+<!--                        />-->
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:layout_width="match_parent"
+                    app:auto_cycle="true"
+                    app:delay="0"
+                    android:id="@+id/img_video_thumbails"
+                    app:period="5000"
+                    app:error_image="@drawable/dummyimage"
+                    app:placeholder="@drawable/dummyimage"
+                    android:layout_height="200dp"/>
 
             </RelativeLayout>
 <LinearLayout
@@ -120,6 +128,10 @@
     android:layout_below="@id/layout_live"
     android:orientation="horizontal"
     android:layout_marginTop="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:padding="8dp"
+    android:background="@drawable/main_div_layout"
     android:layout_marginBottom="5dp"
     android:weightSum="4">
     <LinearLayout
@@ -129,11 +141,19 @@
         android:orientation="vertical"
         android:layout_gravity="center"
         android:layout_weight="1">
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center"
             android:layout_gravity="center"
-            android:src="@drawable/ic_baseline_import_contacts_24"/>
+            android:background="@drawable/image_background">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_local_library_24"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -144,18 +164,47 @@
             android:textSize="15sp"/>
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/layout_class"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_gravity="center"
+        android:gravity="center"
         android:layout_weight="1">
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_baseline_ondemand_video_24"/>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/layout_live_class"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:orientation="vertical"
+            android:background="@drawable/image_background">
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/image_gif"
+                android:layout_width="160dp"
+                android:visibility="visible"
+               android:layout_marginStart="20dp"
+                android:fontFamily="@font/hindbold"
+                android:layout_above="@id/live_imae"
+                android:layout_height="40dp"
+                android:src="@drawable/pulseplus"/>
+            <ImageView
+                android:id="@+id/live_imae"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="7dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_baseline_ondemand_video_24"/>
+
+        </RelativeLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -164,6 +213,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:textSize="15sp"/>
+</LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/layout_test"
@@ -172,11 +222,19 @@
         android:orientation="vertical"
         android:layout_gravity="center"
         android:layout_weight="1">
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_baseline_insert_chart_outlined_24"/>
+            android:gravity="center"
+            android:background="@drawable/image_background">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_insert_chart_outlined_24"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -193,11 +251,19 @@
         android:orientation="vertical"
         android:layout_gravity="center"
         android:layout_weight="1">
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/image_background"
             android:layout_gravity="center"
-            android:src="@drawable/ic_baseline_show_chart_24"/>
+            android:gravity="center">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_show_chart_24"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -213,51 +279,161 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:layout_below="@id/linear_layout"
-                android:layout_marginBottom="10dp">
-
-                <LinearLayout
-                    android:id="@+id/txt_courses"
+                android:id="@+id/layout_test_series1"
+                android:layout_below="@id/linear_layout">
+                <RelativeLayout
+                    android:id="@+id/layout_course1"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_alignParentBottom="true">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="22sp"
-                        android:textColor="#008eca"
-                        android:textStyle="bold"
-                        android:fontFamily="@font/hindbold"
-                        android:text="Our Courses"/>
+                    android:layout_height="wrap_content">
 
-                </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/txt_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_alignParentBottom="true">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textColor="#08496e"
+                            android:textStyle="bold"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/hindbold"
+                            android:text="Test Series"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+                <io.supercharge.shimmerlayout.ShimmerLayout
+                    android:id="@+id/shimmerLayout"
+                    app:shimmer_animation_duration="1200"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/layout_course1"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <include layout="@layout/item_place_holder_layout"/>
+                    </LinearLayout>
+                </io.supercharge.shimmerlayout.ShimmerLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycle_test_series"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
 
             </RelativeLayout>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycle_test_series"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_below="@id/linear_layout"
-                android:nestedScrollingEnabled="false"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                android:id="@+id/layout_course_series"
+                android:layout_below="@id/layout_test_series1">
+                <RelativeLayout
+                    android:id="@+id/layout_test1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
+                    <LinearLayout
+                        android:id="@+id/txt_courses"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textColor="#08496e"
+                            android:textStyle="bold"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/hindbold"
+                            android:text="Study Material"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/gec_home_recycle"
+                    </LinearLayout>
+
+                </RelativeLayout>
+                <io.supercharge.shimmerlayout.ShimmerLayout
+                    android:id="@+id/shimmerLayout1"
+                    app:shimmer_animation_duration="1200"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/layout_test1"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <include layout="@layout/item_place_holder_layout"/>
+                    </LinearLayout>
+                </io.supercharge.shimmerlayout.ShimmerLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/gec_home_recycle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_below="@id/layout_test1"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            </RelativeLayout>
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="65dp"
-                android:layout_below="@id/recycle_test_series"
-                android:nestedScrollingEnabled="false"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                android:id="@+id/layout_pdf_series"
+                android:visibility="visible"
+                android:layout_below="@id/layout_course_series">
+                <RelativeLayout
+                    android:id="@+id/layout_pdf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/txt_pdf"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textColor="#08496e"
+                            android:textStyle="bold"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/hindbold"
+                            android:text="PDF"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+                <io.supercharge.shimmerlayout.ShimmerLayout
+                    android:id="@+id/shimmerLayout2"
+                    app:shimmer_animation_duration="1200"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/layout_pdf"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <include layout="@layout/item_place_holder_layout"/>
+                    </LinearLayout>
+                </io.supercharge.shimmerlayout.ShimmerLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/gec_home_recycle_pdf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="55dp"
+                    android:layout_below="@id/layout_pdf"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            </RelativeLayout>
 
         </RelativeLayout>
 
@@ -268,9 +444,9 @@
         android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="@drawable/bottom_layout"
         android:layout_alignParentBottom="true"
-        android:weightSum="5"
-        android:background="@drawable/bottom_layout">
+        android:weightSum="5">
         <LinearLayout
             android:id="@+id/layout_user"
             android:layout_width="wrap_content"
@@ -282,8 +458,8 @@
                 android:id="@+id/image_user"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_speedometer"
+                android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_user"
@@ -309,8 +485,8 @@
                 android:id="@+id/image_test"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-               android:layout_gravity="center"
                 android:src="@drawable/ic_list"
+               android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_test"
@@ -336,8 +512,8 @@
                 android:id="@+id/image_home"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_home"
+                android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_home"
@@ -363,8 +539,9 @@
                 android:id="@+id/image_doubt"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_questions"
+                android:layout_gravity="center"
+
                 />
             <TextView
                 android:id="@+id/text_doubt"
@@ -390,8 +567,8 @@
                 android:id="@+id/image_notification"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_bell"
+                android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_notification"

@@ -27,8 +27,9 @@
                 android:layout_width="150dp"
                 android:layout_height="100dp"
                 android:src="@drawable/image1"
-                android:padding="10dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="5dp"
                 android:scaleType="centerCrop" />
 
             <TextView
@@ -37,11 +38,11 @@
                 android:layout_height="wrap_content"
                android:layout_toRightOf="@id/youtubeThubnail"
                 android:textColor="@color/edit_text"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginRight="22dp"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/proximanovaregular"
                 android:layout_marginLeft="5dp"
-                android:maxLines="4"
+                android:maxLines="3"
                 android:ellipsize="end"
                 android:text="YouTube Video"
                 android:textSize="15sp" />
@@ -52,18 +53,18 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="5dp"
                 android:visibility="gone"
-                android:src="@drawable/ic_more_vert_black_24dp"
                 android:layout_alignParentEnd="true"/>
             <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/image_gif"
-                android:layout_width="30dp"
+                android:layout_width="40dp"
                 android:visibility="visible"
-                android:layout_marginRight="5dp"
                 android:fontFamily="@font/hindbold"
-                android:layout_alignParentEnd="true"
+                android:src="@drawable/rblive"
+                android:layout_below="@id/title"
+                android:layout_marginStart="5dp"
+                android:layout_toRightOf="@id/youtubeThubnail"
                 android:layout_marginLeft="5dp"
-                android:layout_height="30dp"
-                android:src="@drawable/pulse"/>
+                android:layout_height="40dp" />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -72,6 +73,28 @@
                 android:layout_marginLeft="10dp"
                 android:layout_below="@id/youtubeThubnail"
                 android:layout_marginTop="-40dp"/>
+            <ImageView
+                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:id="@+id/img_lock"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                android:src="@drawable/ic_lock"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp" />
+            <ImageView
+                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:id="@+id/img_Unlock"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/ic_unlock"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp" />
 
 
         </RelativeLayout>

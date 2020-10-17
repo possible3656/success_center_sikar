@@ -13,6 +13,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -30,6 +31,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.balsikandar.crashreporter.BuildConfig;
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
@@ -38,11 +41,14 @@ import com.squareup.picasso.Picasso;
 import com.winbee.successcentersikar.NewModels.CourseContent;
 import com.winbee.successcentersikar.NewModels.CourseContentArray;
 import com.winbee.successcentersikar.NewModels.LogOut;
+import com.winbee.successcentersikar.NewModels.PdfSell;
+import com.winbee.successcentersikar.NewModels.PdfSellArray;
 import com.winbee.successcentersikar.RetrofitApiCall.ApiClient;
 import com.winbee.successcentersikar.RetrofitApiCall.OnlineTestApiClient;
 import com.winbee.successcentersikar.Utils.OnlineTestData;
 import com.winbee.successcentersikar.WebApi.ClientApi;
 import com.winbee.successcentersikar.adapter.AllCourseAdapter;
+import com.winbee.successcentersikar.adapter.AllPdfSellAdapter;
 import com.winbee.successcentersikar.adapter.AllPerminumTestAdapter;
 import com.winbee.successcentersikar.model.BannerModel;
 import com.winbee.successcentersikar.model.LiveStatus;
@@ -73,17 +79,19 @@ public class MainActivity extends AppCompatActivity
     private String UserPassword;
     private GifImageView image_gif;
     TextView txt_discount,user_name;
-    ImageView img_video_thumbails,img_share;
+    private ShimmerLayout shimmerLayout,shimmerLayout1,shimmerLayout2;
+    ImageView img_share;
     private ProgressBarUtil progressBarUtil;
     private ArrayList<CourseContentArray> list1;
-
-    private RecyclerView video_list_recycler,recycle_test_series;
+    private ArrayList<PdfSellArray> pdfSellArrays;
+    ImageSlider img_video_thumbails;
+    private RecyclerView video_list_recycler,recycle_test_series,gec_home_recycle_pdf;
     private AllCourseAdapter CourseAdapter;
+    private AllPdfSellAdapter pdfSellAdapter;
     private AllPerminumTestAdapter allPerminumTestAdapter;
     ImageView WebsiteHome;
     SwipeRefreshLayout refresh_main;
     boolean version = false;
-    private ShimmerLayout shimmerLayout;
     LinearLayout layout_user,layout_test_series,layout_home,layout_doubt,layout_notification,
             layout_course,layout_class,layout_test,layout_quiz;
     String sCurrentVersion,sLastestVersion;
@@ -93,7 +101,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         new GetLastesVersion().execute();
 
         //firebase Common notification
@@ -136,9 +144,10 @@ public class MainActivity extends AppCompatActivity
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        shimmerLayout1=findViewById(R.id.shimmerLayout1);
         shimmerLayout=findViewById(R.id.shimmerLayout);
-        android_id = Settings.Secure.getString(getContext().getContentResolver(),
-                Settings.Secure.ANDROID_ID);
+        shimmerLayout2=findViewById(R.id.shimmerLayout2);
+        android_id = Settings.Secure.getString(getContext().getContentResolver(),Settings.Secure.ANDROID_ID);
 
 
         txt_discount = findViewById(R.id.txt_discount);
@@ -150,6 +159,7 @@ public class MainActivity extends AppCompatActivity
         progressBarUtil = new ProgressBarUtil(this);
         video_list_recycler = findViewById(R.id.gec_home_recycle);
         recycle_test_series = findViewById(R.id.recycle_test_series);
+        gec_home_recycle_pdf = findViewById(R.id.gec_home_recycle_pdf);
         AllCourseAdapter allCourseAdapter = new AllCourseAdapter(this,list1);
         video_list_recycler.setLayoutManager(new GridLayoutManager(this,1));
         video_list_recycler.setAdapter(allCourseAdapter);
@@ -221,37 +231,37 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         });
-        
+
         layout_course=findViewById(R.id.layout_course);
         layout_course.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent profile = new Intent(MainActivity.this,DashboardCourseActivity.class);
-//                startActivity(profile);
+                Intent profile = new Intent(MainActivity.this,MyPurchasedCourseActivity.class);
+                startActivity(profile);
             }
         });
         layout_class=findViewById(R.id.layout_class);
         layout_class.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent profile = new Intent(MainActivity.this,DashboardCourseActivity.class);
-//                startActivity(profile);
+                Intent profile = new Intent(MainActivity.this,YouTubeVideoList.class);
+                startActivity(profile);
             }
         });
         layout_test=findViewById(R.id.layout_test);
         layout_test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent profile = new Intent(MainActivity.this,DashboardCourseActivity.class);
-//                startActivity(profile);
+                Intent profile = new Intent(MainActivity.this,SubjectActivity.class);
+                startActivity(profile);
             }
         });
         layout_quiz=findViewById(R.id.layout_quiz);
         layout_quiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent profile = new Intent(MainActivity.this,DashboardCourseActivity.class);
-//                startActivity(profile);
+                Intent profile = new Intent(MainActivity.this,QuizActivity.class);
+                startActivity(profile);
             }
         });
 
@@ -260,6 +270,7 @@ public class MainActivity extends AppCompatActivity
         callTestApiService();
         callApiService();
         callLiveClassService();
+        callPdfService();
 
         refresh_main=findViewById(R.id.refresh_main);
         refresh_main.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -268,6 +279,7 @@ public class MainActivity extends AppCompatActivity
                 callBannerService();
                 callTestApiService();
                 callApiService();
+                callPdfService();
 
 
                 new Handler().postDelayed(new Runnable() {
@@ -344,6 +356,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_test_series) {
             Intent test = new Intent(MainActivity.this,AllPurchasedTestActivity.class);
             startActivity(test);
+        } else if (id == R.id.nav_pdf) {
+            Intent pdf = new Intent(MainActivity.this,AllPurchasedPdfActivity.class);
+            startActivity(pdf);
         } else if (id == R.id.nav_txn) {
             Intent txn = new Intent(MainActivity.this,MyTransactionActivity.class);
             startActivity(txn);
@@ -353,6 +368,9 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_about) {
             Intent intent = new Intent(MainActivity.this,AboutUsActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_contact) {
+            Intent intent = new Intent(MainActivity.this,ContactUsActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_rate) {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" +getPackageName())));
@@ -382,14 +400,23 @@ public class MainActivity extends AppCompatActivity
     private void callBannerService() {
         progressBarUtil.showProgress();
         ClientApi apiCAll = ApiClient.getClient().create(ClientApi.class);
-        Call<BannerModel> call = apiCAll.getBanner("WB_010");
-        call.enqueue(new Callback<BannerModel>() {
+        Call<ArrayList<BannerModel>> call = apiCAll.getBanner("WB_010");
+        call.enqueue(new Callback<ArrayList<BannerModel>>() {
             @Override
-            public void onResponse(Call<BannerModel> call, Response<BannerModel> response) {
+            public void onResponse(Call<ArrayList<BannerModel>> call, Response<ArrayList<BannerModel>> response) {
                 int statusCode = response.code();
                 if (statusCode == 200 ) {
-                    System.out.println("Suree body: " + response.body().getFile());
-                    Picasso.get().load(response.body().getFile()).placeholder(R.drawable.dummyimage).into(img_video_thumbails);
+//                    System.out.println("Suree body: " + response.body().getFile());
+//                    Picasso.get().load(response.body().getFile())
+//                            .placeholder(R.drawable.dummyimage)
+//                            .into(img_video_thumbails);
+                    ArrayList<BannerModel> bannerModel  =response.body();
+                    List<SlideModel> bannerModels=new ArrayList<>();
+                    //  bannerModels.add(new SlideModel(String.valueOf(Arrays.asList(bannerModel.getFile()))));
+                    for (int i=0;i<bannerModel.size();i++){
+                        bannerModels.add(new SlideModel(bannerModel.get(i).getFile()));
+                    }
+                    img_video_thumbails.setImageList(bannerModels,false);
                     progressBarUtil.hideProgress();
                 } else {
                     progressBarUtil.hideProgress();
@@ -399,7 +426,7 @@ public class MainActivity extends AppCompatActivity
             }
 
             @Override
-            public void onFailure(Call<BannerModel> call, Throwable t) {
+            public void onFailure(Call<ArrayList<BannerModel>> call, Throwable t) {
                 Toast.makeText(getApplicationContext(), "Failed" + t.getMessage(), Toast.LENGTH_SHORT).show();
 
                 System.out.println("Suree: Error " + t.getMessage());
@@ -443,11 +470,13 @@ public class MainActivity extends AppCompatActivity
 
     private void callApiService() {
         progressBarUtil.showProgress();
+        apiCallTest();
         ClientApi apiCAll = ApiClient.getClient().create(ClientApi.class);
         Call<CourseContent> call = apiCAll.getBranchId(1,"WB_010","WB_010",UserID,android_id);
         call.enqueue(new Callback<CourseContent>() {
             @Override
             public void onResponse(Call<CourseContent> call, Response<CourseContent> response) {
+                apiCalledTest();
                 CourseContent courseContent=response.body();
                 int statusCode = response.code();
                 list1 = new ArrayList();
@@ -491,15 +520,69 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+    //for pdf content
+    private void callPdfService() {
+        progressBarUtil.showProgress();
+        apiCallPdf();
+        ClientApi apiCAll = ApiClient.getClient().create(ClientApi.class);
+        Call<PdfSell> call = apiCAll.fetchPdf("WB_010",UserID,android_id);
+        call.enqueue(new Callback<PdfSell>() {
+            @Override
+            public void onResponse(Call<PdfSell> call, Response<PdfSell> response) {
+                apiCalledPdf();
+                PdfSell pdfSell=response.body();
+                int statusCode = response.code();
+                list1 = new ArrayList();
+                if(statusCode==200){
+                    if (response.body().getError()== false) {
+                        System.out.println("Suree body: " + response.body());
+                        pdfSellArrays = new ArrayList<>(Arrays.asList(Objects.requireNonNull(pdfSell).getData()));
+                        pdfSellAdapter = new AllPdfSellAdapter(MainActivity.this, pdfSellArrays);
+                        gec_home_recycle_pdf.setAdapter(pdfSellAdapter);
+                        progressBarUtil.hideProgress();
+                    }else{
+                        android.app.AlertDialog.Builder alertDialogBuilder =
+                                new android.app.AlertDialog.Builder(MainActivity.this);
+                        alertDialogBuilder.setTitle("Alert");
+                        alertDialogBuilder
+                                .setMessage(response.body().getError_Message())
+                                .setCancelable(false)
+                                .setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog,int id) {
+                                        forceLogout();
+                                    }
+                                });
+
+                        android.app.AlertDialog alertDialog = alertDialogBuilder.create();
+                        alertDialog.show();
+                    }
+                }
+                else{
+                    progressBarUtil.hideProgress();
+                    System.out.println("Suree: response code"+response.message());
+                    Toast.makeText(getApplicationContext(),"NetWork Issue,Please Check Network Connection" ,Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PdfSell> call, Throwable t) {
+                Toast.makeText(getApplicationContext(),"Failed" + t.getMessage(),Toast.LENGTH_SHORT).show();
+                progressBarUtil.hideProgress();
+                System.out.println("Suree: Error "+t.getMessage());
+            }
+        });
+    }
     //for test series
     private void callTestApiService() {
         progressBarUtil.showProgress();
+        apiCall();
         ClientApi apiClient= OnlineTestApiClient.getClient().create(ClientApi.class);
         Call<SectionDetailsMainModel> call=apiClient.fetchSectionDetails(OnlineTestData.org_code,OnlineTestData.auth_code,UserID);
         call.enqueue(new Callback<SectionDetailsMainModel>() {
             @Override
             public void onResponse(Call<SectionDetailsMainModel> call, Response<SectionDetailsMainModel> response) {
                 progressBarUtil.hideProgress();
+                apiCalled();
                 SectionDetailsMainModel sectionDetailsMainModel=response.body();
                 if(sectionDetailsMainModel!=null){
                     if (sectionDetailsMainModel.getMessage().equalsIgnoreCase("TRUE")){
@@ -645,5 +728,30 @@ public class MainActivity extends AppCompatActivity
         builder.show();
     }
 
+    private void apiCall() {
+        shimmerLayout.setVisibility(View.VISIBLE);
+        shimmerLayout.startShimmerAnimation();
+    }
+    private void apiCalled() {
+        shimmerLayout.setVisibility(View.GONE);
+        shimmerLayout.stopShimmerAnimation();
+    }
+    private void apiCallTest() {
+        shimmerLayout1.setVisibility(View.VISIBLE);
+        shimmerLayout1.startShimmerAnimation();
+    }
+    private void apiCalledTest() {
+        shimmerLayout1.setVisibility(View.GONE);
+        shimmerLayout1.stopShimmerAnimation();
+    }
+
+    private void apiCallPdf() {
+        shimmerLayout2.setVisibility(View.VISIBLE);
+        shimmerLayout2.startShimmerAnimation();
+    }
+    private void apiCalledPdf() {
+        shimmerLayout2.setVisibility(View.GONE);
+        shimmerLayout2.stopShimmerAnimation();
+    }
 }
 

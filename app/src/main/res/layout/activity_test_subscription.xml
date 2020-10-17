@@ -33,6 +33,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="20dp"
             android:src="@drawable/ic_keyboard_backspace_black_24dp"
+
             />
 
 
@@ -48,7 +49,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/ic_share_black_24dp" />
+            android:src="@drawable/ic_baseline_share_24" />
 
         <TextView
             android:id="@+id/titleHome"
@@ -160,19 +161,21 @@
                 android:layout_height="30dp"
                 android:visibility="visible"
                 android:layout_marginTop="7dp"
+                android:src="@drawable/ic_baseline_expand_more_24"
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="5dp"
-                android:src="@drawable/ic_baseline_expand_more_24"
+
                 android:layout_centerHorizontal="true"/>
             <ImageView
                 android:id="@+id/image_expand_less"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="7dp"
+                android:src="@drawable/ic_baseline_expand_less_24"
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="5dp"
                 android:visibility="gone"
-                android:src="@drawable/ic_baseline_expand_less_24"
+
                 android:layout_centerHorizontal="true"/>
 
             <RelativeLayout
@@ -263,7 +266,7 @@
         android:layout_height="wrap_content"
         android:elevation="4dp"
 android:visibility="gone"
-        android:background="@drawable/bottom_layout"
+
         android:layout_alignParentBottom="true">
         <TextView
             android:id="@+id/txt_complete"
@@ -278,7 +281,6 @@ android:visibility="gone"
         <ImageView
             android:layout_height="20dp"
             android:layout_width="20dp"
-            android:src="@drawable/success_image"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="7dp"
             android:layout_toRightOf="@id/txt_complete"/>
@@ -296,7 +298,6 @@ android:visibility="gone"
             android:id="@+id/layout_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/payment_border"
             android:layout_below="@id/txt_success"
             android:layout_margin="10dp">
             <TextView
@@ -366,7 +367,7 @@ android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        android:background="@drawable/bottom_layout"
+
         android:layout_alignParentBottom="true">
         <TextView
             android:id="@+id/txt_incomplete"
@@ -384,7 +385,7 @@ android:visibility="gone"
             android:layout_height="20dp"
             android:layout_marginTop="6dp"
             android:layout_marginStart="5dp"
-            android:src="@drawable/failed_image"
+
             android:layout_toRightOf="@id/txt_incomplete"
             android:layout_centerHorizontal="true"/>
         <TextView
@@ -426,9 +427,9 @@ android:visibility="gone"
         android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="@drawable/bottom_layout"
         android:layout_alignParentBottom="true"
-        android:weightSum="5"
-        android:background="@drawable/bottom_layout">
+        android:weightSum="5">
         <LinearLayout
             android:id="@+id/layout_user"
             android:layout_width="wrap_content"
@@ -440,8 +441,8 @@ android:visibility="gone"
                 android:id="@+id/image_user"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_speedometer"
+                android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_user"
@@ -467,8 +468,8 @@ android:visibility="gone"
                 android:id="@+id/image_test"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_list"
+                android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_test"
@@ -494,8 +495,8 @@ android:visibility="gone"
                 android:id="@+id/image_home"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_home"
+                android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_home"
@@ -521,8 +522,9 @@ android:visibility="gone"
                 android:id="@+id/image_doubt"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_questions"
+                android:layout_gravity="center"
+
                 />
             <TextView
                 android:id="@+id/text_doubt"
@@ -548,8 +550,8 @@ android:visibility="gone"
                 android:id="@+id/image_notification"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_bell"
+                android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_notification"

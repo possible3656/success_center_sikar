@@ -41,7 +41,9 @@ public class SolutionAdapter extends RecyclerView.Adapter<SolutionAdapter.ViewHo
             holder.image_show.setVisibility(View.GONE);
             holder.txt_ask_title.setVisibility(View.VISIBLE);
         }else if (list.get(position).getSolutionType().equalsIgnoreCase("2")){
-            Picasso.get().load(list.get(position).getQuestion()).placeholder(R.drawable.dummyimage).fit().into(holder.image_show);
+            Picasso.get().load(list.get(position).getQuestion())
+                    .placeholder(R.drawable.dummyimage)
+                    .fit().into(holder.image_show);
             holder.image_show.setVisibility(View.VISIBLE);
             holder.txt_ask_title.setVisibility(View.GONE);
         }

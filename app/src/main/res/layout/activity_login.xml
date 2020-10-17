@@ -22,8 +22,8 @@
             <ImageView
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:src="@drawable/logo"
                 android:layout_gravity="center"
+                android:src="@drawable/logo"
                 />
 
 
@@ -111,7 +111,7 @@
             </LinearLayout>
 
             <Button
-                android:background="@drawable/circularbluebordersolid"
+
                 android:layout_height="wrap_content"
                 android:layout_width="150dp"
                 android:layout_marginBottom="14dp"
@@ -121,6 +121,7 @@
                 android:fontFamily="@font/proximanovaregular"
                 android:layout_marginTop="20dp"
                 android:padding="16dp"
+                android:background="@drawable/btn_login"
                 android:id="@+id/buttonLogin"
                 android:onClick="nextactivity"/>
 

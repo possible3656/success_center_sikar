@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.Html;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -48,8 +49,9 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
     private ImageView pauseBtn,listBtn,img_title,img_option1,img_option2,img_option3,img_option4;
     private TextView tv_testName,tv_timer;
     private RelativeLayout layout_question;
-    private TextView tv_question_num,text_view_marks,tv_review_question,textview_Question,textview_option1,textview_option2,textview_option3,textview_option4;
-    private Button buttonSubmit,buttonSubmitAndReview,buttonReview,buttonNext,buttonSaveNext;
+    private TextView tv_question_num,text_view_marks,tv_review_question,textview_Question,textview_option1,
+            textview_option2,textview_option3,textview_option4,buttonSubmit,tv_review_question_selected;
+    private Button buttonSubmitAndReview,buttonReview,buttonNext,buttonSaveNext;
     private RelativeLayout layout_option1,layout_option2,layout_option3,layout_option4;
     private int currentQuestion=0,totalQuestion=0,ansSelected=0,questionReview=0;
     private String selectedAns="";
@@ -67,7 +69,7 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_online_test_question);
-        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         try{
             WebsiteHome=findViewById(R.id.WebsiteHome);
             WebsiteHome.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +107,9 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
             layout_option3.setOnClickListener(this);
             layout_option4.setOnClickListener(this);
             listBtn.setOnClickListener(this);
+            tv_review_question_selected.setOnClickListener(this);
+            tv_review_question.setOnClickListener(this);
+
 
             buttonSaveNext.setOnClickListener(this);
             buttonNext.setOnClickListener(this);
@@ -130,7 +135,9 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
                 .setCancelable(false)
                 .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
-                        OnlineQuestionActivity.this.finish();
+                    //    OnlineQuestionActivity.this.finish();
+                        Intent intent =new Intent(OnlineQuestionActivity.this,MainActivity.class);
+                        startActivity(intent);
                     }
                 })
                 .setNegativeButton("No",new DialogInterface.OnClickListener() {
@@ -280,50 +287,52 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
                     }
                 }
                 break;
-            case R.id.buttonReview:
+            case R.id.tv_review_question:
+                tv_review_question.setVisibility(View.GONE);
+                tv_review_question_selected.setVisibility(View.VISIBLE);
                 if(questionReview==0){
                     questionReview=1;
                     tv_review_question.setCompoundDrawablesRelativeWithIntrinsicBounds(null,null,getDrawable(R.drawable.ic_star_black_24dp),null);
                     studentQAModelList.get(currentQuestion).setAnsStatus("review");
                     studentQAModelList.get(currentQuestion).setAnsStatusCode("3");
-                    if(currentQuestion<totalQuestion-1) {
-                        currentQuestion++;
-                        setQuestion(currentQuestion);
-                    }
-                    else {
-                        AlertDialog alertDialog = new AlertDialog.Builder(OnlineQuestionActivity.this)
-                                .setTitle("Quiz Completed")
-                                .setMessage("You have attempted all Questions..!!!\n\nShow Score")
-                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        showResult();
-                                    }
-                                })
-                                .show();
-                    }
                 }
                 else{
                     questionReview=0;
                     tv_review_question.setCompoundDrawablesRelativeWithIntrinsicBounds(null,null,getDrawable(R.drawable.ic_star_border_black_24dp),null);
                     studentQAModelList.get(currentQuestion).setAnsStatus("not_answered");
                     studentQAModelList.get(currentQuestion).setAnsStatusCode("2");
-                    if(currentQuestion<totalQuestion-1) {
-                        currentQuestion++;
-                        setQuestion(currentQuestion);
-                    }
-                    else {
-                        AlertDialog alertDialog = new AlertDialog.Builder(OnlineQuestionActivity.this)
-                                .setTitle("Quiz Completed")
-                                .setMessage("You have attempted all Questions..!!!\n\nShow Score")
-                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        showResult();
-                                    }
-                                })
-                                .show();
-                    }
                 }
                 break;
+            case R.id.tv_review_question_selected:
+                tv_review_question.setVisibility(View.VISIBLE);
+                tv_review_question_selected.setVisibility(View.GONE);
+                if(questionReview==0){
+                    questionReview=0;
+                    tv_review_question.setCompoundDrawablesRelativeWithIntrinsicBounds(null,null,getDrawable(R.drawable.ic_star_border_black_24dp),null);
+                    studentQAModelList.get(currentQuestion).setAnsStatus("not_answered");
+                    studentQAModelList.get(currentQuestion).setAnsStatusCode("2");
+                }
+                else{
+                    questionReview=1;
+                    tv_review_question.setCompoundDrawablesRelativeWithIntrinsicBounds(null,null,getDrawable(R.drawable.ic_star_black_24dp),null);
+                    studentQAModelList.get(currentQuestion).setAnsStatus("review");
+                    studentQAModelList.get(currentQuestion).setAnsStatusCode("3");
+                }
+                break;
+//            case R.id.buttonReview:
+//                if(questionReview==0){
+//                    questionReview=1;
+//                    tv_review_question.setCompoundDrawablesRelativeWithIntrinsicBounds(null,null,getDrawable(R.drawable.ic_star_black_24dp),null);
+//                    studentQAModelList.get(currentQuestion).setAnsStatus("review");
+//                    studentQAModelList.get(currentQuestion).setAnsStatusCode("3");
+//                }
+//                else{
+//                    questionReview=0;
+//                    tv_review_question.setCompoundDrawablesRelativeWithIntrinsicBounds(null,null,getDrawable(R.drawable.ic_star_border_black_24dp),null);
+//                    studentQAModelList.get(currentQuestion).setAnsStatus("not_answered");
+//                    studentQAModelList.get(currentQuestion).setAnsStatusCode("2");
+//                }
+//                break;
             case R.id.buttonSubmitAndReview:
                 if(ansSelected==1)
                 {
@@ -359,7 +368,6 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
                 showResult();
                 break;
         }
-
     }
     private void iniIDs(){
         shimmerLayout=findViewById(R.id.shimmerLayout);
@@ -385,6 +393,8 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
         img_option2=findViewById(R.id.img_option2);
         img_option3=findViewById(R.id.img_option3);
         img_option4=findViewById(R.id.img_option4);
+        tv_review_question=findViewById(R.id.tv_review_question);
+        tv_review_question_selected=findViewById(R.id.tv_review_question_selected);
 
 
         buttonSubmit=findViewById(R.id.buttonSubmit);
@@ -459,7 +469,9 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
         //image implement
         if (siaddQuestionDataModelList.get(currentQuestion).getQuestionTitle_img().endsWith("jpg")){
             img_title.setVisibility(View.VISIBLE);
-            Picasso.get().load(siaddQuestionDataModelList.get(currentQuestion).getQuestionTitle_img()).placeholder(R.drawable.dummyimage).into(img_title);
+            Picasso.get().load(siaddQuestionDataModelList.get(currentQuestion).getQuestionTitle_img())
+                    .placeholder(R.drawable.dummyimage)
+                    .into(img_title);
         }else{
             img_title.setVisibility(View.GONE);
         }
@@ -467,7 +479,9 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
         if (siaddQuestionDataModelList.get(currentQuestion).getOption1_img().endsWith("jpg"))
         {
             img_option1.setVisibility(View.VISIBLE);
-            Picasso.get().load(siaddQuestionDataModelList.get(currentQuestion).getOption1_img()).placeholder(R.drawable.dummyimage).into(img_option1);
+            Picasso.get().load(siaddQuestionDataModelList.get(currentQuestion).getOption1_img())
+                    .placeholder(R.drawable.dummyimage)
+                    .into(img_option1);
         }else{
             img_option1.setVisibility(View.GONE);
         }
@@ -475,7 +489,9 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
         if (siaddQuestionDataModelList.get(currentQuestion).getOption2_img().endsWith("jpg"))
         {
             img_option2.setVisibility(View.VISIBLE);
-            Picasso.get().load(siaddQuestionDataModelList.get(currentQuestion).getOption2_img()).placeholder(R.drawable.dummyimage).into(img_option2);
+            Picasso.get().load(siaddQuestionDataModelList.get(currentQuestion).getOption2_img())
+                    .placeholder(R.drawable.dummyimage)
+                    .into(img_option2);
         }else{
             img_option2.setVisibility(View.GONE);
         }
@@ -483,7 +499,9 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
         if (siaddQuestionDataModelList.get(currentQuestion).getOption3_img().endsWith("jpg"))
         {
             img_option3.setVisibility(View.VISIBLE);
-            Picasso.get().load(siaddQuestionDataModelList.get(currentQuestion).getOption3_img()).placeholder(R.drawable.dummyimage).into(img_option3);
+            Picasso.get().load(siaddQuestionDataModelList.get(currentQuestion).getOption3_img())
+                    .placeholder(R.drawable.dummyimage)
+                    .into(img_option3);
         }else{
             img_option3.setVisibility(View.GONE);
         }
@@ -491,7 +509,9 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
         if (siaddQuestionDataModelList.get(currentQuestion).getOption4_img().endsWith("jpg"))
         {
             img_option4.setVisibility(View.VISIBLE);
-            Picasso.get().load(siaddQuestionDataModelList.get(currentQuestion).getOption4_img()).placeholder(R.drawable.dummyimage).into(img_option4);
+            Picasso.get().load(siaddQuestionDataModelList.get(currentQuestion).getOption4_img())
+                    .placeholder(R.drawable.dummyimage)
+                    .into(img_option4);
         }else{
             img_option4.setVisibility(View.GONE);
         }

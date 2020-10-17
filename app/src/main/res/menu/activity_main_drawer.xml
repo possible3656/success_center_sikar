@@ -37,6 +37,14 @@
             android:title="My Test Series"/>
     </group>
     <group
+        android:id="@+id/menu_top10"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_pdf"
+            android:icon="@drawable/ic_pdf1"
+            android:title="My PDF"/>
+    </group>
+    <group
         android:id="@+id/menu_top4"
         android:checkableBehavior="single">
         <item
@@ -59,6 +67,14 @@
             android:id="@+id/nav_about"
             android:icon="@drawable/ic_menu_about"
             android:title="@string/menu_about"/>
+    </group>
+    <group
+        android:id="@+id/menu_top11"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@drawable/ic_baseline_phone_24"
+            android:title="Contact Us"/>
     </group>
     <group
         android:id="@+id/menu_top7"

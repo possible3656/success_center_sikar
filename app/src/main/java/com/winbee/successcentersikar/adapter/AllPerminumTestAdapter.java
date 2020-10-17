@@ -47,7 +47,9 @@ public class AllPerminumTestAdapter extends RecyclerView.Adapter<AllPerminumTest
             if (list1.get(position).getIsPaid().equals(0)){
                 holder.Course_layout.setVisibility(View.VISIBLE);
                 holder.txt_course.setText(list1.get(position).getBucketName());
-                Picasso.get().load(list1.get(position).getItemAttachment()).placeholder(R.drawable.dummyimage).fit().into(holder.course_image);
+                Picasso.get().load(list1.get(position).getItemAttachment())
+                        .placeholder(R.drawable.dummyimage)
+                        .fit().into(holder.course_image);
                 holder.txt_type.setText("Test Series");
                 holder.layout_coming_soon.setVisibility(View.GONE);
                 holder.layout_free.setVisibility(View.GONE);
@@ -62,7 +64,9 @@ public class AllPerminumTestAdapter extends RecyclerView.Adapter<AllPerminumTest
             }else if (list1.get(position).getIsPaid().equals(1)){
                 holder.Course_layout.setVisibility(View.VISIBLE);
                 holder.txt_course.setText(list1.get(position).getBucketName());
-                Picasso.get().load(list1.get(position).getItemAttachment()).placeholder(R.drawable.dummyimage).fit().into(holder.course_image);
+                Picasso.get().load(list1.get(position).getItemAttachment())
+                        .placeholder(R.drawable.dummyimage)
+                        .fit().into(holder.course_image);
                 holder.txt_type.setText("Test Series");
                 holder.layout_coming_soon.setVisibility(View.GONE);
                 holder.layout_free.setVisibility(View.GONE);
@@ -93,7 +97,9 @@ public class AllPerminumTestAdapter extends RecyclerView.Adapter<AllPerminumTest
         }else if(list1.get(position).getIsPremium().equalsIgnoreCase("0")){
             holder.Course_layout.setVisibility(View.VISIBLE);
             holder.txt_course.setText(list1.get(position).getBucketName());
-            Picasso.get().load(list1.get(position).getItemAttachment()).placeholder(R.drawable.dummyimage).fit().into(holder.course_image);
+            Picasso.get().load(list1.get(position).getItemAttachment())
+                    .placeholder(R.drawable.dummyimage)
+                    .fit().into(holder.course_image);
             holder.txt_type.setText("Test Series");
             holder.layout_coming_soon.setVisibility(View.GONE);
             holder.layout_free.setVisibility(View.VISIBLE);
@@ -123,7 +129,9 @@ public class AllPerminumTestAdapter extends RecyclerView.Adapter<AllPerminumTest
         }else if(list1.get(position).getIsPaid().equals(1)){
             holder.Course_layout.setVisibility(View.VISIBLE);
             holder.txt_course.setText(list1.get(position).getBucketName());
-            Picasso.get().load(list1.get(position).getItemAttachment()).placeholder(R.drawable.dummyimage).fit().into(holder.course_image);
+            Picasso.get().load(list1.get(position).getItemAttachment())
+                    .placeholder(R.drawable.dummyimage)
+                    .fit().into(holder.course_image);
             holder.txt_type.setText("Test Series");
             holder.layout_coming_soon.setVisibility(View.GONE);
             holder.layout_free.setVisibility(View.GONE);

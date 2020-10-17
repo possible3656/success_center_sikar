@@ -43,7 +43,9 @@ public class AllPurchaseSubjectAdapter extends RecyclerView.Adapter<AllPurchaseS
         holder.branchname.setText(list.get(position).getBucket_Name());
         holder.total_video.setText("Videos : "+list.get(position).getTotal_Video());
         holder.total_document.setText("Notes : "+list.get(position).getTotal_Document());
-        Picasso.get().load(list.get(position).getBucket_Image()).placeholder(R.drawable.dummyimage).into(holder.live_image);
+        Picasso.get().load(list.get(position).getBucket_Image())
+                .placeholder(R.drawable.dummyimage)
+                .into(holder.live_image);
             holder.branch_sem.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

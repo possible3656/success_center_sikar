@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -25,6 +26,7 @@ import androidx.core.view.GravityCompat;
 import androidx.core.view.MenuItemCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.winbee.successcentersikar.RetrofitApiCall.ApiClient;
@@ -47,6 +49,7 @@ public class YouTubeVideoList extends AppCompatActivity implements NavigationVie
     private List<FacultyName> List;
     private RecyclerView video_list_recycler;
     private ProgressBarUtil progressBarUtil;
+    private SwipeRefreshLayout live_refresh;
     private AllLiveClassAdapter adapter;
     private ImageView img_share,WebsiteHome;
     private RelativeLayout today_classes;
@@ -59,10 +62,18 @@ public class YouTubeVideoList extends AppCompatActivity implements NavigationVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_you_tube_video_list);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         progressBarUtil   =  new ProgressBarUtil(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         video_list_recycler = findViewById(R.id.all_liveClasses);
+        live_refresh = findViewById(R.id.live_refresh);
+        live_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                callLiveApiService();
+            }
+        });
         today_classes = findViewById(R.id.today_classes);
         select_option=findViewById(R.id.select_option);
         spinner_faculty=findViewById(R.id.spinner_faculty);
@@ -260,13 +271,17 @@ public class YouTubeVideoList extends AppCompatActivity implements NavigationVie
         } else if (id == R.id.nav_live_class) {
             Intent live = new Intent(YouTubeVideoList.this,YouTubeVideoList.class);
             startActivity(live);
-
+        } else if (id == R.id.nav_pdf) {
+            Intent pdf = new Intent(YouTubeVideoList.this,AllPurchasedPdfActivity.class);
+            startActivity(pdf);
         } else if (id == R.id.nav_about) {
             Intent intent = new Intent(YouTubeVideoList.this,AboutUsActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_rate) {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" +getPackageName())));
-
+        } else if (id == R.id.nav_contact) {
+            Intent intent = new Intent(YouTubeVideoList.this,ContactUsActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_share) {
             try {
@@ -290,7 +305,7 @@ public class YouTubeVideoList extends AppCompatActivity implements NavigationVie
     private void callLiveApiService() {
         progressBarUtil.showProgress();
         ClientApi apiCAll = ApiClient.getClient().create(ClientApi.class);
-        Call<ArrayList<LiveClass>> call = apiCAll.getLive(item,value);
+        Call<ArrayList<LiveClass>> call = apiCAll.getLive();
         Log.i("tag", "callLiveApiService: "+ item+""+value);
         call.enqueue(new Callback<ArrayList<LiveClass>>() {
             @Override
@@ -304,10 +319,12 @@ public class YouTubeVideoList extends AppCompatActivity implements NavigationVie
                     liveList = response.body();
                     adapter = new AllLiveClassAdapter(YouTubeVideoList.this,liveList);
                     video_list_recycler.setAdapter(adapter);
+                        live_refresh.setRefreshing(false);
                     progressBarUtil.hideProgress();
                     }
                     else{
                         today_classes.setVisibility(View.VISIBLE);
+                        live_refresh.setRefreshing(false);
                         progressBarUtil.hideProgress();
                     }
 

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -58,6 +59,7 @@ public class YoutubeLibaray extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_youtube_libaray);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         title_bar_home = findViewById(R.id.title_bar_home);
         UserId = SharedPrefManager.getInstance(this).refCode().getUserId();
         Username=SharedPrefManager.getInstance(this).refCode().getName();
@@ -128,7 +130,7 @@ public class YoutubeLibaray extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //todo
-                Intent intent = new Intent(YoutubeLibaray.this,PdfWebActivity.class);
+                Intent intent = new Intent(YoutubeLibaray.this,StudyMaterial.class);
                 startActivity(intent);
                 finish();
             }
@@ -205,7 +207,7 @@ public class YoutubeLibaray extends AppCompatActivity {
                     if (response.body().getError()==false) {
                         System.out.println("Suree body: " + response.body());
                         list = new ArrayList<>(Arrays.asList(Objects.requireNonNull(pdfContent).getData()));
-                        LocalData.PdfUrl=list.get(0).getURL();
+                        //LocalData.PdfUrl=list.get(0).getURL();
                         Log.i("pdf", "onResponse: "+ LocalData.PdfUrl);
                         progressBarUtil.hideProgress();
                     }

@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio4/plugins/android/lib/android.jar!/images/material/icons/materialicons/show_chart/baseline_show_chart_24.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio4/plugins/android/lib/android.jar!/images/material/icons/materialicons/phone/baseline_phone_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +28,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_baseline_show_chart_24" />
-                            <entry key="sourceFile" value="C:\Users\singh\AndroidStudioProjects\SuccessCenterSikar" />
+                            <entry key="color" value="111111" />
+                            <entry key="outputName" value="ic_baseline_phone_24" />
+                            <entry key="sourceFile" value="C:\Users\singh\Downloads\user.svg" />
                           </map>
                         </option>
                       </PersistentState>

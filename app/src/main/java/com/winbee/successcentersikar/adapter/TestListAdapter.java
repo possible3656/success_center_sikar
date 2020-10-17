@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -150,7 +151,8 @@ public class TestListAdapter extends RecyclerView.Adapter<TestListAdapter.Custom
     }
     static class CustomViewHolder extends RecyclerView.ViewHolder {
         RelativeLayout branch_live1;
-        RelativeLayout layout_start,layout_pervious,layout_new_start,layout_rank;
+        LinearLayout layout_start,layout_pervious,layout_rank;
+        RelativeLayout layout_new_start;
         ImageView live_image,img_lock,img_Unlock;
         TextView online_testname,total_question,total_time,txt_closed_message,txt_closed_date;
         CustomViewHolder(@NonNull View itemView) {

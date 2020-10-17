@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
+import com.winbee.successcentersikar.AllPurchasedCourseTestActivity;
 import com.winbee.successcentersikar.LocalData;
 import com.winbee.successcentersikar.MyPurchaseSubjectActivity;
 import com.winbee.successcentersikar.NewModels.CourseContentArray;
@@ -43,15 +44,18 @@ public class AllPurchaseCourseAdapter extends RecyclerView.Adapter<AllPurchaseCo
             holder.layout_coming_soon.setVisibility(View.GONE);
             holder.layout_free.setVisibility(View.GONE);
             holder.layout_buy.setVisibility(View.GONE);
+            holder.layout_purchased.setVisibility(View.GONE);
             holder.layout_view.setVisibility(View.VISIBLE);
             holder.txt_coming_soon.setVisibility(View.GONE);
             holder.img_rupee.setVisibility(View.GONE);
             holder.img_rupee1.setVisibility(View.GONE);
             holder.txt_discount.setVisibility(View.GONE);
             holder.txt_actual_price.setVisibility(View.GONE);
-            holder.txt_type.setText("Course");
+            holder.txt_type.setText(list1.get(position).getDescription());
             holder.txt_course.setText(list1.get(position).getBucket_Name());
-            Picasso.get().load(list1.get(position).getBucket_Image()).placeholder(R.drawable.dummyimage).fit().into(holder.course_image);
+            Picasso.get().load(list1.get(position).getBucket_Image())
+                    .placeholder(R.drawable.dummyimage)
+                    .fit().into(holder.course_image);
 
             holder.Course_layout.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -59,13 +63,14 @@ public class AllPurchaseCourseAdapter extends RecyclerView.Adapter<AllPurchaseCo
                     LocalData.CourseName = list1.get(position).getBucket_Name();
                     LocalData.CourseImage = list1.get(position).getBucket_Cover_Image();
                     LocalData.CoursePrice = list1.get(position).getDiscount_price();
-                    LocalData.CourseDiscription = list1.get(position).getDescription();
+                   // LocalData.CourseDiscription = list1.get(position).getDescription();
                     LocalData.CourseChildLink = list1.get(position).getChild_Link();
                     LocalData.CourseTotalVideos = list1.get(position).getTotal_Video();
                     LocalData.CourseTotalPdf = list1.get(position).getTotal_Document();
                     LocalData.CourseDiscountPrice = list1.get(position).getDisplay_price();
                     LocalData.CourseId = list1.get(position).getBucket_ID();
-                    Intent intent = new Intent(context, MyPurchaseSubjectActivity.class);
+                    LocalData.TestBuckedId = list1.get(position).getExamSectionId();
+                    Intent intent = new Intent(context, AllPurchasedCourseTestActivity.class);
                     context.startActivity(intent);
                 }
             });
@@ -83,7 +88,7 @@ public class AllPurchaseCourseAdapter extends RecyclerView.Adapter<AllPurchaseCo
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView txt_course,txt_discount,txt_actual_price,txt_coming_soon,txt_type;
         private ImageView course_image,img_rupee,img_rupee1;
-        private RelativeLayout Course_layout,layout_coming_soon,layout_free,layout_buy,layout_view;
+        private RelativeLayout Course_layout,layout_coming_soon,layout_free,layout_buy,layout_view,layout_purchased;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txt_course = itemView.findViewById(R.id.txt_course);
@@ -99,6 +104,7 @@ public class AllPurchaseCourseAdapter extends RecyclerView.Adapter<AllPurchaseCo
             layout_free = itemView.findViewById(R.id.layout_free);
             layout_buy = itemView.findViewById(R.id.layout_buy);
             layout_view = itemView.findViewById(R.id.layout_view);
+            layout_purchased = itemView.findViewById(R.id.layout_purchased);
         }
     }
 }

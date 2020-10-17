@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
    android:layout_marginTop="5dp"
    >
     <RelativeLayout
@@ -9,8 +10,8 @@
         android:layout_height="120dp"
         android:id="@+id/branch_live1"
         android:clickable="true"
-        android:elevation="3dp"
         android:background="@drawable/shadow"
+        android:elevation="3dp"
        >
     <ImageView
         android:id="@+id/live_image"
@@ -19,8 +20,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
-        android:src="@drawable/ic_list"
         android:visibility="visible"
+        android:src="@drawable/ic_list"
         android:layout_marginLeft="10dp"/>
     <TextView
         android:id="@+id/online_subjectname"
@@ -54,7 +55,8 @@
             android:layout_marginBottom="5dp"
             android:layout_marginEnd="10dp"
             android:gravity="center"
-            android:background="@drawable/buynow_bg">
+            android:background="@drawable/buynow_bg"
+           >
             <TextView
                 android:id="@+id/txt_view"
                 android:layout_width="match_parent"

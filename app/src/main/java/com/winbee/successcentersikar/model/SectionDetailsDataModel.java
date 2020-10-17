@@ -28,21 +28,23 @@ public class SectionDetailsDataModel {
     @SerializedName("IsPremium")
     @Expose
     private String isPremium;
+    @SerializedName("Decription")
+    @Expose
+    private String decription;
     @SerializedName("IsPaid")
     @Expose
     private Integer isPaid;
     @SerializedName("Is_Section_Live")
     @Expose
     private Integer is_Section_Live;
-    @SerializedName("Decription")
-    @Expose
-    private String decription;
     @SerializedName("ItemAttachment")
     @Expose
     private String itemAttachment;
+    @SerializedName("IsCommingSoon")
+    @Expose
+    private String isCommingSoon;
 
-
-    public SectionDetailsDataModel(String coachingID, String bucketID, String bucketName, String bucketInfo, String logData, String status, String totalTest, String isPremium, Integer isPaid, Integer is_Section_Live, String decription, String itemAttachment) {
+    public SectionDetailsDataModel(String coachingID, String bucketID, String bucketName, String bucketInfo, String logData, String status, String totalTest, String isPremium, String decription, Integer isPaid, Integer is_Section_Live, String itemAttachment, String isCommingSoon) {
         this.coachingID = coachingID;
         this.bucketID = bucketID;
         this.bucketName = bucketName;
@@ -51,10 +53,11 @@ public class SectionDetailsDataModel {
         this.status = status;
         this.totalTest = totalTest;
         this.isPremium = isPremium;
+        this.decription = decription;
         this.isPaid = isPaid;
         this.is_Section_Live = is_Section_Live;
-        this.decription = decription;
         this.itemAttachment = itemAttachment;
+        this.isCommingSoon = isCommingSoon;
     }
 
     public String getCoachingID() {
@@ -121,6 +124,14 @@ public class SectionDetailsDataModel {
         this.isPremium = isPremium;
     }
 
+    public String getDecription() {
+        return decription;
+    }
+
+    public void setDecription(String decription) {
+        this.decription = decription;
+    }
+
     public Integer getIsPaid() {
         return isPaid;
     }
@@ -137,20 +148,20 @@ public class SectionDetailsDataModel {
         this.is_Section_Live = is_Section_Live;
     }
 
-    public String getDecription() {
-        return decription;
-    }
-
-    public void setDecription(String decription) {
-        this.decription = decription;
-    }
-
     public String getItemAttachment() {
         return itemAttachment;
     }
 
     public void setItemAttachment(String itemAttachment) {
         this.itemAttachment = itemAttachment;
+    }
+
+    public String getIsCommingSoon() {
+        return isCommingSoon;
+    }
+
+    public void setIsCommingSoon(String isCommingSoon) {
+        this.isCommingSoon = isCommingSoon;
     }
 
 }

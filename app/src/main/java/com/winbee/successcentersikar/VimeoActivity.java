@@ -189,8 +189,6 @@ public class VimeoActivity extends AppCompatActivity {
                 long currentClickTime = System.currentTimeMillis();
                 if (currentClickTime - LAST_CLICK_TIME <= mDoubleClickInterval)
                 {
-//work kiya
-                    //aak bar hi kiya
                     backimage.setVisibility(View.VISIBLE);
                     if (vimeoPlayer.getCurrentTimeSeconds() >= 10) {
                         vimeoPlayer.seekTo(vimeoPlayer.getCurrentTimeSeconds()-10);
@@ -292,76 +290,12 @@ public class VimeoActivity extends AppCompatActivity {
         }
     }
 
-//    public  void fullscreenClick(View v){
-//        if (!fullscreen) {
-//
-//            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
-//            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) vimeoPlayer.getLayoutParams();
-//            params.width = ViewGroup.LayoutParams.MATCH_PARENT;
-//            params.height = ViewGroup.LayoutParams.MATCH_PARENT;
-////        params.height = (int) ( 200 * getApplicationContext().getResources().getDisplayMetrics().density);
-//            vimeoPlayer.setLayoutParams(params);
-//            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER_LANDSCAPE);
-//            footer.setVisibility(View.GONE);
-//            title_bar_home.setVisibility(View.GONE);
-//            fullscreen_button.setVisibility(View.GONE);
-//            exitscreen_button.setVisibility(View.VISIBLE);
-//            fullscreen=true;
-//        }
-//
-//    }
-
-//    public void exitscreenClick(View v){
-//        if (fullscreen){
-//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT);
-//        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) vimeoPlayer.getLayoutParams();
-//        params.width = ViewGroup.LayoutParams.MATCH_PARENT;
-//        params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
-//        vimeoPlayer.setLayoutParams(params);
-//        footer.setVisibility(View.VISIBLE);
-//        title_bar_home.setVisibility(View.VISIBLE);
-//        fullscreen_button.setVisibility(View.VISIBLE);
-//        exitscreen_button.setVisibility(View.GONE);
-//        fullscreen=false;
-//        }
-//    }
 
     private void setupView() {
         getLifecycle().addObserver(vimeoPlayer);
-         vimeoPlayer.initialize(Integer.parseInt(LocalData.VideoUrl));
-       // vimeoPlayer.initialize(441740538);//441740538
+        // vimeoPlayer.initialize(Integer.parseInt(LocalData.VideoUrl));
+        vimeoPlayer.initialize(441740538);//441740538
         vimeoPlayer.setFullscreenVisibility(true);
-//
-//        vimeoPlayer.setFullscreenClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (fullscreen){
-////                    getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
-////                    if(getSupportActionBar() != null){
-////                        getSupportActionBar().show();
-////                    }
-//                  //  footer.setVisibility(View.GONE);
-//                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-//                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) vimeoPlayer.getLayoutParams();
-//                    params.width = ViewGroup.LayoutParams.MATCH_PARENT;
-//                    params.height = ViewGroup.LayoutParams.MATCH_PARENT;
-//                  //  params.height = (int) ( 200 * getApplicationContext().getResources().getDisplayMetrics().density);
-//                    vimeoPlayer.setLayoutParams(params);
-//                    fullscreen = false;
-//
-//                }else {
-//                  //  footer.setVisibility(View.VISIBLE);
-//                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER_LANDSCAPE);
-//                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) vimeoPlayer.getLayoutParams();
-//                    params.width = ViewGroup.LayoutParams.MATCH_PARENT;
-//                    params.height = ViewGroup.LayoutParams.MATCH_PARENT;
-//                    vimeoPlayer.setLayoutParams(params);
-//                    fullscreen = true;
-//                }
-//            }
-//        });
-
     }
 
     @Override

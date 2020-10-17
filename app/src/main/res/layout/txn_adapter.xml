@@ -2,10 +2,10 @@
 
     <RelativeLayout
     android:layout_marginRight="5dp"
-    android:background="@drawable/shadow"
     android:padding="8dp"
     android:clickable="true"
     android:elevation="4dp"
+    android:background="@drawable/shadow"
     android:id="@+id/branch_live1"
     android:layout_marginLeft="5dp"
     android:layout_marginBottom="4dp"
@@ -27,8 +27,8 @@
         android:layout_marginTop="7dp"
         android:layout_height="25dp"
         android:layout_width="25dp"
-        android:layout_marginStart="7dp"
-        android:src="@drawable/ic_book"/>
+        android:src="@drawable/ic_book"
+        android:layout_marginStart="7dp" />
 
     <TextView
         android:layout_marginRight="10dp"

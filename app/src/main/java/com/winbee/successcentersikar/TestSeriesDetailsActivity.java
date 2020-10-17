@@ -10,6 +10,7 @@ import android.provider.Settings;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -60,6 +61,7 @@ public class TestSeriesDetailsActivity extends AppCompatActivity
         protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_series_details);
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         progressBarUtil = new ProgressBarUtil(this);
@@ -205,7 +207,12 @@ public class TestSeriesDetailsActivity extends AppCompatActivity
             } else if (id == R.id.nav_live_class) {
                 Intent live = new Intent(TestSeriesDetailsActivity.this,YouTubeVideoList.class);
                 startActivity(live);
-
+            } else if (id == R.id.nav_pdf) {
+                Intent pdf = new Intent(TestSeriesDetailsActivity.this,AllPurchasedPdfActivity.class);
+                startActivity(pdf);
+            } else if (id == R.id.nav_contact) {
+                Intent intent = new Intent(TestSeriesDetailsActivity.this,ContactUsActivity.class);
+                startActivity(intent);
             } else if (id == R.id.nav_about) {
                 Intent intent = new Intent(TestSeriesDetailsActivity.this,AboutUsActivity.class);
                 startActivity(intent);

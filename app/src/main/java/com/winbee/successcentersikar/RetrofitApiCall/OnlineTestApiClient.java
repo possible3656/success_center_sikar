@@ -16,7 +16,7 @@ public class OnlineTestApiClient {
 //    static final String fetchSIACDetails="fetch-section-individual-assessment-cover-details.php";
 //    static final String fetchSIADDATA="fetch-section-individual-assessment-data.php";
 
-    private static final String BASE_URL="https://ots.shekhawatiacademy.com/api/";
+    private static final String BASE_URL="http://ots.successcenter.in/api/";
     private static Retrofit retrofit = null;
 
 

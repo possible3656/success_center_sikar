@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,7 +27,7 @@ import retrofit2.Response;
 
 public class OtpVerficationActivity extends AppCompatActivity {
     Button buttonLogin;
-    TextView text_mobile3,resend_otp;
+    TextView text_mobile3,resend_otp,login;
     private ProgressBarUtil progressBarUtil;
 
     private FirebaseAuth mAuth;
@@ -38,6 +39,7 @@ public class OtpVerficationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp_verfication);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         otpView = findViewById(R.id.otp_view);
         text_mobile3 = findViewById(R.id.text_mobile3);
         resend_otp = findViewById(R.id.resend_otp);
@@ -53,6 +55,15 @@ public class OtpVerficationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(OtpVerficationActivity.this, "Please Enter Otp", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        login = findViewById(R.id.login);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(OtpVerficationActivity.this,LoginActivity.class);
+                startActivity(intent);
             }
         });
         text_mobile3.setText(LocalData.Mobile);

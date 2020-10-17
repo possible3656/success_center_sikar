@@ -45,7 +45,9 @@ public class AllLiveClassAdapter  extends RecyclerView.Adapter<AllLiveClassAdapt
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         //setting data toAd apter List
         holder.progressBarUtil.showProgress();
-        Picasso.get().load(list.get(position).getThumbnails()).placeholder(R.drawable.dummyimage).fit().into(holder.youtubeThubnail);
+        Picasso.get().load(list.get(position).getThumbnails())
+               // .placeholder(R.drawable.dummyimage)
+                .fit().into(holder.youtubeThubnail);
         holder.title.setText(list.get(position).getTopic());
         if (list.get(position).getCS_type_code().equals(1)) {
             holder.image_gif.setVisibility(View.VISIBLE);
@@ -55,6 +57,18 @@ public class AllLiveClassAdapter  extends RecyclerView.Adapter<AllLiveClassAdapt
             holder.image_gif.setVisibility(View.GONE);
                 }
         holder.progressBarUtil.hideProgress();
+
+        if (list.get(position).getVersion().equalsIgnoreCase("0")){
+            holder.img_Unlock.setVisibility(View.VISIBLE);
+            holder.img_lock.setVisibility(View.GONE);
+        }else if (list.get(position).getVersion().equalsIgnoreCase("1")){
+            holder.img_Unlock.setVisibility(View.GONE);
+            holder.img_lock.setVisibility(View.VISIBLE);
+        }else{
+            holder.img_Unlock.setVisibility(View.GONE);
+            holder.img_lock.setVisibility(View.GONE);
+        }
+
 
         holder.card_view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +97,7 @@ public class AllLiveClassAdapter  extends RecyclerView.Adapter<AllLiveClassAdapt
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView title;
         private CardView card_view;
-        private ImageView youtubeThubnail,img_dots;
+        private ImageView youtubeThubnail,img_dots,img_lock,img_Unlock;
         GifImageView image_gif;
         OnMenuCicked onMenuCicked;
         private ProgressBarUtil progressBarUtil;
@@ -94,6 +108,8 @@ public class AllLiveClassAdapter  extends RecyclerView.Adapter<AllLiveClassAdapt
             youtubeThubnail = itemView.findViewById(R.id.youtubeThubnail);
             img_dots = itemView.findViewById(R.id.img_dots);
             title = itemView.findViewById(R.id.title);
+            img_Unlock = itemView.findViewById(R.id.img_Unlock);
+            img_lock = itemView.findViewById(R.id.img_lock);
             image_gif = itemView.findViewById(R.id.image_gif);
            // time = itemView.findViewById(R.id.time);
             card_view = itemView.findViewById(R.id.card_view);

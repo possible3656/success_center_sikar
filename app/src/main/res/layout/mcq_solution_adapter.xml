@@ -7,8 +7,8 @@
     android:layout_marginLeft="5dp"
     android:id="@+id/branch_live1"
     android:elevation="4dp"
-    android:clickable="true"
     android:background="@drawable/shadow"
+    android:clickable="true"
     android:layout_marginRight="15dp">
     <RelativeLayout
         android:id="@+id/branch_live"
@@ -21,8 +21,9 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginTop="7dp"
+            android:src="@drawable/ic_businessman"
             android:layout_marginStart="7dp"
-            android:src="@drawable/ic_businessman"/>
+           />
         <TextView
             android:id="@+id/text_user"
             android:layout_width="wrap_content"
@@ -42,8 +43,8 @@
             android:layout_marginTop="7dp"
             android:layout_marginStart="7dp"
             android:layout_marginBottom="7dp"
-            android:layout_below="@id/img_user"
-            android:src="@drawable/ic_question"/>
+            android:src="@drawable/ic_question"
+            android:layout_below="@id/img_user" />
 
         <TextView
             android:id="@+id/text_user_answer"
@@ -55,7 +56,6 @@
             android:fontFamily="@font/hindsemibold"
             android:layout_below="@id/text_user"
             android:layout_toRightOf="@id/img_user_answer"
-
             android:textColor="#111"
             android:text="yes"/>
         <View
@@ -68,9 +68,9 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginTop="10dp"
+            android:src="@drawable/ic_trophy"
             android:layout_marginStart="7dp"
-            android:layout_below="@id/img_user_answer"
-            android:src="@drawable/ic_trophy"/>
+            android:layout_below="@id/img_user_answer" />
 
         <TextView
             android:id="@+id/text_user_message"

@@ -21,20 +21,10 @@
                 android:id="@+id/image_view"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/logo"/>
+                android:src="@drawable/logo"
+                android:layout_centerHorizontal="true" />
 
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:id="@+id/text_verificaion"
-                android:textStyle="bold"
-                android:textSize="24sp"
-                android:textColor="#3c4b5d"
-                android:layout_marginTop="20dp"
-                android:layout_below="@id/image_view"
-                android:gravity="center"
-                android:text="Verification Code"/>
+
 
             <TextView
                 android:layout_height="wrap_content"
@@ -44,41 +34,50 @@
                 android:textColor="#111"
                 android:textSize="20sp"
                 android:layout_marginStart="30dp"
-                android:text="Please Type the verification code"
-                android:layout_below="@id/text_verificaion"/>
+                android:text="OTP Sent Successfully"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/success_image"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/text_mobile"/>
             <TextView
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_marginTop="15dp"
                 android:id="@+id/text_mobile1"
                 android:gravity="center"
                 android:textColor="#111"
                 android:textSize="20sp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginStart="30dp"
-                android:text="send to Registered Mobile No"
+                android:text="Enter OTP"
                 android:layout_below="@id/text_mobile"/>
 
             <TextView
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:id="@+id/text_mobile2"
-                android:textColor="#111"
-                android:textSize="18sp"
-                android:text=""
-                android:layout_below="@id/text_mobile1"/>
-
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_marginTop="15dp"
                 android:id="@+id/text_mobile3"
-                android:textColor="#111"
-                android:textSize="16sp"
-                android:layout_marginStart="105dp"
-                android:text=""
-                android:layout_below="@id/text_mobile2"/>
+                android:textSize="24sp"
+                android:textColor="#3c4b5d"
+                android:text="8769114445"
+                android:layout_below="@id/image_view"/>
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/success_image"
+                android:layout_width="160dp"
+                android:visibility="visible"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="40dp"
+                android:layout_below="@+id/text_mobile3"
+                android:src="@drawable/successpayment"/>
+
+
 
         </RelativeLayout>
 
@@ -87,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_marginTop="12dp"
             android:id="@+id/otp_view"
-            android:textColor="@android:color/holo_blue_light"
+            android:textColor="@color/white"
             app:viewType="line"
             android:gravity="center"
             app:lineColor="@color/dot_dark_screen2"
@@ -98,26 +97,49 @@
 
         <TextView
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
             android:id="@+id/resend_otp"
             android:textColor="#3D5AFE"
-            android:gravity="end"
             android:textSize="18sp"
-            android:text="Resend Otp"
-            android:layout_below="@id/otp_view"/>
+            android:text="Resend Otp  ?"
+            android:layout_below="@id/buttonLogin"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
+            android:id="@+id/login"
+            android:textColor="#3D5AFE"
+            android:textSize="18sp"
+            android:gravity="end"
+            android:text="Login"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:layout_below="@id/buttonLogin"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="15dp"
+            android:id="@+id/text_mobile5"
+            android:textColor="#111"
+            android:textSize="18sp"
+            android:text="Please wait for OTP 1 minute"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/resend_otp"/>
 
         <Button
-            android:background="@drawable/circularbluebordersolid"
+
             android:layout_height="wrap_content"
             android:layout_width="150dp"
             android:layout_marginBottom="14dp"
             android:textColor="@color/white"
             android:layout_centerHorizontal="true"
-            android:text="Validate"
+            android:text="Verify OTP"
+            android:background="@drawable/btn_login"
             android:fontFamily="@font/proximanovaregular"
             android:layout_marginTop="40dp"
-            android:layout_below="@id/resend_otp"
+            android:layout_below="@id/otp_view"
             android:padding="16dp"
             android:id="@+id/buttonLogin" />
     </RelativeLayout>

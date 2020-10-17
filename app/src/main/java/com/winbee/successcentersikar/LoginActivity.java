@@ -182,18 +182,12 @@ public class LoginActivity extends AppCompatActivity {
                         TextView txt_login_verify=dialog.findViewById(R.id.txt_login_verify);
                         txt_login_verify.setVisibility(View.GONE);
                         TextView txt_login=dialog.findViewById(R.id.txt_login);
+                        txt_login.setVisibility(View.GONE);
                         TextView txt_choose=dialog.findViewById(R.id.txt_choose);
                         txt_choose.setText(response.body().getMessageFailure());
                         txt_cancel.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                dialog.dismiss();
-                            }
-                        });
-                        txt_login.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                loginValidation();
                                 dialog.dismiss();
                             }
                         });

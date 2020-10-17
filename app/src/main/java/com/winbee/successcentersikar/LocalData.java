@@ -36,7 +36,9 @@ public class LocalData {
     public static  String CourseName="";
     public static  String CourseImage="";
     public static  int CoursePrice;
+    public static String PdfPrice="";
     public static  int CourseDiscountPrice;
+    public static  String PdfDiscountPrice="";
     public static  int TotalDiscount;
     public static  String TopicDocumentId="";
     public static  String CourseChildLink="";
@@ -48,7 +50,8 @@ public class LocalData {
     public static  String PdfUrl="";
     public static  String NotesDetails="";
     public static  String CourseDiscription="";
-    public static  String CourseTotalVideos="";
+    public static  int CourseTotalVideos;
+    public static  String CourseTotalTest="";
     public static  String ExamSectionId="";
     public static  String CourseInternalTotalVideos="";
     public static  int CourseTotalPdf;
@@ -62,5 +65,6 @@ public class LocalData {
     public static  String TotalTest="";
     public static  String Message="";
     public static  String DocumentId="";
+    public static  String BucketId="";
     public static  String TxnId="";
 }

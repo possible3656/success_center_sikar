@@ -43,10 +43,10 @@
                         android:layout_height="30dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="20dp"
+                        android:src="@drawable/logo"
                         android:layout_toRightOf="@id/WebsiteHome"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:src="@drawable/logo" />
+                        android:layout_marginBottom="10dp" />
 
 
                     <ImageView
@@ -60,7 +60,7 @@
                         android:layout_marginEnd="20dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="10dp"
-                        android:src="@drawable/ic_share_black_24dp" />
+                        android:src="@drawable/ic_baseline_share_24" />
 
                     <TextView
                         android:id="@+id/titleHome"
@@ -68,7 +68,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         style="@style/viewParent.headerText"
-                        android:text="SDA LEARNING APP"
+                        android:text="SUCCESS CENTER"
                         android:layout_marginStart="30dp"
                         android:fontFamily="@font/hindbold"
                         android:textColor="@color/white"
@@ -88,6 +88,170 @@
                     android:layout_width="match_parent"
                     android:id="@+id/payment_image"
                     android:elevation="1dp" />
+                <LinearLayout
+                    android:id="@+id/layout_language_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#A4DDDDDD"
+                    android:layout_below="@id/payment_image"
+                    android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/layout_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Language :"
+                            android:layout_marginStart="37dp"
+                            android:textColor="@color/edit_text"
+                            android:textSize="15sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hindi"
+                            android:textSize="15sp"
+                            android:textColor="#1E88E5"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Validity :"
+                            android:layout_marginStart="40dp"
+                            android:textColor="@color/edit_text"
+                            android:textSize="15sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="365 days"
+                            android:textSize="15sp"
+                            android:textColor="#1E88E5"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layout_pdf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/payment_image"
+                    android:weightSum="3"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Videos :"
+                            android:layout_marginStart="37dp"
+                            android:textColor="@color/edit_text"
+                            android:textSize="15sp"/>
+                        <TextView
+                            android:id="@+id/total_video"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="50"
+                            android:textSize="15sp"
+                            android:textColor="#1E88E5"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Notes :"
+                            android:layout_marginStart="33dp"
+                            android:textColor="@color/edit_text"
+                            android:textSize="15sp"/>
+                        <TextView
+                            android:id="@+id/total_notes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="50"
+                            android:textSize="15sp"
+                            android:textColor="#1E88E5"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/layout_test"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Test :"
+                            android:layout_marginStart="33dp"
+                            android:textColor="@color/edit_text"
+                            android:textSize="15sp"/>
+                        <TextView
+                            android:id="@+id/total_test"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="50"
+                            android:textSize="15sp"
+                            android:textColor="#1E88E5"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btn_demo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View Full Course"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/white"
+                    android:padding="8dp"
+                    android:layout_below="@id/layout_language_detail"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/header"
+                    android:layout_marginTop="13dp"/>
+                <TextView
+                    android:id="@+id/btn_demo_test"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View Test Series"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="5dp"
+                    android:padding="8dp"
+                    android:textColor="@color/white"
+                    android:background="@color/header"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@id/btn_demo"
+                    android:layout_below="@id/layout_language_detail"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="13dp"/>
+
 
                 <RelativeLayout
                     android:id="@+id/Course_layout_main"
@@ -169,31 +333,67 @@
                         android:layout_marginTop="5dp"
                         android:text="Buy Course"/>
 
-                    <Button
+                    <RelativeLayout
                         android:id="@+id/buy_now"
-                        android:layout_width="120dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="40dp"
-                        android:text="Buy Now"
-                        android:textSize="12sp"
-                        android:textColor="@color/white"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_below="@id/txt_buy_course"
-                        android:layout_marginTop="13dp"
-                        android:background="#F3D268"/>
-                    <Button
-                        android:id="@+id/btn_demo"
-                        android:layout_width="120dp"
-                        android:layout_height="40dp"
-                        android:text="DEMO"
-                        android:textSize="12sp"
-                        android:layout_marginBottom="5dp"
-                        android:textColor="@color/white"
+                        android:layout_marginStart="10dp"
                         android:layout_below="@id/buy_course"
-                        android:layout_toRightOf="@id/buy_now"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="13dp"
-                        android:background="@color/header"/>
+                        android:visibility="visible"
+                        android:background="#F3D268"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginEnd="10dp">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_baseline_shopping_cart_24"
+                            android:id="@+id/img_shop"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="10dp"/>
+                        <TextView
+                            android:id="@+id/txt_buy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/white"
+                            android:visibility="visible"
+                            android:layout_toRightOf="@id/img_shop"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_centerVertical="true"
+                            android:text="Purchase"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/hindbold"/>
+                        <ImageView
+                            android:id="@+id/img_rupee3"
+                            android:layout_height="12dp"
+                            android:layout_width="10dp"
+                            android:layout_marginTop="15dp"
+                            android:visibility="visible"
+                            android:layout_toRightOf="@id/txt_buy"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/ic_rupee2"
+                            />
+
+                        <TextView
+                            android:id="@+id/txt_actual_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:fontFamily="@font/hindbold"
+                            android:layout_toRightOf="@id/img_rupee3"
+                            android:text="5000"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:visibility="visible" />
+
+                    </RelativeLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -226,8 +426,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="5dp"
-                    android:elevation="1dp"
-                    android:layout_below="@id/layout_demo">
+                    android:layout_below="@id/btn_demo">
 
                     <TextView
                         android:id="@+id/txt_discription"
@@ -237,6 +436,7 @@
                         android:textSize="16sp"
                         android:layout_marginTop="7dp"
                         android:layout_marginStart="5dp"
+                        android:visibility="gone"
                         android:textColor="@color/header" />
                     <TextView
                         android:id="@+id/txt_discription_click"
@@ -246,36 +446,37 @@
                         android:textSize="16sp"
                         android:layout_marginTop="7dp"
                         android:layout_marginStart="5dp"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         android:textStyle="bold"
-                        android:textColor="#F3D268" />
+                        android:textColor="@color/header" />
                     <ImageView
                         android:id="@+id/image_expand_more"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         android:layout_marginTop="7dp"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginRight="5dp"
                         android:src="@drawable/ic_baseline_expand_more_24"
+                        android:layout_marginRight="5dp"
                         android:layout_centerHorizontal="true"/>
                     <ImageView
                         android:id="@+id/image_expand_less"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginTop="7dp"
+                        android:src="@drawable/ic_baseline_expand_less_24"
                         android:layout_alignParentEnd="true"
                         android:layout_marginRight="5dp"
-                        android:visibility="gone"
-                        android:src="@drawable/ic_baseline_expand_less_24"
+                        android:visibility="visible"
+
                         android:layout_centerHorizontal="true"/>
 
                     <RelativeLayout
                         android:id="@+id/layout_discription_details"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        android:layout_below="@id/txt_discription">
+                        android:visibility="visible"
+                        android:layout_below="@id/txt_discription_click">
 
 
                     <TextView
@@ -285,257 +486,162 @@
                         android:text="discrption is here about the course"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
                         android:visibility="visible"
                         android:textSize="15sp"
-                        android:textColor="@color/edit_text"/>
+                        android:textColor="#8EC3CF"/>
                     </RelativeLayout>
 
 
                 </RelativeLayout>
-                <TextView
-                    android:id="@+id/txt_study"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Study Material"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:textColor="#08496e"
-                    android:layout_marginStart="10dp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/hindbold"
-                    android:textSize="22sp"
-                    android:layout_below="@+id/description_layout"/>
                 <RelativeLayout
-                    android:id="@+id/total_video_layout"
+                    android:id="@+id/content_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="5dp"
+                    android:visibility="visible"
                     android:elevation="1dp"
-                    android:layout_below="@id/txt_study">
+                    android:layout_below="@id/description_layout">
 
                     <TextView
-                        android:id="@+id/txt_total_videos"
+                        android:id="@+id/txt_items"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="total video"
-                        android:textSize="15sp"
+                        android:text="Course Items"
+                        android:textSize="16sp"
+                        android:layout_marginTop="7dp"
                         android:layout_marginStart="5dp"
-                        android:layout_marginTop="7dp"
-                        android:textColor="@color/edit_text"/>
-                    <Button
-                        android:id="@+id/btn_course_demo_vedio"
-                        android:layout_width="120dp"
-                        android:layout_height="35dp"
-                        android:text="DEMO VIDEO"
-                        android:textSize="12sp"
-                        android:layout_marginBottom="5dp"
-                        android:textColor="@color/white"
-                        android:layout_marginRight="5dp"
-                        android:layout_toLeftOf="@id/image_expand_more_video"
+                        android:textColor="@color/header" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/content_recycle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:background="@color/header"/>
-
-                    <ImageView
-                        android:id="@+id/image_expand_more_video"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:visibility="visible"
-                        android:layout_marginTop="7dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginRight="5dp"
-                        android:layout_centerHorizontal="true"/>
-                    <ImageView
-                        android:id="@+id/image_expand_less_video"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginTop="7dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginRight="5dp"
-                        android:visibility="gone"
-                        android:src="@drawable/ic_baseline_expand_less_24"
-                        android:layout_centerHorizontal="true"/>
-                    <RelativeLayout
-                        android:id="@+id/layout_video_details"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        android:layout_below="@id/txt_total_videos">
-
-
-                        <TextView
-                            android:id="@+id/txt_course_videos"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="discrption is here about the course"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:visibility="visible"
-                            android:textSize="15sp"
-                            android:textColor="@color/edit_text"/>
-                    </RelativeLayout>
-
-                </RelativeLayout>
-                <RelativeLayout
-                    android:id="@+id/total_pdf_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:elevation="1dp"
-                    android:layout_below="@id/total_video_layout">
-
-                    <TextView
-                        android:id="@+id/txt_total_pdf"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="total pdf"
-                        android:textSize="15sp"
-                        android:layout_marginBottom="7dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="7dp"
-                        android:textColor="@color/edit_text"/>
-                    <Button
-                        android:id="@+id/btn_course_demo_pdf"
-                        android:layout_width="120dp"
-                        android:layout_height="35dp"
-                        android:text="DEMO NOTES"
-                        android:textSize="12sp"
-                        android:layout_marginBottom="5dp"
-                        android:textColor="@color/white"
-                        android:layout_marginRight="5dp"
-                        android:layout_toLeftOf="@id/image_expand_more_pdf"
-                        android:layout_marginTop="5dp"
-                        android:background="@color/header"/>
-                    <ImageView
-                        android:id="@+id/image_expand_more_pdf"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:visibility="visible"
-                        android:layout_marginTop="7dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginRight="5dp"
-                        android:layout_centerHorizontal="true"/>
-                    <ImageView
-                        android:id="@+id/image_expand_less_pdf"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginTop="7dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginRight="5dp"
-                        android:visibility="gone"
-                        android:src="@drawable/ic_baseline_expand_less_24"
-                        android:layout_centerHorizontal="true"/>
-                    <RelativeLayout
-                        android:id="@+id/layout_pdf_details"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        android:layout_below="@id/txt_total_pdf">
-
-
-                        <TextView
-                            android:id="@+id/txt_course_pdf"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="discrption is here about the course"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:visibility="visible"
-                            android:textSize="15sp"
-                            android:textColor="@color/edit_text"/>
-                    </RelativeLayout>
-
+                        android:layout_marginBottom="60dp"
+                        android:layout_below="@id/txt_items"
+                        android:nestedScrollingEnabled="false"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
                 </RelativeLayout>
 
-                <RelativeLayout
-                    android:id="@+id/total_test_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:elevation="1dp"
-                    android:layout_below="@id/total_pdf_layout">
-                    <TextView
-                        android:id="@+id/txt_total_test"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="ONLINE TEST"
-                        android:textSize="15sp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="7dp"
-                        android:textColor="@color/edit_text"/>
-                    <Button
-                        android:id="@+id/btn_test_demo"
-                        android:layout_width="120dp"
-                        android:layout_height="35dp"
-                        android:text="DEMO TEST"
-                        android:textSize="12sp"
-                        android:layout_marginBottom="5dp"
-                        android:textColor="@color/white"
-                       android:layout_toLeftOf="@id/image_expand_more_test"
-                        android:layout_marginTop="5dp"
-                        android:background="@color/header"/>
-                    <ImageView
-                        android:id="@+id/image_expand_more_test"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:visibility="visible"
-                        android:layout_marginTop="7dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginRight="5dp"
-                        android:layout_centerHorizontal="true"/>
-
-                </RelativeLayout>
             </RelativeLayout>
 
             </RelativeLayout>
 
         </ScrollView>
-    <Button
-        android:layout_height="wrap_content"
+    <RelativeLayout
+        android:id="@+id/btn_buy_course"
         android:layout_width="match_parent"
-        android:background="@color/header"
-        android:textColor="@color/white"
-        android:layout_alignParentBottom="true"
-        android:text="BUY COURSE"
+        android:layout_height="40dp"
         android:visibility="visible"
-        android:id="@+id/btn_buy_course"/>
+        android:background="@color/header"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:id="@+id/txt_buy_pdf"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:visibility="visible"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="15dp"
+            android:layout_centerVertical="true"
+            android:text="BUY"
+            android:textSize="15sp"
+            android:fontFamily="@font/hindbold"/>
+        <ImageView
+            android:id="@+id/img_rupee6"
+            android:layout_height="12dp"
+            android:layout_width="10dp"
+            android:layout_marginTop="13dp"
+            android:visibility="visible"
+            android:layout_toRightOf="@id/txt_buy_pdf"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_rupee2"
+            />
 
+        <TextView
+            android:id="@+id/txt_actual_price_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/hindbold"
+            android:layout_toRightOf="@id/img_rupee6"
+            android:text="5000"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+<View
+    android:id="@+id/view_success"
+    android:layout_width="match_parent"
+    android:layout_height="0.5dp"
+    android:visibility="gone"
+    android:background="@color/grey"
+    android:layout_above="@id/layout_success"/>
     <RelativeLayout
         android:id="@+id/layout_success"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:elevation="4dp"
-        android:background="@drawable/bottom_layout"
         android:layout_alignParentBottom="true">
         <TextView
             android:id="@+id/txt_complete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Transaction Success"
+            android:text="Payment Successful"
             android:textSize="17sp"
             android:textStyle="bold"
+            android:layout_centerHorizontal="true"
             android:textColor="@color/header"
-            android:layout_marginStart="10dp"
+            android:layout_below="@id/success_image"
             android:layout_marginTop="5dp"/>
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/success_image"
+            android:layout_width="160dp"
+            android:visibility="visible"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="40dp"
+            android:src="@drawable/successpayment"/>
         <ImageView
-            android:layout_height="20dp"
+            android:id="@+id/img_rupee4"
+            android:layout_height="15dp"
             android:layout_width="20dp"
-            android:src="@drawable/success_image"
-            android:layout_marginLeft="2dp"
-            android:layout_marginTop="7dp"
-            android:layout_toRightOf="@id/txt_complete"/>
+            android:layout_marginTop="15dp"
+            android:visibility="visible"
+            android:src="@drawable/ic_rupee"
+            android:layout_toLeftOf="@id/txt_amount"
+            android:layout_below="@id/txt_complete" />
+        <TextView
+            android:id="@+id/txt_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/txt_complete"
+            android:textColor="@color/edit_text"
+            android:text="amount"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_below="@id/txt_amount"
+            android:background="@color/grey"/>
         <TextView
             android:id="@+id/txt_success"
             android:layout_width="wrap_content"
@@ -544,24 +650,23 @@
             android:textSize="15sp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
-            android:layout_below="@id/txt_complete"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/txt_amount"
             android:textColor="@color/edit_text"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_below="@id/txt_success"
+            android:background="@color/grey"/>
         <RelativeLayout
             android:id="@+id/layout_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/payment_border"
             android:layout_below="@id/txt_success"
             android:layout_margin="10dp">
-            <TextView
-                android:id="@+id/txt_amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="5dp"
-                android:textSize="15sp"
-                android:textColor="@color/edit_text"
-                android:text="amount"/>
             <TextView
                 android:id="@+id/txt_course"
                 android:layout_width="wrap_content"
@@ -569,8 +674,8 @@
                 android:text="amount"
                 android:textSize="15sp"
                 android:layout_marginStart="5dp"
-                android:layout_below="@id/txt_amount"
                 android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
                 android:textColor="@color/edit_text"/>
             <TextView
                 android:id="@+id/txt_txn_id"
@@ -579,45 +684,77 @@
                 android:layout_below="@id/txt_course"
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="5dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginBottom="5dp"
                 android:textSize="15sp"
                 android:textColor="@color/edit_text"
                 android:text="amount"/>
         </RelativeLayout>
-        <Button
+        <RelativeLayout
             android:id="@+id/go_back"
-            android:layout_width="120dp"
-            android:layout_height="40dp"
-            android:text="GO BACK"
-            android:textSize="12sp"
-            android:textColor="@color/white"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_marginStart="90dp"
+            android:layout_marginBottom="10dp"
             android:layout_below="@id/layout_id"
-            android:layout_toLeftOf="@id/btn_course"
-            android:layout_marginTop="7dp"
-            android:background="#F3D268"/>
-        <Button
+            android:padding="10dp"
+            android:background="#87BF4C">
+            <ImageView
+                android:id="@+id/image_home"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_home_white_24dp"/>
+            <TextView
+                android:id="@+id/backbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/hindmedium"
+                android:text="Home"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:textSize="15dp"
+                android:layout_toRightOf="@id/image_home"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+        <RelativeLayout
             android:id="@+id/btn_course"
-            android:layout_width="120dp"
-            android:layout_height="40dp"
-            android:text="VIEW COURSES"
-            android:textSize="12sp"
-            android:layout_marginBottom="5dp"
-            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@id/go_back"
             android:layout_below="@id/layout_id"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="7dp"
-            android:background="@color/header"/>
+            android:background="@color/gradientLightBlue">
+            <TextView
+                android:id="@+id/btn_solution"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:fontFamily="@font/hindmedium"
+                android:text="View Course"
+                android:textSize="15dp"
+                android:textColor="@color/white" />
+        </RelativeLayout>
 
     </RelativeLayout>
+    <View
+        android:id="@+id/view_failed"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/grey"
+        android:visibility="gone"
+        android:layout_above="@id/layout_failed"/>
     <RelativeLayout
         android:id="@+id/layout_failed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        android:background="@drawable/bottom_layout"
         android:layout_alignParentBottom="true">
         <TextView
             android:id="@+id/txt_incomplete"
@@ -626,51 +763,103 @@
             android:text="Transaction Failed"
             android:textSize="17sp"
             android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/img_cancel"
             android:textColor="@color/header"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"/>
-        <ImageView
+        <pl.droidsonroids.gif.GifImageView
             android:id="@+id/img_cancel"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginStart="5dp"
-            android:src="@drawable/failed_image"
-            android:layout_toRightOf="@id/txt_incomplete"
-            android:layout_centerHorizontal="true"/>
+            android:layout_width="160dp"
+            android:visibility="visible"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="40dp"
+            android:src="@drawable/failedpayment"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/grey"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_below="@id/txt_incomplete"/>
         <TextView
             android:id="@+id/txt_failed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/img_cancel"
+            android:layout_below="@id/txt_incomplete"
             android:textSize="15sp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
+            android:layout_centerHorizontal="true"
             android:textColor="@color/edit_text"
-            android:text="If by mistake clicked on back / cancel button , Kindly try again."/>
-
+            android:text="If by mistake clicked on back / cancel button "/>
         <TextView
-            android:id="@+id/txt_failed1"
+            android:id="@+id/txt_failed2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_failed"
             android:textSize="15sp"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_centerHorizontal="true"
             android:textColor="@color/edit_text"
-            android:text="If amount has been deducted from bank account, please contact to organization"/>
-        <Button
-            android:id="@+id/go_back_failed"
-            android:layout_width="120dp"
-            android:layout_height="40dp"
-            android:text="GO BACK"
-            android:textSize="12sp"
-            android:textColor="@color/white"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="5dp"
+            android:text="Kindly try again."/>
+
+        <TextView
+            android:id="@+id/txt_failed1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_failed2"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="5dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/edit_text"
+            android:text="If amount has been deducted from bank account"/>
+        <TextView
+            android:id="@+id/txt_failed3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/txt_failed1"
-            android:layout_marginTop="7dp"
-            android:background="#F3D268"/>
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/edit_text"
+            android:text="Please Contact Orginzation"/>
+        <RelativeLayout
+            android:id="@+id/go_back_failed"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/txt_failed3"
+            android:padding="10dp"
+            android:background="#87BF4C">
+            <ImageView
+                android:id="@+id/image_home1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_home_white_24dp"/>
+            <TextView
+                android:id="@+id/backbtn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/hindmedium"
+                android:text="Home"
+                android:layout_marginStart="5dp"
+                android:textSize="15dp"
+                android:layout_marginTop="7dp"
+                android:layout_toRightOf="@id/image_home1"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

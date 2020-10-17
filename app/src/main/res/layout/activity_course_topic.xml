@@ -24,6 +24,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="20dp"
             android:src="@drawable/ic_keyboard_backspace_black_24dp"
+
             />
 
 
@@ -39,7 +40,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/ic_share_black_24dp" />
+            android:src="@drawable/ic_baseline_share_24" />
 
         <TextView
             android:id="@+id/titleHome"
@@ -78,9 +79,9 @@
         android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="@drawable/bottom_layout"
         android:layout_alignParentBottom="true"
-        android:weightSum="5"
-        android:background="@drawable/bottom_layout">
+        android:weightSum="5">
         <LinearLayout
             android:id="@+id/layout_user"
             android:layout_width="wrap_content"
@@ -92,8 +93,8 @@
                 android:id="@+id/image_user"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_speedometer"
+                android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_user"
@@ -119,8 +120,8 @@
                 android:id="@+id/image_test"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_list"
+                android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_test"
@@ -146,8 +147,8 @@
                 android:id="@+id/image_home"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_home"
+                android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_home"
@@ -173,8 +174,9 @@
                 android:id="@+id/image_doubt"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_questions"
+                android:layout_gravity="center"
+
                 />
             <TextView
                 android:id="@+id/text_doubt"
@@ -200,8 +202,8 @@
                 android:id="@+id/image_notification"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center"
                 android:src="@drawable/ic_bell"
+                android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_notification"

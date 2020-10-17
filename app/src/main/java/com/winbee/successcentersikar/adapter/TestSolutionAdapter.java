@@ -152,38 +152,50 @@ public class TestSolutionAdapter extends RecyclerView.Adapter<TestSolutionAdapte
 
         if (list.get(position).getQuestionTitle_img().endsWith("jpg")){
            holder.img_solution_title.setVisibility(View.VISIBLE);
-            Picasso.get().load(list.get(position).getQuestionTitle_img()).placeholder(R.drawable.dummyimage).into(holder.img_solution_title);
+            Picasso.get().load(list.get(position).getQuestionTitle_img())
+                    .placeholder(R.drawable.dummyimage)
+                    .into(holder.img_solution_title);
         }else {
             holder.img_solution_title.setVisibility(View.GONE);
         }
         if (list.get(position).getOption1_img().endsWith("jpg")){
             holder.img_solution_option1.setVisibility(View.VISIBLE);
-            Picasso.get().load(list.get(position).getOption1_img()).placeholder(R.drawable.dummyimage).into(holder.img_solution_option1);
+            Picasso.get().load(list.get(position).getOption1_img())
+                    .placeholder(R.drawable.dummyimage)
+                    .into(holder.img_solution_option1);
         }else {
             holder.img_solution_option1.setVisibility(View.GONE);
         }
 
         if (list.get(position).getOption2_img().endsWith("jpg")){
             holder.img_solution_option2.setVisibility(View.VISIBLE);
-            Picasso.get().load(list.get(position).getOption2_img()).placeholder(R.drawable.dummyimage).into(holder.img_solution_option2);
+            Picasso.get().load(list.get(position).getOption2_img())
+                   .placeholder(R.drawable.dummyimage)
+                    .into(holder.img_solution_option2);
         }else {
             holder.img_solution_option2.setVisibility(View.GONE);
         }
         if (list.get(position).getOption3_img().endsWith("jpg")){
             holder.img_solution_option3.setVisibility(View.VISIBLE);
-            Picasso.get().load(list.get(position).getOption3_img()).placeholder(R.drawable.dummyimage).into(holder.img_solution_option3);
+            Picasso.get().load(list.get(position).getOption3_img())
+                    .placeholder(R.drawable.dummyimage)
+                    .into(holder.img_solution_option3);
         }else {
             holder.img_solution_option3.setVisibility(View.GONE);
         }
             if (list.get(position).getOption4_img().endsWith("jpg")){
                         holder.img_solution_option4.setVisibility(View.VISIBLE);
-                        Picasso.get().load(list.get(position).getOption4_img()).placeholder(R.drawable.dummyimage).into(holder.img_solution_option4);
+                        Picasso.get().load(list.get(position).getOption4_img())
+                                .placeholder(R.drawable.dummyimage)
+                                .into(holder.img_solution_option4);
                     }else {
                         holder.img_solution_option4.setVisibility(View.GONE);
                     }
          if (list.get(position).getAnswerDetails_img().endsWith("jpg")){
                                 holder.img_solution_discription.setVisibility(View.VISIBLE);
-                                Picasso.get().load(list.get(position).getAnswerDetails_img()).placeholder(R.drawable.dummyimage).into(holder.img_solution_discription);
+                                Picasso.get().load(list.get(position).getAnswerDetails_img())
+                                       .placeholder(R.drawable.dummyimage)
+                                        .into(holder.img_solution_discription);
                             }else {
                                 holder.img_solution_discription.setVisibility(View.GONE);
                             }

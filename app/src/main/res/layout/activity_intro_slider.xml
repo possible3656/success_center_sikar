@@ -9,6 +9,7 @@
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="55dp"
         android:id="@+id/view_pager"/>
 
     <LinearLayout
@@ -24,27 +25,38 @@
     <View
         android:layout_height="1dp"
         android:layout_width="match_parent"
-        android:background="@android:color/white"
+        android:background="@color/edit_text"
         android:layout_above="@id/layoutDots"
         android:alpha=".5"/>
 
-    <Button
+    <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:id="@+id/btn_next"
         android:layout_alignParentBottom="true"
-        android:background="@null"
-        android:textColor="@android:color/white"
+        android:textColor="@color/edit_text"
         android:text="@string/next"
-        android:layout_alignParentRight="true"/>
+        android:layout_marginBottom="10dp"
+        android:layout_toLeftOf="@id/img_forward"
+        android:textSize="15sp" />
+    <ImageView
+        android:id="@+id/img_forward"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/ic_baseline_trending_flat_24"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"/>
 
     <Button
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:id="@+id/btn_skip"
         android:layout_alignParentBottom="true"
-        android:background="@null"
-        android:textColor="@android:color/white"
+        android:background="@drawable/btn_login"
+        android:visibility="gone"
+        android:textColor="@color/white"
         android:text="@string/skip"
         android:layout_alignParentLeft="true"/>
 

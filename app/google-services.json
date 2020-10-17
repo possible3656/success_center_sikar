@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "20524621700",
+    "firebase_url": "https://sekhawati-defence-academy.firebaseio.com",
+    "project_id": "sekhawati-defence-academy",
+    "storage_bucket": "sekhawati-defence-academy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20524621700:android:5645a259d82b561fae07d1",
+        "android_client_info": {
+          "package_name": "com.winbee.successcentersikar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20524621700-044qmnr926fnqj5c9laaito4tb4j33t1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMSqQEPOAaC4YZ-ErWDzgdbFFhR2rB7y0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20524621700-044qmnr926fnqj5c9laaito4tb4j33t1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

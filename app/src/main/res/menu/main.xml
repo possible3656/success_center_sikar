@@ -8,27 +8,25 @@
 
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_home"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_menu_profile"
+
             android:title="@string/menu_profile" />
         <item
             android:id="@+id/nav_about"
-            android:icon="@drawable/ic_menu_about"
+
             android:title="@string/menu_about"/>
         <item
             android:id="@+id/nav_rate"
-            android:icon="@drawable/ic_menu_rate"
+
             android:title="@string/menu_rate" />
         <item
             android:id="@+id/nav_share"
-            android:icon="@drawable/ic_share_black_24dp"
+
             android:title="@string/menu_share" />
         <item
             android:id="@+id/nav_logout"
-            android:icon="@drawable/ic_logout"
             android:title="@string/menu_invite"/>
     </group>
 

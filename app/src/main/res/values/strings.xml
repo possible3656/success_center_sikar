@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Success Center Sikar</string>
+    <string name="facebook_app_id">403501207470374</string>
+    <string name="fb_login_protocol_scheme">fb[APP_ID]</string>
+
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -7,6 +11,7 @@
     <string name="next">NEXT</string>
     <string name="skip">SKIP</string>
     <string name="start">GOT IT</string>
+    <string name="live_class">Live Class</string>
     <string name="log_in">Log In</string>
     <string name="nav_header_desc">Navigation header</string>
 
@@ -47,11 +52,7 @@
 
     <string-array name="filter">
 
-        <item>Select Category</item>//0
-        <item>Faculty</item>//1
-        <item>Subject</item>//2
-        <item>Duration</item>
-
+        <item>Option loading</item>//0
     </string-array>
 
     <style name="Spinner" parent="Widget.AppCompat.Light.DropDownItem.Spinner">

@@ -46,7 +46,7 @@ public class TestSolutionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_solution);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         UserID = SharedPrefManager.getInstance(this).refCode().getUserId();
         progressBarUtil = new ProgressBarUtil(this);
         test_recycler = findViewById(R.id.test_solution_recycle);

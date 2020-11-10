@@ -1,15 +1,21 @@
 package com.winbee.successcentersikar;
 
+import android.app.Activity;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
+import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,6 +39,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.balsikandar.crashreporter.BuildConfig;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
@@ -45,6 +53,7 @@ import com.winbee.successcentersikar.NewModels.PdfSell;
 import com.winbee.successcentersikar.NewModels.PdfSellArray;
 import com.winbee.successcentersikar.RetrofitApiCall.ApiClient;
 import com.winbee.successcentersikar.RetrofitApiCall.OnlineTestApiClient;
+import com.winbee.successcentersikar.Utils.AppUpdateChecker;
 import com.winbee.successcentersikar.Utils.OnlineTestData;
 import com.winbee.successcentersikar.WebApi.ClientApi;
 import com.winbee.successcentersikar.adapter.AllCourseAdapter;
@@ -58,6 +67,8 @@ import com.winbee.successcentersikar.model.SectionDetailsMainModel;
 import org.jsoup.Jsoup;
 
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -68,6 +79,9 @@ import pl.droidsonroids.gif.GifImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+
 
 import static com.balsikandar.crashreporter.CrashReporter.getContext;
 
@@ -88,7 +102,6 @@ public class MainActivity extends AppCompatActivity
     private RecyclerView video_list_recycler,recycle_test_series,gec_home_recycle_pdf;
     private AllCourseAdapter CourseAdapter;
     private AllPdfSellAdapter pdfSellAdapter;
-    private AllPerminumTestAdapter allPerminumTestAdapter;
     ImageView WebsiteHome;
     SwipeRefreshLayout refresh_main;
     boolean version = false;
@@ -101,9 +114,23 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
-        new GetLastesVersion().execute();
+        FacebookSdk.setAutoInitEnabled(true);
+        FacebookSdk.fullyInitialize();
+      //  getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo(
+                    "com.winbee.successcentersikar",
+                    PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
 
+        } catch (NoSuchAlgorithmException e) {
+
+        }
         //firebase Common notification
         if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.O){
             NotificationChannel channel = new NotificationChannel("Common","Common", NotificationManager.IMPORTANCE_DEFAULT);
@@ -140,6 +167,8 @@ public class MainActivity extends AppCompatActivity
                         //Toast.makeText(GecHomeActivity.this, msg, Toast.LENGTH_SHORT).show();
                     }
                 });
+        AppUpdateChecker appUpdateChecker=new AppUpdateChecker(this);  //pass the activity in constructure
+        appUpdateChecker.checkForUpdate(false); //mannual check false here
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -323,7 +352,6 @@ public class MainActivity extends AppCompatActivity
         });
         Intent intent=getIntent();
        Username=intent.getStringExtra("username");
-
 
     }
 

@@ -45,7 +45,7 @@ public class MyPurchaseSubjectActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_purchase_subject);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         video_list_recycler = findViewById(R.id.gec_semester_recycle);
         txt_no_subject = findViewById(R.id.txt_no_subject);
         progressBarUtil   =  new ProgressBarUtil(this);

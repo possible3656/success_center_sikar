@@ -42,7 +42,7 @@ public class OnlineTestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_online_test);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         try{
             WebsiteHome=findViewById(R.id.WebsiteHome);
             UserId=SharedPrefManager.getInstance(this).refCode().getUserId();

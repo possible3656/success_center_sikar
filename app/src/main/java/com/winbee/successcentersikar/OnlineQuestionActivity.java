@@ -1,6 +1,7 @@
 package com.winbee.successcentersikar;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.Html;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -46,13 +48,18 @@ import retrofit2.Response;
 
 public class OnlineQuestionActivity extends AppCompatActivity implements View.OnClickListener {
     private ShimmerLayout shimmerLayout;
-    private ImageView pauseBtn,listBtn,img_title,img_option1,img_option2,img_option3,img_option4;
+    private ImageView pauseBtn,listBtn,img_title,img_option1,img_option2,img_option3,img_option4,
+            img_option1_slected,img_option2_selected,img_option3_selected,img_option4_selected;
     private TextView tv_testName,tv_timer;
     private RelativeLayout layout_question;
     private TextView tv_question_num,text_view_marks,tv_review_question,textview_Question,textview_option1,
-            textview_option2,textview_option3,textview_option4,buttonSubmit,tv_review_question_selected;
+            textview_option2,textview_option3,textview_option4,buttonSubmit,tv_review_question_selected,
+            textview_option1_slected,textview_option2_selected,textview_option3_selected,textview_option4_selected;
     private Button buttonSubmitAndReview,buttonReview,buttonNext,buttonSaveNext;
-    private RelativeLayout layout_option1,layout_option2,layout_option3,layout_option4;
+    private View view_option1,view_option1_selected,view_option2,view_option2_selected,view_option3,view_option3_selected,
+            view_option4,view_option4_selected;
+    private RelativeLayout layout_option1,layout_option2,layout_option3,layout_option4,
+            layout_option1_selected,layout_option2_selected,layout_option3_selected,layout_option4_selected;
     private int currentQuestion=0,totalQuestion=0,ansSelected=0,questionReview=0;
     private String selectedAns="";
     int milliTimer,cntMillitimer,countTimer;
@@ -69,7 +76,7 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_online_test_question);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+     //   getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         try{
             WebsiteHome=findViewById(R.id.WebsiteHome);
             WebsiteHome.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +113,10 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
             layout_option2.setOnClickListener(this);
             layout_option3.setOnClickListener(this);
             layout_option4.setOnClickListener(this);
+            layout_option1_selected.setOnClickListener(this);
+            layout_option2_selected.setOnClickListener(this);
+            layout_option3_selected.setOnClickListener(this);
+            layout_option4_selected.setOnClickListener(this);
             listBtn.setOnClickListener(this);
             tv_review_question_selected.setOnClickListener(this);
             tv_review_question.setOnClickListener(this);
@@ -157,34 +168,107 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
             case R.id.layout_option1:
                 ansSelected=1;
                 selectedAns="1";
-                layout_option1.setBackground(getDrawable(R.drawable.q_selected));
+               // layout_option1.setBackground(getDrawable(R.drawable.q_non_selected));
                 layout_option2.setBackground(getDrawable(R.drawable.q_non_selected));
                 layout_option3.setBackground(getDrawable(R.drawable.q_non_selected));
                 layout_option4.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option1.setVisibility(View.GONE);
+                layout_option1_selected.setVisibility(View.VISIBLE);
+                layout_option2.setVisibility(View.VISIBLE);
+                layout_option2_selected.setVisibility(View.GONE);
+                layout_option3.setVisibility(View.VISIBLE);
+                layout_option3_selected.setVisibility(View.GONE);
+                layout_option4.setVisibility(View.VISIBLE);
+                layout_option4_selected.setVisibility(View.GONE);
+                break;
+            case R.id.layout_option1_selected:
+                ansSelected=0;
+                selectedAns="";
+ //               layout_option1.setBackground(getDrawable(R.drawable.q_selected));
+                layout_option2.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option3.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option4.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option1.setVisibility(View.VISIBLE);
+                layout_option1_selected.setVisibility(View.GONE);
                 break;
             case R.id.layout_option2:
                 ansSelected=1;
                 selectedAns="2";
-                layout_option2.setBackground(getDrawable(R.drawable.q_selected));
+               // layout_option2.setBackground(getDrawable(R.drawable.q_selected));
                 layout_option1.setBackground(getDrawable(R.drawable.q_non_selected));
                 layout_option3.setBackground(getDrawable(R.drawable.q_non_selected));
                 layout_option4.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option2.setVisibility(View.GONE);
+                layout_option2_selected.setVisibility(View.VISIBLE);
+                layout_option1.setVisibility(View.VISIBLE);
+                layout_option1_selected.setVisibility(View.GONE);
+                layout_option3.setVisibility(View.VISIBLE);
+                layout_option3_selected.setVisibility(View.GONE);
+                layout_option4.setVisibility(View.VISIBLE);
+                layout_option4_selected.setVisibility(View.GONE);
+                break;
+
+            case R.id.layout_option2_selected:
+                ansSelected=0;
+                selectedAns="";
+             //   layout_option2.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option1.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option3.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option4.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option2.setVisibility(View.VISIBLE);
+                layout_option2_selected.setVisibility(View.GONE);
                 break;
             case R.id.layout_option3:
                 ansSelected=1;
                 selectedAns="3";
-                layout_option3.setBackground(getDrawable(R.drawable.q_selected));
+               // layout_option3.setBackground(getDrawable(R.drawable.q_selected));
                 layout_option1.setBackground(getDrawable(R.drawable.q_non_selected));
                 layout_option2.setBackground(getDrawable(R.drawable.q_non_selected));
                 layout_option4.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option3.setVisibility(View.GONE);
+                layout_option3_selected.setVisibility(View.VISIBLE);
+                layout_option1.setVisibility(View.VISIBLE);
+                layout_option1_selected.setVisibility(View.GONE);
+                layout_option2.setVisibility(View.VISIBLE);
+                layout_option2_selected.setVisibility(View.GONE);
+                layout_option4.setVisibility(View.VISIBLE);
+                layout_option4_selected.setVisibility(View.GONE);
+                break;
+            case R.id.layout_option3_selected:
+                ansSelected=0;
+                selectedAns="";
+               // layout_option3.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option1.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option2.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option4.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option3.setVisibility(View.VISIBLE);
+                layout_option3_selected.setVisibility(View.GONE);
                 break;
             case R.id.layout_option4:
                 ansSelected=1;
                 selectedAns="4";
-                layout_option4.setBackground(getDrawable(R.drawable.q_selected));
+                //layout_option4.setBackground(getDrawable(R.drawable.q_selected));
                 layout_option1.setBackground(getDrawable(R.drawable.q_non_selected));
                 layout_option2.setBackground(getDrawable(R.drawable.q_non_selected));
                 layout_option3.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option4.setVisibility(View.GONE);
+                layout_option4_selected.setVisibility(View.VISIBLE);
+                layout_option1.setVisibility(View.VISIBLE);
+                layout_option1_selected.setVisibility(View.GONE);
+                layout_option3.setVisibility(View.VISIBLE);
+                layout_option3_selected.setVisibility(View.GONE);
+                layout_option2.setVisibility(View.VISIBLE);
+                layout_option2_selected.setVisibility(View.GONE);
+                break;
+            case R.id.layout_option4_selected:
+                ansSelected=0;
+                selectedAns="";
+               // layout_option4.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option1.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option2.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option3.setBackground(getDrawable(R.drawable.q_non_selected));
+                layout_option4.setVisibility(View.VISIBLE);
+                layout_option4_selected.setVisibility(View.GONE);
                 break;
             case R.id.listBtn:
                 showBottomSheetDialogFragment();
@@ -384,18 +468,33 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
         textview_option2=findViewById(R.id.textview_option2);
         textview_option3=findViewById(R.id.textview_option3);
         textview_option4=findViewById(R.id.textview_option4);
+        textview_option1_slected=findViewById(R.id.textview_option1_slected);
+        textview_option2_selected=findViewById(R.id.textview_option2_selected);
+        textview_option3_selected=findViewById(R.id.textview_option3_selected);
+        textview_option4_selected=findViewById(R.id.textview_option4_selected);
         layout_option1=findViewById(R.id.layout_option1);
         layout_option2=findViewById(R.id.layout_option2);
         layout_option3=findViewById(R.id.layout_option3);
         layout_option4=findViewById(R.id.layout_option4);
+        layout_option1_selected=findViewById(R.id.layout_option1_selected);
+        layout_option2_selected=findViewById(R.id.layout_option2_selected);
+        layout_option3_selected=findViewById(R.id.layout_option3_selected);
+        layout_option4_selected=findViewById(R.id.layout_option4_selected);
         img_title=findViewById(R.id.img_title);
         img_option1=findViewById(R.id.img_option1);
         img_option2=findViewById(R.id.img_option2);
         img_option3=findViewById(R.id.img_option3);
         img_option4=findViewById(R.id.img_option4);
+        img_option1_slected=findViewById(R.id.img_option1_slected);
+        img_option2_selected=findViewById(R.id.img_option2_selected);
+        img_option3_selected=findViewById(R.id.img_option3_selected);
+        img_option4_selected=findViewById(R.id.img_option4_selected);
         tv_review_question=findViewById(R.id.tv_review_question);
         tv_review_question_selected=findViewById(R.id.tv_review_question_selected);
-
+        view_option1=findViewById(R.id.view_option1);
+        view_option2=findViewById(R.id.view_option2);
+        view_option3=findViewById(R.id.view_option3);
+        view_option4=findViewById(R.id.view_option4);
 
         buttonSubmit=findViewById(R.id.buttonSubmit);
         buttonSubmitAndReview=findViewById(R.id.buttonSubmitAndReview);
@@ -464,6 +563,14 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
         layout_option2.setBackgroundResource(R.drawable.q_non_selected);
         layout_option3.setBackgroundResource(R.drawable.q_non_selected);
         layout_option4.setBackgroundResource(R.drawable.q_non_selected);
+        layout_option1.setVisibility(View.VISIBLE);
+        layout_option2.setVisibility(View.VISIBLE);
+        layout_option3.setVisibility(View.VISIBLE);
+        layout_option4.setVisibility(View.VISIBLE);
+        layout_option1_selected.setVisibility(View.GONE);
+        layout_option2_selected.setVisibility(View.GONE);
+        layout_option3_selected.setVisibility(View.GONE);
+        layout_option4_selected.setVisibility(View.GONE);
         int q=currentQuestion+1;
         tv_question_num.setText(""+q);
         //image implement
@@ -476,6 +583,7 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
             img_title.setVisibility(View.GONE);
         }
         textview_Question.setText(Html.fromHtml(siaddQuestionDataModelList.get(currentQuestion).getQuestionTitle()));
+
         if (siaddQuestionDataModelList.get(currentQuestion).getOption1_img().endsWith("jpg"))
         {
             img_option1.setVisibility(View.VISIBLE);
@@ -486,6 +594,18 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
             img_option1.setVisibility(View.GONE);
         }
         textview_option1.setText(Html.fromHtml(siaddQuestionDataModelList.get(currentQuestion).getOption1()));
+
+        if (siaddQuestionDataModelList.get(currentQuestion).getOption1_img().endsWith("jpg"))
+        {
+            img_option1_slected.setVisibility(View.VISIBLE);
+            Picasso.get().load(siaddQuestionDataModelList.get(currentQuestion).getOption1_img())
+                    .placeholder(R.drawable.dummyimage)
+                    .into(img_option1);
+        }else{
+            img_option1_slected.setVisibility(View.GONE);
+        }
+        textview_option1_slected.setText(Html.fromHtml(siaddQuestionDataModelList.get(currentQuestion).getOption1()));
+
         if (siaddQuestionDataModelList.get(currentQuestion).getOption2_img().endsWith("jpg"))
         {
             img_option2.setVisibility(View.VISIBLE);
@@ -496,6 +616,19 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
             img_option2.setVisibility(View.GONE);
         }
         textview_option2.setText(Html.fromHtml(siaddQuestionDataModelList.get(currentQuestion).getOption2()));
+
+        if (siaddQuestionDataModelList.get(currentQuestion).getOption2_img().endsWith("jpg"))
+        {
+            img_option2_selected.setVisibility(View.VISIBLE);
+            Picasso.get().load(siaddQuestionDataModelList.get(currentQuestion).getOption2_img())
+                    .placeholder(R.drawable.dummyimage)
+                    .into(img_option2);
+        }else{
+            img_option2_selected.setVisibility(View.GONE);
+        }
+        textview_option2_selected.setText(Html.fromHtml(siaddQuestionDataModelList.get(currentQuestion).getOption2()));
+
+
         if (siaddQuestionDataModelList.get(currentQuestion).getOption3_img().endsWith("jpg"))
         {
             img_option3.setVisibility(View.VISIBLE);
@@ -506,6 +639,19 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
             img_option3.setVisibility(View.GONE);
         }
         textview_option3.setText(Html.fromHtml(siaddQuestionDataModelList.get(currentQuestion).getOption3()));
+
+        if (siaddQuestionDataModelList.get(currentQuestion).getOption3_img().endsWith("jpg"))
+        {
+            img_option3_selected.setVisibility(View.VISIBLE);
+            Picasso.get().load(siaddQuestionDataModelList.get(currentQuestion).getOption3_img())
+                    .placeholder(R.drawable.dummyimage)
+                    .into(img_option3);
+        }else{
+            img_option3_selected.setVisibility(View.GONE);
+        }
+        textview_option3_selected.setText(Html.fromHtml(siaddQuestionDataModelList.get(currentQuestion).getOption3()));
+
+
         if (siaddQuestionDataModelList.get(currentQuestion).getOption4_img().endsWith("jpg"))
         {
             img_option4.setVisibility(View.VISIBLE);
@@ -516,7 +662,19 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
             img_option4.setVisibility(View.GONE);
         }
         textview_option4.setText(Html.fromHtml(siaddQuestionDataModelList.get(currentQuestion).getOption4()));
+
+        if (siaddQuestionDataModelList.get(currentQuestion).getOption4_img().endsWith("jpg"))
+        {
+            img_option4_selected.setVisibility(View.VISIBLE);
+            Picasso.get().load(siaddQuestionDataModelList.get(currentQuestion).getOption4_img())
+                    .placeholder(R.drawable.dummyimage)
+                    .into(img_option4);
+        }else{
+            img_option4_selected.setVisibility(View.GONE);
+        }
+        textview_option4_selected.setText(Html.fromHtml(siaddQuestionDataModelList.get(currentQuestion).getOption4()));
     }
+
     private void setTimer() {
         countDownTimer=new CountDownTimer(milliTimer,1000) {
             @Override
@@ -602,17 +760,38 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
         }
 
         ClientApi apiClient= OnlineTestApiClient.getClient().create(ClientApi.class);
-        Call<ResultModel> call=apiClient.submitResponse(OnlineTestData.CoachingID,OnlineTestData.paperID,UserId,Response,null,true);
+        Call<ResultModel> call=apiClient.submitResponse("WB_010",OnlineTestData.paperID,UserId,Response,null,true);
         call.enqueue(new Callback<ResultModel>() {
             @Override
             public void onResponse(Call<ResultModel> call, Response<ResultModel> response) {
                 ResultModel resultModel=response.body();
                 pd.cancel();
-                if(resultModel!=null){
+                if(resultModel!=null) {
                     doToast("Response Submitted");
-                    Intent intent=new Intent(OnlineQuestionActivity.this, ViewResultActivity.class);
-                    startActivity(intent);
-                    finish();
+                    if (OnlineTestData.test_publish == true) {
+                        Intent intent = new Intent(OnlineQuestionActivity.this, ViewResultActivity.class);
+                        startActivity(intent);
+                        finish();
+                    } else if (OnlineTestData.test_publish == false) {
+                        final Dialog dialog = new Dialog(OnlineQuestionActivity.this);
+                        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                        dialog.setContentView(R.layout.custom_test_alert);
+                        RelativeLayout layout_home = dialog.findViewById(R.id.layout_home);
+                        TextView txt_course = dialog.findViewById(R.id.txt_course);
+                        txt_course.setText(OnlineTestData.test_closed);
+                        layout_home.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(OnlineQuestionActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        });
+
+                        dialog.show();
+                        dialog.setCancelable(false);
+
+                    }
                 }
                 else
                     doToast("data null");

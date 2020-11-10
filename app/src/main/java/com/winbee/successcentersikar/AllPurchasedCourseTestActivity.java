@@ -22,7 +22,7 @@ public class AllPurchasedCourseTestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_purchased_course_test);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+     //   getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         txtViewDailyQuiz= findViewById(R.id.txtViewDailyQuiz);
         txtViewDiscussion= findViewById(R.id.txtViewDiscussion);
         WebsiteHome=findViewById(R.id.WebsiteHome);

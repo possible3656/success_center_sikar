@@ -37,7 +37,7 @@ public class NewDoubtActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_doubt);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+      //  getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         editTextQuestionTitle=findViewById(R.id.editTextQuestionTitle);
         editTextQuestionDescription=findViewById(R.id.editTextQuestionDescription);
         progressBarUtil   =  new ProgressBarUtil(this);
@@ -147,7 +147,7 @@ public class NewDoubtActivity extends AppCompatActivity {
         progressBarUtil.showProgress();
         // final UrlNewQuestion urlNewQuestion = new UrlNewQuestion(title,description,documentid,userid);
         ClientApi apiCall = ApiClient.getClient().create(ClientApi.class);
-        Call<NewDoubtQuestion> call =apiCall.getNewQuestion(newDoubtQuestion.getTitle(),newDoubtQuestion.getQuestion(),newDoubtQuestion.getUserId());
+        Call<NewDoubtQuestion> call =apiCall.getNewQuestionText(newDoubtQuestion.getTitle(),newDoubtQuestion.getQuestion(),newDoubtQuestion.getUserId(),"1");
         Log.d("TAG", "callNewAskedQuestionApiService: "+newDoubtQuestion.getTitle()+""+newDoubtQuestion.getQuestion()+""+newDoubtQuestion.getUserId());
         call.enqueue(new Callback<NewDoubtQuestion>() {
             @Override

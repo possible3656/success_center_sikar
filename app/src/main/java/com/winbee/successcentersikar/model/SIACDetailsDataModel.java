@@ -46,6 +46,27 @@ public class SIACDetailsDataModel {
     @SerializedName("Test_Closed_Message")
     @Expose
     private String test_Closed_Message;
+    @SerializedName("Is_Test_category_Specail")
+    @Expose
+    private Boolean is_Test_category_Specail;
+    @SerializedName("Is_ReAttempt")
+    @Expose
+    private Boolean is_ReAttempt;
+    @SerializedName("ReAttempt_Error_Message")
+    @Expose
+    private String reAttempt_Error_Message;
+    @SerializedName("Is_Instant_View_Rank")
+    @Expose
+    private Boolean is_Instant_View_Rank;
+    @SerializedName("Is_Instant_View_Result")
+    @Expose
+    private Boolean is_Instant_View_Result;
+    @SerializedName("Is_Notification")
+    @Expose
+    private Boolean is_Notification;
+    @SerializedName("Notification_Message")
+    @Expose
+    private String notification_Message;
     @SerializedName("IsNegativeMarking_decode")
     @Expose
     private String isNegativeMarking_decode;
@@ -169,6 +190,62 @@ public class SIACDetailsDataModel {
 
     public void setTest_Closed_Message(String test_Closed_Message) {
         this.test_Closed_Message = test_Closed_Message;
+    }
+
+    public Boolean getIs_Test_category_Specail() {
+        return is_Test_category_Specail;
+    }
+
+    public void setIs_Test_category_Specail(Boolean is_Test_category_Specail) {
+        this.is_Test_category_Specail = is_Test_category_Specail;
+    }
+
+    public Boolean getIs_ReAttempt() {
+        return is_ReAttempt;
+    }
+
+    public void setIs_ReAttempt(Boolean is_ReAttempt) {
+        this.is_ReAttempt = is_ReAttempt;
+    }
+
+    public String getReAttempt_Error_Message() {
+        return reAttempt_Error_Message;
+    }
+
+    public void setReAttempt_Error_Message(String reAttempt_Error_Message) {
+        this.reAttempt_Error_Message = reAttempt_Error_Message;
+    }
+
+    public Boolean getIs_Instant_View_Rank() {
+        return is_Instant_View_Rank;
+    }
+
+    public void setIs_Instant_View_Rank(Boolean is_Instant_View_Rank) {
+        this.is_Instant_View_Rank = is_Instant_View_Rank;
+    }
+
+    public Boolean getIs_Instant_View_Result() {
+        return is_Instant_View_Result;
+    }
+
+    public void setIs_Instant_View_Result(Boolean is_Instant_View_Result) {
+        this.is_Instant_View_Result = is_Instant_View_Result;
+    }
+
+    public Boolean getIs_Notification() {
+        return is_Notification;
+    }
+
+    public void setIs_Notification(Boolean is_Notification) {
+        this.is_Notification = is_Notification;
+    }
+
+    public String getNotification_Message() {
+        return notification_Message;
+    }
+
+    public void setNotification_Message(String notification_Message) {
+        this.notification_Message = notification_Message;
     }
 
     public String getIsNegativeMarking_decode() {

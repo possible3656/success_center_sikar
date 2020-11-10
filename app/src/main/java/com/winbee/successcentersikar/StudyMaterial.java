@@ -56,7 +56,7 @@ public class StudyMaterial extends AppCompatActivity implements NavigationView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study_material);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         progressBarUtil   =  new ProgressBarUtil(this);
         all_study_material = findViewById(R.id.all_study_material);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

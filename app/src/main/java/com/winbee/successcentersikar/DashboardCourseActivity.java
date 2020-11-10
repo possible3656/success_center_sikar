@@ -28,7 +28,7 @@ public class DashboardCourseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_course);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         Name=SharedPrefManager.getInstance(this).refCode().getName();
         Mobile=SharedPrefManager.getInstance(this).refCode().getUsername();
         Email=SharedPrefManager.getInstance(this).refCode().getEmail();

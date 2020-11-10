@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerFullScreenListener;
@@ -59,7 +60,7 @@ public class YoutubeLibaray extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_youtube_libaray);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         title_bar_home = findViewById(R.id.title_bar_home);
         UserId = SharedPrefManager.getInstance(this).refCode().getUserId();
         Username=SharedPrefManager.getInstance(this).refCode().getName();
@@ -184,10 +185,16 @@ public class YoutubeLibaray extends AppCompatActivity {
                                 LocalData.VideoUrl, 0f
                         );
 
-
+//                        CustomPlayerUiController customPlayerUiController = new CustomPlayerUiController(CustomUiActivity.this, customPlayerUi, youTubePlayer, youTubePlayerView);
+//                        youTubePlayer.addListener(customPlayerUiController);
                     }
 
+
                 });
+
+
+        // Called every time the quality of the playback changes.
+       // void onPlaybackQualityChange(@NonNull YouTubePlayer youTubePlayer, @NonNull PlayerConstants.PlaybackQuality playbackQuality)
         callTopicApiService();
 
     }

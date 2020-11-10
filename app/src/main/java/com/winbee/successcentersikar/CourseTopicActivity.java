@@ -49,7 +49,7 @@ public class CourseTopicActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_topic);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+      //  getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         video_list_recycler = findViewById(R.id.gec_semester_topic_recycle);
         progressBarUtil   =  new ProgressBarUtil(this);
         UserId=SharedPrefManager.getInstance(this).refCode().getUserId();

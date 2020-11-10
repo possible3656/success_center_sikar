@@ -22,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.squareup.picasso.Picasso;
 import com.winbee.successcentersikar.RetrofitApiCall.ApiClient;
 import com.winbee.successcentersikar.WebApi.ClientApi;
 import com.winbee.successcentersikar.adapter.SolutionAdapter;
@@ -42,6 +43,7 @@ public class DoubtSolutionActivity extends AppCompatActivity {
     private ArrayList<SolutionQuestion> list;
     private RecyclerView askedSolution;
     EditText editTextGiveSolution;
+    ImageView image_show;
     ImageView submit_solution,WebsiteHome,img_share,select_image,select_url;
     private TextView txt_user,txt_time,txt_ask_title,txt_ask_question,txt_commments;
     LinearLayout layout_user,layout_test_series,layout_home,layout_doubt,layout_notification;
@@ -52,7 +54,7 @@ public class DoubtSolutionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doubt_solution);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         askedSolution = findViewById(R.id.gec_asked_solution_recycle);
         editTextGiveSolution=findViewById(R.id.editTextGiveSolution);
         select_image=findViewById(R.id.select_image);
@@ -70,6 +72,15 @@ public class DoubtSolutionActivity extends AppCompatActivity {
         txt_commments.setText(LocalData.Commnts);
         WebsiteHome=findViewById(R.id.WebsiteHome);
         img_share=findViewById(R.id.img_share);
+        image_show=findViewById(R.id.image_show);
+        Picasso.get().load(LocalData.Discription).placeholder(R.drawable.dummyimage).fit().into(image_show);
+        if (LocalData.QuestionType.equalsIgnoreCase("1")){
+            image_show.setVisibility(View.GONE);
+            txt_ask_question.setVisibility(View.VISIBLE);
+        }else if (LocalData.QuestionType.equalsIgnoreCase("2")){
+            image_show.setVisibility(View.VISIBLE);
+            txt_ask_question.setVisibility(View.GONE);
+        }
         layout_user=findViewById(R.id.layout_user);
         layout_user.setOnClickListener(new View.OnClickListener() {
             @Override

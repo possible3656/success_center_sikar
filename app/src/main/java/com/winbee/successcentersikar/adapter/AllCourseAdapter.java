@@ -46,6 +46,7 @@ public class AllCourseAdapter extends RecyclerView.Adapter<AllCourseAdapter.View
             //coming soon
             holder.layout_coming_soon.setVisibility(View.VISIBLE);
             holder.layout_free.setVisibility(View.GONE);
+            holder.layout_download.setVisibility(View.GONE);
             holder.layout_view.setVisibility(View.GONE);
             holder.layout_buy.setVisibility(View.GONE);
             holder.layout_purchased.setVisibility(View.GONE);
@@ -60,6 +61,7 @@ public class AllCourseAdapter extends RecyclerView.Adapter<AllCourseAdapter.View
                 //buy now
                 holder.layout_coming_soon.setVisibility(View.GONE);
                 holder.layout_free.setVisibility(View.GONE);
+                holder.layout_download.setVisibility(View.GONE);
                 holder.layout_buy.setVisibility(View.VISIBLE);
                 holder.layout_view.setVisibility(View.GONE);
                 holder.layout_purchased.setVisibility(View.GONE);
@@ -71,6 +73,7 @@ public class AllCourseAdapter extends RecyclerView.Adapter<AllCourseAdapter.View
                 //free course
                 holder.layout_coming_soon.setVisibility(View.GONE);
                 holder.layout_free.setVisibility(View.VISIBLE);
+                holder.layout_download.setVisibility(View.VISIBLE);
                 holder.layout_buy.setVisibility(View.GONE);
                 holder.layout_purchased.setVisibility(View.GONE);
                 holder.img_rupee1.setVisibility(View.VISIBLE);
@@ -84,6 +87,7 @@ public class AllCourseAdapter extends RecyclerView.Adapter<AllCourseAdapter.View
         if (list1.get(position).getPaid().equals(1)){
             holder.layout_coming_soon.setVisibility(View.GONE);
             holder.layout_free.setVisibility(View.GONE);
+            holder.layout_download.setVisibility(View.GONE);
             holder.layout_buy.setVisibility(View.GONE);
             holder.layout_purchased.setVisibility(View.VISIBLE);
             holder.img_rupee1.setVisibility(View.GONE);
@@ -200,7 +204,7 @@ public class AllCourseAdapter extends RecyclerView.Adapter<AllCourseAdapter.View
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView txt_course,txt_discount,txt_actual_price,txt_type;
         private ImageView course_image,img_rupee1,img_rupee;
-        private RelativeLayout Course_layout,layout_coming_soon,layout_free,layout_buy,layout_view,layout_purchased;
+        private RelativeLayout Course_layout,layout_coming_soon,layout_free,layout_buy,layout_view,layout_purchased,layout_download;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txt_course = itemView.findViewById(R.id.txt_course);
@@ -211,6 +215,7 @@ public class AllCourseAdapter extends RecyclerView.Adapter<AllCourseAdapter.View
             layout_buy = itemView.findViewById(R.id.layout_buy);
             layout_view = itemView.findViewById(R.id.layout_view);
             layout_purchased = itemView.findViewById(R.id.layout_purchased);
+            layout_download = itemView.findViewById(R.id.layout_download);
             Course_layout = itemView.findViewById(R.id.Course_layout);
             course_image=itemView.findViewById(R.id.course_image);
             txt_discount=itemView.findViewById(R.id.txt_discount);

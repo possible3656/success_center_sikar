@@ -39,7 +39,7 @@ public class OtpVerficationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp_verfication);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+      //  getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         otpView = findViewById(R.id.otp_view);
         text_mobile3 = findViewById(R.id.text_mobile3);
         resend_otp = findViewById(R.id.resend_otp);

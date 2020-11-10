@@ -33,7 +33,7 @@ public class McqSolutionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mcq_solution);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+      //  getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         progressBarUtil   =  new ProgressBarUtil(this);
         askedSolution = findViewById(R.id.gec_asked_solution_recycle);
         WebsiteHome=findViewById(R.id.WebsiteHome);

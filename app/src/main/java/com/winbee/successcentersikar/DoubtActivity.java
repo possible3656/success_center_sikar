@@ -44,7 +44,7 @@ public class DoubtActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doubt);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         btn_asked=findViewById(R.id.btn_asked);
         askedQuestion = findViewById(R.id.gec_asked_question_recycle);
         progressBarUtil   =  new ProgressBarUtil(this);

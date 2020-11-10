@@ -21,7 +21,7 @@ public class DiscussionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_discussion);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         txtAsk= findViewById(R.id.txtViewAsk);
         txtMcq= findViewById(R.id.txtViewMcq);
         WebsiteHome=findViewById(R.id.WebsiteHome);

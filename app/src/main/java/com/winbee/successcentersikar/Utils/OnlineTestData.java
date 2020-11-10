@@ -18,6 +18,8 @@ public class OnlineTestData {
     public static String logData="";
     public static String status="";
     public static String totalTest="";
+    public static String test_closed="";
+    public static Boolean test_publish;
 
     //fetch-section-individual-assessment-cover-details.php data
     public static String bucketIDre="";

@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "20524621700",
-    "firebase_url": "https://sekhawati-defence-academy.firebaseio.com",
-    "project_id": "sekhawati-defence-academy",
-    "storage_bucket": "sekhawati-defence-academy.appspot.com"
+    "project_number": "129439759522",
+    "firebase_url": "https://success-center-sikar.firebaseio.com",
+    "project_id": "success-center-sikar",
+    "storage_bucket": "success-center-sikar.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:20524621700:android:5645a259d82b561fae07d1",
+        "mobilesdk_app_id": "1:129439759522:android:9dbc06d4ddf0ac185aabfb",
         "android_client_info": {
           "package_name": "com.winbee.successcentersikar"
         }
       },
       "oauth_client": [
         {
-          "client_id": "20524621700-044qmnr926fnqj5c9laaito4tb4j33t1.apps.googleusercontent.com",
+          "client_id": "129439759522-pafusemdflm5384mhm3hhrvfe26kdu44.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAMSqQEPOAaC4YZ-ErWDzgdbFFhR2rB7y0"
+          "current_key": "AIzaSyDsW8Xs8r-ckI592QDj0u51WXPAZbSNBcE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "20524621700-044qmnr926fnqj5c9laaito4tb4j33t1.apps.googleusercontent.com",
+              "client_id": "129439759522-pafusemdflm5384mhm3hhrvfe26kdu44.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

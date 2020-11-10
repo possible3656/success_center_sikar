@@ -55,6 +55,8 @@ public class LocalData {
     public static  String ExamSectionId="";
     public static  String CourseInternalTotalVideos="";
     public static  int CourseTotalPdf;
+    public static String QuestionType="";
+    public static String Username="";
 
     //paid test series
     public static  String TestBuckedId="";

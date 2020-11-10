@@ -22,6 +22,7 @@ import com.winbee.successcentersikar.NewModels.CourseContentArray;
 import com.winbee.successcentersikar.NewModels.PdfSellArray;
 import com.winbee.successcentersikar.PdfDetailsActivity;
 import com.winbee.successcentersikar.PdfWebActivity;
+import com.winbee.successcentersikar.PdfWebActivityDownload;
 import com.winbee.successcentersikar.R;
 
 import java.util.List;
@@ -53,7 +54,8 @@ public class AllPdfSellAdapter extends RecyclerView.Adapter<AllPdfSellAdapter.Vi
         Picasso.get().load(list1.get(position).getThumbnail()).placeholder(R.drawable.dummyimage).fit().into(holder.course_image);
 
         if (list1.get(position).getVersion().equalsIgnoreCase("1")){
-            holder.layout_free.setVisibility(View.VISIBLE);
+            holder.layout_download.setVisibility(View.VISIBLE);
+            holder.layout_free.setVisibility(View.GONE);
             holder.layout_coming_soon.setVisibility(View.GONE);
             holder.layout_buy.setVisibility(View.GONE);
             holder.layout_purchased.setVisibility(View.GONE);
@@ -66,7 +68,7 @@ public class AllPdfSellAdapter extends RecyclerView.Adapter<AllPdfSellAdapter.Vi
                 @Override
                 public void onClick(View view) {
                     LocalData.PdfUrl=list1.get(position).getContent();
-                    Intent intent = new Intent(context, PdfWebActivity.class);
+                    Intent intent = new Intent(context, PdfWebActivityDownload.class);
                     context.startActivity(intent);
                 }
             });
@@ -74,6 +76,7 @@ public class AllPdfSellAdapter extends RecyclerView.Adapter<AllPdfSellAdapter.Vi
             if (list1.get(position).getIsPaid().equals(0)) {
                 holder.layout_coming_soon.setVisibility(View.GONE);
                 holder.layout_free.setVisibility(View.GONE);
+                holder.layout_download.setVisibility(View.GONE);
                 holder.layout_purchased.setVisibility(View.GONE);
                 holder.img_rupee1.setVisibility(View.VISIBLE);
                 holder.layout_view.setVisibility(View.GONE);
@@ -98,6 +101,7 @@ public class AllPdfSellAdapter extends RecyclerView.Adapter<AllPdfSellAdapter.Vi
             }else if (list1.get(position).getIsPaid().equals(1)){
                 holder.layout_purchased.setVisibility(View.VISIBLE);
                 holder.layout_free.setVisibility(View.GONE);
+                holder.layout_download.setVisibility(View.GONE);
                 holder.layout_coming_soon.setVisibility(View.GONE);
                 holder.layout_buy.setVisibility(View.GONE);
                 holder.img_rupee1.setVisibility(View.GONE);
@@ -126,7 +130,7 @@ public class AllPdfSellAdapter extends RecyclerView.Adapter<AllPdfSellAdapter.Vi
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView txt_course,txt_discount,txt_actual_price,txt_type;
         private ImageView course_image,img_rupee1,img_rupee;
-        private RelativeLayout Course_layout,layout_coming_soon,layout_free,layout_buy,layout_view,layout_purchased;
+        private RelativeLayout Course_layout,layout_coming_soon,layout_free,layout_buy,layout_view,layout_purchased,layout_download;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txt_course = itemView.findViewById(R.id.txt_course);
@@ -134,6 +138,7 @@ public class AllPdfSellAdapter extends RecyclerView.Adapter<AllPdfSellAdapter.Vi
             img_rupee = itemView.findViewById(R.id.img_rupee);
             layout_coming_soon = itemView.findViewById(R.id.layout_coming_soon);
             layout_free = itemView.findViewById(R.id.layout_free);
+            layout_download = itemView.findViewById(R.id.layout_download);
             layout_buy = itemView.findViewById(R.id.layout_buy);
             layout_view = itemView.findViewById(R.id.layout_view);
             layout_purchased = itemView.findViewById(R.id.layout_purchased);

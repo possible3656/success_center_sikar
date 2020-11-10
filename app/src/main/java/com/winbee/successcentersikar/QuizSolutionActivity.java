@@ -52,7 +52,7 @@ public class QuizSolutionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_solution);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         askedSolution = findViewById(R.id.gec_asked_solution_recycle);
         editTextGiveSolution=findViewById(R.id.editTextGiveSolution);
         select_image=findViewById(R.id.select_image);

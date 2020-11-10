@@ -37,7 +37,7 @@ public class MyTransactionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_transaction);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+      //  getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         progressBarUtil = new ProgressBarUtil(this);
         txn_recycle = findViewById(R.id.all_txn);
         today_classes = findViewById(R.id.today_classes);

@@ -186,6 +186,7 @@
                     android:textSize="16dip"
                     android:textColor="#8e9cfe"
                     android:text=" Login"
+                    android:textStyle="bold"
                     android:gravity="center"
                     android:fontFamily="@font/proximanovaregular"
                     android:id="@+id/textViewLogin"

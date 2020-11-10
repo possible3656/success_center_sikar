@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -44,6 +45,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.balsikandar.crashreporter.CrashReporter.getContext;
+
 public class YouTubeVideoList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private ArrayList<LiveClass> liveList;
     private List<FacultyName> List;
@@ -53,6 +56,7 @@ public class YouTubeVideoList extends AppCompatActivity implements NavigationVie
     private AllLiveClassAdapter adapter;
     private ImageView img_share,WebsiteHome;
     private RelativeLayout today_classes;
+    String UserId,android_id;
     LinearLayout layout_user,layout_test_series,layout_home,layout_doubt,layout_notification;
     private Spinner select_option,spinner_faculty;
     long item,item_value;
@@ -62,11 +66,13 @@ public class YouTubeVideoList extends AppCompatActivity implements NavigationVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_you_tube_video_list);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         progressBarUtil   =  new ProgressBarUtil(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         video_list_recycler = findViewById(R.id.all_liveClasses);
+        android_id = Settings.Secure.getString(getContext().getContentResolver(),Settings.Secure.ANDROID_ID);
+        UserId=SharedPrefManager.getInstance(this).refCode().getUserId();
         live_refresh = findViewById(R.id.live_refresh);
         live_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -305,7 +311,7 @@ public class YouTubeVideoList extends AppCompatActivity implements NavigationVie
     private void callLiveApiService() {
         progressBarUtil.showProgress();
         ClientApi apiCAll = ApiClient.getClient().create(ClientApi.class);
-        Call<ArrayList<LiveClass>> call = apiCAll.getLive();
+        Call<ArrayList<LiveClass>> call = apiCAll.getLive("WB_010",UserId,android_id);
         Log.i("tag", "callLiveApiService: "+ item+""+value);
         call.enqueue(new Callback<ArrayList<LiveClass>>() {
             @Override

@@ -43,6 +43,7 @@ public class AllPurchaseCourseAdapter extends RecyclerView.Adapter<AllPurchaseCo
         if (list1.get(position).getPaid().equals(1)) {
             holder.layout_coming_soon.setVisibility(View.GONE);
             holder.layout_free.setVisibility(View.GONE);
+            holder.layout_download.setVisibility(View.GONE);
             holder.layout_buy.setVisibility(View.GONE);
             holder.layout_purchased.setVisibility(View.GONE);
             holder.layout_view.setVisibility(View.VISIBLE);
@@ -88,7 +89,7 @@ public class AllPurchaseCourseAdapter extends RecyclerView.Adapter<AllPurchaseCo
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView txt_course,txt_discount,txt_actual_price,txt_coming_soon,txt_type;
         private ImageView course_image,img_rupee,img_rupee1;
-        private RelativeLayout Course_layout,layout_coming_soon,layout_free,layout_buy,layout_view,layout_purchased;
+        private RelativeLayout Course_layout,layout_coming_soon,layout_free,layout_buy,layout_view,layout_purchased,layout_download;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txt_course = itemView.findViewById(R.id.txt_course);
@@ -105,6 +106,7 @@ public class AllPurchaseCourseAdapter extends RecyclerView.Adapter<AllPurchaseCo
             layout_buy = itemView.findViewById(R.id.layout_buy);
             layout_view = itemView.findViewById(R.id.layout_view);
             layout_purchased = itemView.findViewById(R.id.layout_purchased);
+            layout_download = itemView.findViewById(R.id.layout_download);
         }
     }
 }

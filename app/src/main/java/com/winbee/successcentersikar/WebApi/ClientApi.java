@@ -12,6 +12,7 @@ import com.winbee.successcentersikar.NewModels.LogOut;
 import com.winbee.successcentersikar.NewModels.PaymentModel;
 import com.winbee.successcentersikar.NewModels.PdfContent;
 import com.winbee.successcentersikar.NewModels.PdfSell;
+import com.winbee.successcentersikar.NewModels.QuizFilter;
 import com.winbee.successcentersikar.NewModels.SubjectContent;
 import com.winbee.successcentersikar.NewModels.TestSeriesPayment;
 import com.winbee.successcentersikar.NewModels.TestSubscription;
@@ -181,7 +182,11 @@ public interface ClientApi {
 
 
     @POST("fetch-all-live-classes.php")
-    Call<ArrayList<LiveClass>> getLive();
+    Call<ArrayList<LiveClass>> getLive(
+            @Query("org_id") String org_id,
+            @Query("user_id") String user_id,
+            @Query("device_id") String device_id
+    );
 
     @POST("fetch-notes-of-live-class.php")
     Call<ArrayList<NotesModel>> getNotes(
@@ -195,19 +200,38 @@ public interface ClientApi {
 
     @FormUrlEncoded
     @POST("ask-doubt.php")
-    Call<NewDoubtQuestion> getNewQuestion(
+    Call<NewDoubtQuestion> getNewQuestionText(
             @Field("title") String title,
             @Field("question") String question,
-            @Field("userid") String userid
+            @Field("userid") String userid,
+            @Field("questionType") String questionType
+    );
+
+    @FormUrlEncoded
+    @POST("ask-doubt.php")
+    Call<NewDoubtQuestion> getNewQuestionImage(
+            @Field("title") String title,
+            @Field("question") String question,
+            @Field("userid") String userid,
+            @Field("questionType") String questionType
     );
 
     //for quiz
     @FormUrlEncoded
     @POST("ask-doubt-quiz.php")
-    Call<NewDoubtQuestion> getQuizQuestion(
+    Call<NewDoubtQuestion> getQuizQuestionText(
             @Field("title") String title,
             @Field("question") String question,
-            @Field("userid") String userid
+            @Field("userid") String userid,
+            @Field("questionType") String questionType
+    );
+    @FormUrlEncoded
+    @POST("ask-doubt-quiz.php")
+    Call<NewDoubtQuestion> getQuizQuestionImage(
+            @Field("title") String title,
+            @Field("question") String question,
+            @Field("userid") String userid,
+            @Field("questionType") String questionType
     );
 
     @POST("beta-doubt-storage.php")
@@ -466,5 +490,8 @@ public interface ClientApi {
             @Query("DeviceId") String DeviceId,
             @Query("LiveClassId") String LiveClassId
     );
+
+    @POST("for_filter_exam_section.php")
+    Call<ArrayList<QuizFilter>> getFaculty();
 
 }

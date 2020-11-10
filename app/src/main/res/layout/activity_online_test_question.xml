@@ -172,6 +172,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+        <RelativeLayout
             android:visibility="visible"
             android:id="@+id/layout_question"
             android:layout_width="wrap_content"
@@ -254,13 +259,20 @@
             <!--                android:layout_height="@dimen/view_width_small"-->
             <!--                android:background="@color/grey_light"-->
             <!--                android:layout_below="@id/img_title" />-->
+
             <RelativeLayout
-                android:id="@+id/layout_option1"
+                android:id="@+id/option1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layout_question1"
                 android:layout_marginTop="5dp"
-                android:elevation="4dp"
+                android:elevation="4dp">
+
+
+            <RelativeLayout
+                android:id="@+id/layout_option1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:weightSum="6"
                 android:padding="10dp">
@@ -299,18 +311,72 @@
 
 
             </RelativeLayout>
-            <View android:layout_width="match_parent"
+            <RelativeLayout
+                android:id="@+id/layout_option1_selected"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="6"
+                android:visibility="gone"
+                android:background="@drawable/q_selected"
+                android:padding="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_circle_gray_trans"
+                    android:text="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:visibility="gone"
+                    android:src="@drawable/a_letter"/>
+
+                <TextView
+                    android:id="@+id/textview_option1_slected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:layout_weight="5"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/proximanovaregular"
+                    android:textColor="@android:color/white"
+                    android:text=""
+                    android:textSize="14sp" />
+                <ImageView
+                    android:id="@+id/img_option1_slected"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"
+                    android:layout_below="@id/textview_option1_slected" />
+
+
+            </RelativeLayout>
+            </RelativeLayout>
+            <View
+                android:id="@+id/view_option1"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/view_width_small"
                 android:background="@color/grey_light"
-                android:layout_below="@id/layout_option1" />
+                android:layout_below="@id/option1" />
+            <RelativeLayout
+                android:id="@+id/option2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/option1"
+                android:layout_marginTop="7dp"
+                android:elevation="4dp">
+
+
+
             <RelativeLayout
                 android:id="@+id/layout_option2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:elevation="4dp"
                 android:weightSum="6"
-                android:layout_below="@id/layout_option1"
                 android:padding="10dp">
                 <TextView
                     android:layout_width="wrap_content"
@@ -346,20 +412,69 @@
                     android:layout_below="@id/textview_option2" />
 
             </RelativeLayout>
-            <View android:layout_width="match_parent"
+
+            <RelativeLayout
+                android:id="@+id/layout_option2_selected"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="6"
+                android:visibility="gone"
+                android:background="@drawable/q_selected"
+                android:padding="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_circle_gray_trans"
+                    android:text="2"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:visibility="gone"
+                    android:src="@drawable/b_letter"/>
+
+                <TextView
+                    android:id="@+id/textview_option2_selected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:layout_weight="5"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/proximanovaregular"
+                    android:textColor="@android:color/white"
+                    android:text=""
+                    android:textSize="14sp" />
+                <ImageView
+                    android:id="@+id/img_option2_selected"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"
+                    android:layout_below="@id/textview_option2_selected" />
+
+            </RelativeLayout>
+            </RelativeLayout>
+            <View
+                android:id="@+id/view_option2"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/view_width_small"
                 android:background="@color/grey_light"
-                android:layout_below="@id/layout_option2"
+                android:layout_below="@id/option2"
                 />
-
+            <RelativeLayout
+                android:id="@+id/option3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/option2"
+                android:layout_marginTop="7dp"
+                android:elevation="4dp">
             <RelativeLayout
                 android:id="@+id/layout_option3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:elevation="4dp"
                 android:weightSum="6"
-                android:layout_below="@id/layout_option2"
                 android:padding="10dp">
                 <TextView
                     android:layout_width="wrap_content"
@@ -395,19 +510,70 @@
                     android:layout_below="@id/textview_option3" />
 
             </RelativeLayout>
-            <View android:layout_width="match_parent"
+
+
+            <RelativeLayout
+                android:id="@+id/layout_option3_selected"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="6"
+                android:background="@drawable/q_selected"
+                android:visibility="gone"
+                android:padding="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_circle_gray_trans"
+                    android:text="3"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:visibility="gone"
+                    android:src="@drawable/c_letter"/>
+
+                <TextView
+                    android:id="@+id/textview_option3_selected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:layout_weight="5"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/proximanovaregular"
+                    android:textColor="@android:color/white"
+                    android:text=""
+                    android:textSize="14sp" />
+                <ImageView
+                    android:id="@+id/img_option3_selected"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"
+                    android:layout_below="@id/textview_option3_selected" />
+
+            </RelativeLayout>
+            </RelativeLayout>
+            <View
+                android:id="@+id/view_option3"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/view_width_small"
                 android:background="@color/grey_light"
-                android:layout_below="@id/layout_option3"
+                android:layout_below="@id/option3"
                 />
+            <RelativeLayout
+                android:id="@+id/option4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/option3"
+                android:layout_marginTop="7dp"
+                android:elevation="4dp">
             <RelativeLayout
                 android:id="@+id/layout_option4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:elevation="4dp"
                 android:weightSum="6"
-                android:layout_below="@id/layout_option3"
                 android:padding="10dp">
                 <TextView
                     android:layout_width="wrap_content"
@@ -443,87 +609,133 @@
                     android:layout_below="@id/textview_option4"/>
 
             </RelativeLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/view_width_small"
-                android:background="@color/grey_light"
-                android:layout_below="@id/layout_option4"
-                android:id="@+id/view_question"/>
-            <LinearLayout
-                android:id="@+id/ll_button"
-                android:layout_marginTop="24dp"
-                android:layout_below="@+id/view_question"
+
+            <RelativeLayout
+                android:id="@+id/layout_option4_selected"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-                <Button
-                    android:id="@+id/buttonSaveNext"
-                    android:layout_width="wrap_content"
-                    android:layout_marginHorizontal="8dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/btn_savenext"
-                    android:fontFamily="@font/proximanovaregular"
-                    android:padding="16dp"
-                    android:textStyle="bold"
-                    android:visibility="gone"
-                    android:textSize="15sp"
-                    android:text="Save And Next"
-                    android:textColor="@color/white" />
-                <Button
-                    android:id="@+id/buttonNext"
+                android:weightSum="6"
+                android:background="@drawable/q_selected"
+                android:visibility="gone"
+                android:padding="10dp">
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:background="@drawable/btn_next"
-                    android:fontFamily="@font/proximanovaregular"
-                    android:padding="12dp"
-                    android:text="NEXT QUESTION"
-                    android:drawableRight="@drawable/ic_baseline_arrow_forward_24"
+                    android:background="@drawable/ic_circle_gray_trans"
+                    android:text="4"
                     android:gravity="center"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/black"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:visibility="gone"
+                    android:src="@drawable/d_letter"/>
 
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/ll_button2"
-                android:layout_marginTop="24dp"
-                android:layout_below="@+id/ll_button"
-                android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/textview_option4_selected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:layout_weight="5"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/proximanovaregular"
+                    android:textColor="@android:color/white"
+                    android:text=""
+                    android:textSize="14sp" />
+                <ImageView
+                    android:id="@+id/img_option4_selected"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"
+                    android:layout_below="@id/textview_option4_selected"/>
+
+            </RelativeLayout>
+            </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_width_small"
+                    android:background="@color/grey_light"
+                    android:layout_below="@id/option4"
+                    android:id="@+id/view_option4"/>
+
+
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/ll_button"
+            android:layout_marginTop="24dp"
+            android:layout_below="@+id/layout_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/buttonSaveNext"
+                android:layout_width="wrap_content"
+                android:layout_marginHorizontal="8dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <Button
-                    android:id="@+id/buttonReview"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/btn_review"
-                    android:fontFamily="@font/proximanovaregular"
-                    android:padding="16dp"
-                    android:textStyle="bold"
-                    android:textSize="15sp"
-                    android:text="Review"
-                    android:visibility="gone"
-                    android:layout_marginHorizontal="10dp"
-                    android:textColor="@color/white" />
-                <Button
-                    android:id="@+id/buttonSubmitAndReview"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginHorizontal="10dp"
-                    android:background="@drawable/btn_savereview"
-                    android:fontFamily="@font/proximanovaregular"
-                    android:padding="16dp"
-                    android:visibility="gone"
-                    android:text="Save and Review"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/white" />
-                <!--1-submitand next,2-next,3-review,4-submitand review-->
-            </LinearLayout>
+                android:background="@drawable/btn_savenext"
+                android:fontFamily="@font/proximanovaregular"
+                android:padding="16dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:textSize="15sp"
+                android:text="Save And Next"
+                android:textColor="@color/white" />
+            <Button
+                android:id="@+id/buttonNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/btn_next"
+                android:fontFamily="@font/proximanovaregular"
+                android:padding="12dp"
+                android:text="NEXT QUESTION"
+                android:drawableRight="@drawable/ic_baseline_arrow_forward_24"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
 
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_button2"
+            android:layout_marginTop="24dp"
+            android:layout_below="@+id/ll_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/buttonReview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_review"
+                android:fontFamily="@font/proximanovaregular"
+                android:padding="16dp"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:text="Review"
+                android:visibility="gone"
+                android:layout_marginHorizontal="10dp"
+                android:textColor="@color/white" />
+            <Button
+                android:id="@+id/buttonSubmitAndReview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/btn_savereview"
+                android:fontFamily="@font/proximanovaregular"
+                android:padding="16dp"
+                android:visibility="gone"
+                android:text="Save and Review"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
+            <!--1-submitand next,2-next,3-review,4-submitand review-->
+        </LinearLayout>
         </RelativeLayout>
     </ScrollView>
 </LinearLayout>

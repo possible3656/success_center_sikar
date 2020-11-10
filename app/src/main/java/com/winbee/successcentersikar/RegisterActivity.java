@@ -52,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_register);
         try{
             initView();
@@ -155,7 +155,7 @@ public class RegisterActivity extends AppCompatActivity {
                 int statusCode = response.code();
                 if (statusCode == 200 && response.body().getSuccess()== true) {
                     LocalData.UserName = refUser.getEmail();
-                    LocalData.Mobile=refUser.getMobile();
+                    LocalData.Mobile=editTextPhone.getText().toString().trim();
                     LocalData.Password = refUser.getPassword();
                     progressBarUtil.hideProgress();
                     Intent intent = new Intent(RegisterActivity.this,OtpVerficationActivity.class);

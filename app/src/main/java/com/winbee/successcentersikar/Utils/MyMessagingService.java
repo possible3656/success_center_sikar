@@ -11,6 +11,7 @@ import androidx.core.app.NotificationManagerCompat;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.winbee.successcentersikar.MainActivity;
+import com.winbee.successcentersikar.R;
 import com.winbee.successcentersikar.YouTubeVideoList;
 
 
@@ -36,7 +37,7 @@ public class MyMessagingService extends FirebaseMessagingService {
         Uri soundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"Common")
                 .setContentTitle(title)
-               // .setSmallIcon(R.drawable.logo)
+                .setSmallIcon(R.drawable.logo)
                 .setAutoCancel(true)
                 .setContentText(message)
                 .setSound(soundUri)
@@ -54,7 +55,7 @@ public class MyMessagingService extends FirebaseMessagingService {
         Uri soundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"liveClass")
                 .setContentTitle(title)
-                //.setSmallIcon(R.drawable.logo)
+                .setSmallIcon(R.drawable.logo)
                 .setAutoCancel(true)
                 .setContentText(message)
                 .setSound(soundUri)
@@ -71,7 +72,7 @@ public class MyMessagingService extends FirebaseMessagingService {
         Uri soundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"testSeries")
                 .setContentTitle(title)
-               // .setSmallIcon(R.drawable.logo)
+                .setSmallIcon(R.drawable.logo)
                 .setAutoCancel(true)
                 .setContentText(message)
                 .setSound(soundUri)

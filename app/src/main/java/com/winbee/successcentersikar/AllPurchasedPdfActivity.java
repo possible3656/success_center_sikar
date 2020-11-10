@@ -46,7 +46,7 @@ public class AllPurchasedPdfActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_purchased);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         gec_pdf_recycle = findViewById(R.id.gec_pdf_recycle);
         progressBarUtil   =  new ProgressBarUtil(this);
         UserId=SharedPrefManager.getInstance(this).refCode().getUserId();

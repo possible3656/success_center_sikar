@@ -3,6 +3,7 @@ package com.winbee.successcentersikar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -32,7 +33,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_forget_password);
 
         forgetMobile = findViewById(R.id.editTextre_Password);
@@ -61,6 +62,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         progressBarUtil.showProgress();
         ClientApi mService = ApiClient.getClient().create(ClientApi.class);
         Call<ForgetMobile> call = mService.getForgetMobile(1,forgetMobile.getUsername());
+        Log.i("forgetpassword", "callForgetMobileApi: "+forgetMobile.getUsername());
         call.enqueue(new Callback<ForgetMobile>() {
             @Override
             public void onResponse(Call<ForgetMobile> call, Response<ForgetMobile> response) {

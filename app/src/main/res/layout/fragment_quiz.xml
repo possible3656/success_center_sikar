@@ -8,12 +8,28 @@
     android:background="@color/bg_color">
 
 
-
+    <RelativeLayout
+        android:id="@+id/quiz_selection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_layout"
+        android:gravity="end"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp">
+        <Spinner
+            android:id="@+id/select_quiz"
+            android:layout_width="match_parent"
+            android:entries="@array/filter"
+            android:textAlignment="viewStart"
+            android:layout_height="40dp" />
+    </RelativeLayout>
     <io.supercharge.shimmerlayout.ShimmerLayout
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         app:shimmer_animation_duration="1200"
-        android:layout_below="@id/title_bar_home"
+        android:layout_marginTop="50dp"
         android:id="@+id/shimmerLayout">
 
 
@@ -21,7 +37,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:orientation="vertical">
-
             <include layout="@layout/item_place_holder_layout"/>
 
         </LinearLayout>
@@ -30,6 +45,7 @@
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/quiz_refresh"
         android:layout_width="match_parent"
+        android:layout_marginTop="55dp"
         android:layout_height="match_parent">
     <androidx.recyclerview.widget.RecyclerView
         android:layout_height="wrap_content"
@@ -37,6 +53,6 @@
         android:id="@+id/recycle_test"
         android:layout_marginBottom="65dp"
         android:layout_marginTop="10dp"
-        android:layout_below="@id/title_bar_home" />
+        android:layout_below="@id/quiz_selection" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </FrameLayout>

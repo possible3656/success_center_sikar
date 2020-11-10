@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.squareup.picasso.Picasso;
 import com.winbee.successcentersikar.LocalData;
 import com.winbee.successcentersikar.NewModels.PdfContentArray;
 import com.winbee.successcentersikar.NewModels.TopicContentArray;
@@ -49,6 +50,9 @@ public class AllPurchaseTopicAdapter extends RecyclerView.Adapter<AllPurchaseTop
             holder.img_Unlock.setVisibility(View.GONE);
             holder.subject.setText(list.get(position).getSubject());
             holder.teacher.setText(list.get(position).getFaculty());
+            holder.txt_date.setText(list.get(position).getPublished());
+            Picasso.get().load(list.get(position).getThumbnail()).placeholder(R.drawable.dummyimage).fit().into(holder.document_type);
+
 
         if (list.get(position).getType().equalsIgnoreCase("YouTube")){
             holder.document_type_image.setImageResource(R.drawable.ic_clapperboard);
@@ -108,8 +112,8 @@ public class AllPurchaseTopicAdapter extends RecyclerView.Adapter<AllPurchaseTop
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView subject, teacher, released_date, document_type_text;
-        ImageView img_lock, img_Unlock,txt_video, txt_pdf,document_type_image;
+        private TextView subject, teacher, txt_date, document_type_text;
+        ImageView img_lock, img_Unlock,txt_video, txt_pdf,document_type_image,document_type;
         private RelativeLayout branch_sem_topic, layout_onclick;
         private ProgressBarUtil progressBarUtil;
         private ArrayList<PdfContentArray> list;
@@ -118,12 +122,14 @@ public class AllPurchaseTopicAdapter extends RecyclerView.Adapter<AllPurchaseTop
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             subject = itemView.findViewById(R.id.gec_subject);
+            document_type = itemView.findViewById(R.id.document_type);
             img_lock = itemView.findViewById(R.id.img_lock);
             img_Unlock = itemView.findViewById(R.id.img_Unlock);
             teacher = itemView.findViewById(R.id.teacher);
             txt_video = itemView.findViewById(R.id.txt_video);
             branch_sem_topic = itemView.findViewById(R.id.branch_sem_topic);
             txt_pdf = itemView.findViewById(R.id.txt_pdf);
+            txt_date = itemView.findViewById(R.id.txt_date);
             document_type_image = itemView.findViewById(R.id.document_type_image);
         }
 

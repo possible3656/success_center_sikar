@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -41,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
         if (SharedPrefManager.getInstance(this).isLoggedIn()) {
             finish();
@@ -91,6 +92,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void userValidation() {
         final String mobile = editTextUsername.getText().toString();
+        LocalData.Username=editTextUsername.getText().toString();
+        LocalData.Mobile=editTextUsername.getText().toString();
         final String password = editTextPassword.getText().toString();
         //validating inputs
         if (TextUtils.isEmpty(mobile)) {
@@ -162,6 +165,7 @@ public class LoginActivity extends AppCompatActivity {
                         TextView txt_login_verify=dialog.findViewById(R.id.txt_login_verify);
                         txt_login_verify.setVisibility(View.GONE);
                         TextView txt_login=dialog.findViewById(R.id.txt_login);
+                        TextView txt_register=dialog.findViewById(R.id.txt_register);
                         txt_login.setVisibility(View.GONE);
                         TextView txt_choose=dialog.findViewById(R.id.txt_choose);
                         txt_choose.setText(response.body().getMessageFailure());
@@ -169,6 +173,13 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onClick(View view) {
                                 dialog.dismiss();
+                            }
+                        });
+                        txt_register.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                               Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+                               startActivity(intent);
                             }
                         });
                         dialog.show();
@@ -180,6 +191,8 @@ public class LoginActivity extends AppCompatActivity {
                         dialog.setContentView(R.layout.custom_alert_login);
                         TextView txt_cancel=dialog.findViewById(R.id.txt_cancel);
                         TextView txt_login_verify=dialog.findViewById(R.id.txt_login_verify);
+                        TextView txt_register=dialog.findViewById(R.id.txt_register);
+                        txt_register.setVisibility(View.GONE);
                         txt_login_verify.setVisibility(View.GONE);
                         TextView txt_login=dialog.findViewById(R.id.txt_login);
                         txt_login.setVisibility(View.GONE);
@@ -202,6 +215,8 @@ public class LoginActivity extends AppCompatActivity {
                         TextView txt_login=dialog.findViewById(R.id.txt_login);
                         txt_login.setVisibility(View.GONE);
                         TextView txt_login_verify=dialog.findViewById(R.id.txt_login_verify);
+                        TextView txt_register=dialog.findViewById(R.id.txt_register);
+                        txt_register.setVisibility(View.GONE);
                         TextView txt_choose=dialog.findViewById(R.id.txt_choose);
                         txt_choose.setText(response.body().getMessageFailure());
                         txt_cancel.setOnClickListener(new View.OnClickListener() {
@@ -215,6 +230,7 @@ public class LoginActivity extends AppCompatActivity {
                             public void onClick(View view) {
                                 callResendOtp();
                                 dialog.dismiss();
+
                                 Intent intent = new Intent(LoginActivity.this,OtpVerficationActivity.class);
                                 startActivity(intent);
                                 finish();
@@ -230,6 +246,8 @@ public class LoginActivity extends AppCompatActivity {
                         TextView txt_cancel=dialog.findViewById(R.id.txt_cancel);
                         TextView txt_login=dialog.findViewById(R.id.txt_login);
                         TextView txt_login_verify=dialog.findViewById(R.id.txt_login_verify);
+                        TextView txt_register=dialog.findViewById(R.id.txt_register);
+                        txt_register.setVisibility(View.GONE);
                         txt_cancel.setVisibility(View.GONE);
                         txt_login.setVisibility(View.GONE);
                         txt_login_verify.setVisibility(View.GONE);
@@ -237,8 +255,51 @@ public class LoginActivity extends AppCompatActivity {
                         txt_choose.setText(response.body().getMessageFailure());
                         dialog.show();
 
+                    }else if (response.body().getError_code()==5) {// Account is Suspended
+                        progressBarUtil.hideProgress();
+                        final Dialog dialog = new Dialog(LoginActivity.this);
+                        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                        dialog.setContentView(R.layout.custom_alert_login);
+                        TextView txt_cancel = dialog.findViewById(R.id.txt_cancel);
+                        TextView txt_login = dialog.findViewById(R.id.txt_login);
+                        TextView txt_login_verify = dialog.findViewById(R.id.txt_login_verify);
+                        TextView txt_register=dialog.findViewById(R.id.txt_register);
+                        txt_register.setVisibility(View.GONE);
+                        txt_cancel.setVisibility(View.VISIBLE);
+                        txt_cancel.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog.dismiss();
+                            }
+                        });
+                        txt_login.setVisibility(View.GONE);
+                        txt_login_verify.setVisibility(View.GONE);
+                        TextView txt_choose = dialog.findViewById(R.id.txt_choose);
+                        txt_choose.setText(response.body().getMessageFailure());
+                        dialog.show();
+                    }else if (response.body().getError_code()==6) {// Username OR Password Does not Match
+                        progressBarUtil.hideProgress();
+                        final Dialog dialog = new Dialog(LoginActivity.this);
+                        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                        dialog.setContentView(R.layout.custom_alert_login);
+                        TextView txt_cancel = dialog.findViewById(R.id.txt_cancel);
+                        TextView txt_login = dialog.findViewById(R.id.txt_login);
+                        TextView txt_login_verify = dialog.findViewById(R.id.txt_login_verify);
+                        TextView txt_register=dialog.findViewById(R.id.txt_register);
+                        txt_register.setVisibility(View.GONE);
+                        txt_cancel.setVisibility(View.VISIBLE);
+                        txt_cancel.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog.dismiss();
+                            }
+                        });
+                        txt_login.setVisibility(View.GONE);
+                        txt_login_verify.setVisibility(View.GONE);
+                        TextView txt_choose = dialog.findViewById(R.id.txt_choose);
+                        txt_choose.setText(response.body().getMessageFailure());
+                        dialog.show();
                     }
-
                 }
 
 
@@ -269,7 +330,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void callResendOtp() {
         ClientApi mService = ApiClient.getClient().create(ClientApi.class);
-        Call<ResendOtp> call = mService.getResendOtp( username,1);
+        Call<ResendOtp> call = mService.getResendOtp( LocalData.Username,1);
+        Log.i("Otp", "callResendOtp: "+ LocalData.Username);
         call.enqueue(new Callback<ResendOtp>() {
             @Override
             public void onResponse(Call<ResendOtp> call, Response<ResendOtp> response) {

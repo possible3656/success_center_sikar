@@ -85,7 +85,7 @@ public class CourseDetailsActivity extends AppCompatActivity
         setContentView(R.layout.activity_course_details);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+      //  getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         progressBarUtil = new ProgressBarUtil(this);
         callApiService();
         android_id = Settings.Secure.getString(getContext().getContentResolver(),Settings.Secure.ANDROID_ID);
@@ -492,7 +492,7 @@ public class CourseDetailsActivity extends AppCompatActivity
 
     public void startPayment() {
         Checkout checkout = new Checkout();
-        checkout.setKeyID("rzp_live_KU9POPFwMblwKf");
+        checkout.setKeyID("rzp_live_HLDJONfMPDlCM9");
 
 
         String str = String.valueOf(LocalData.CourseDiscountPrice);

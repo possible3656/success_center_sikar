@@ -30,6 +30,9 @@ public class AskDoubtQuestion implements Serializable {
     @SerializedName("file_description")
     @Expose
     private String file_description;
+    @SerializedName("question_type")
+    @Expose
+    private String question_type;
     @SerializedName("DocumentId")
     @Expose
     private String documentId;
@@ -96,6 +99,14 @@ public class AskDoubtQuestion implements Serializable {
 
     public void setFile_description(String file_description) {
         this.file_description = file_description;
+    }
+
+    public String getQuestion_type() {
+        return question_type;
+    }
+
+    public void setQuestion_type(String question_type) {
+        this.question_type = question_type;
     }
 
     public String getDocumentId() {

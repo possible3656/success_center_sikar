@@ -10,7 +10,7 @@
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="com.winbee.successcentersikar"
-            android:targetClass="com.winbee.successcentersikar.YouTubeVideoList"/>
+            android:targetClass="com.winbee.successcentersikar.activity.YouTubeVideoList"/>
 
     </shortcut>
 

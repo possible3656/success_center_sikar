@@ -8,8 +8,7 @@ import androidx.core.app.NotificationCompat;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.google.gson.JsonIOException;
-import com.winbee.successcentersikar.MainActivity;
+import com.winbee.successcentersikar.activity.MainActivity;
 import com.winbee.successcentersikar.R;
 
 import org.json.JSONException;

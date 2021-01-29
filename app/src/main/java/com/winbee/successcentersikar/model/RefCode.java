@@ -31,6 +31,9 @@ public class RefCode implements Serializable {
     @SerializedName("MessageFailure")
     @Expose
     private String messageFailure;
+    @SerializedName("CurrentLoginStatus")
+    @Expose
+    private String currentLoginStatus;
     @SerializedName("Org_Code")
     @Expose
     private String org_Code;
@@ -40,12 +43,21 @@ public class RefCode implements Serializable {
     @SerializedName("ref_code")
     @Expose
     private String ref_code;
+    @SerializedName("REFERRAL_CODE")
+    @Expose
+    private String rEFERRAL_CODE;
     @SerializedName("error_code")
     @Expose
     private Integer error_code;
+    @SerializedName("device_id")
+    @Expose
+    private String device_id;
+    @SerializedName("Cred")
+    @Expose
+    private String cred;
 
-
-    public RefCode(String username, String name, String email, String role_Encode, String userId, String ref_code, String password) {
+    public RefCode(String username, String name, String email, String role_Encode, String userId, String ref_code,
+                   String password,String referal_code) {
         this.username=username;
         this.name=name;
         this.email=email;
@@ -53,11 +65,13 @@ public class RefCode implements Serializable {
         this.userId=userId;
         this.ref_code=ref_code;
         this.password=password;
+        this.rEFERRAL_CODE=referal_code;
     }
 
     public RefCode() {
 
     }
+
 
     public String getName() {
         return name;
@@ -123,6 +137,14 @@ public class RefCode implements Serializable {
         this.messageFailure = messageFailure;
     }
 
+    public String getCurrentLoginStatus() {
+        return currentLoginStatus;
+    }
+
+    public void setCurrentLoginStatus(String currentLoginStatus) {
+        this.currentLoginStatus = currentLoginStatus;
+    }
+
     public String getOrg_Code() {
         return org_Code;
     }
@@ -147,12 +169,36 @@ public class RefCode implements Serializable {
         this.ref_code = ref_code;
     }
 
+    public String getREFERRAL_CODE() {
+        return rEFERRAL_CODE;
+    }
+
+    public void setREFERRAL_CODE(String rEFERRAL_CODE) {
+        this.rEFERRAL_CODE = rEFERRAL_CODE;
+    }
+
     public Integer getError_code() {
         return error_code;
     }
 
     public void setError_code(Integer error_code) {
         this.error_code = error_code;
+    }
+
+    public String getDevice_id() {
+        return device_id;
+    }
+
+    public void setDevice_id(String device_id) {
+        this.device_id = device_id;
+    }
+
+    public String getCred() {
+        return cred;
+    }
+
+    public void setCred(String cred) {
+        this.cred = cred;
     }
 
 }

@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.winbee.successcentersikar.OnlineQuestionActivity;
+import com.winbee.successcentersikar.activity.OnlineQuestionActivity;
 import com.winbee.successcentersikar.R;
 import com.winbee.successcentersikar.model.StudentQAModel;
 

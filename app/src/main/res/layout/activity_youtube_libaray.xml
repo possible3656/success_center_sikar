@@ -9,7 +9,7 @@
     android:clickable="true"
     android:background="@color/back_color"
     android:focusable="true"
-    tools:context=".YoutubeLibaray">
+    tools:context=".activity.YoutubeLibaray">
     <RelativeLayout
         android:id="@+id/title_bar_home"
         android:layout_width="match_parent"
@@ -30,7 +30,18 @@
             android:layout_marginLeft="20dp"
             />
 
-
+        <ImageView
+            android:id="@+id/img_noti"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/img_share"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_baseline_notifications_24"
+            />
 
         <ImageView
             android:id="@+id/img_share"
@@ -68,7 +79,38 @@
         app:showFullScreenButton="true"
         android:layout_below="@id/title_bar_home"
         app:showSeekBar="true"
-        app:showYouTubeButton="false"/>
+        app:showYouTubeButton="false">
+        <RelativeLayout
+            android:id="@+id/relativeBack"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp">
+            <ImageView
+                android:id="@+id/backimage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:visibility="invisible"
+                android:src="@drawable/ic_baseline_replay_10_24"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/relativeForward"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_marginBottom="30dp">
+            <ImageView
+                android:id="@+id/forwardImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:visibility="invisible"
+                android:src="@drawable/ic_baseline_forward_10_24"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+    </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
 
     <RelativeLayout
         android:id="@+id/details_layout"
@@ -157,7 +199,7 @@
                 android:id="@+id/text_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DashBoard"
+                android:text="Dashboard"
                 android:textSize="12sp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/proximanovaregular"
@@ -259,14 +301,14 @@
                 android:id="@+id/image_notification"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:src="@drawable/ic_bell"
+                android:src="@drawable/ic_giftbox"
                 android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_notification"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Notification"
+                android:text="Referral &amp; Earn"
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/proximanovaregular"

@@ -148,6 +148,25 @@
                         android:hint=" Re-enter Password"/>
 
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:padding="12dp">
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="18sp"
+                        android:textColor="@color/edit_text"
+                        android:fontFamily="@font/proximanovaregular"
+                        android:id="@+id/editTextreferal"
+                        android:inputType="text"
+                        android:textColorHint="@color/edit_text"
+                        android:hint="Enter Referal Code"/>
+
+                </LinearLayout>
 
 
 

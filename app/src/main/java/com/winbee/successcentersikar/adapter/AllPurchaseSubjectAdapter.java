@@ -13,8 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
-import com.winbee.successcentersikar.LocalData;
-import com.winbee.successcentersikar.MyPurchaseTopicActivity;
+import com.winbee.successcentersikar.Utils.LocalData;
+import com.winbee.successcentersikar.activity.MyPurchaseTopicActivity;
 import com.winbee.successcentersikar.NewModels.SubjectContentArray;
 import com.winbee.successcentersikar.R;
 

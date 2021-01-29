@@ -13,10 +13,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.winbee.successcentersikar.InstructionsActivity;
+import com.winbee.successcentersikar.activity.InstructionsActivity;
 import com.winbee.successcentersikar.R;
-import com.winbee.successcentersikar.TestRankActivity;
-import com.winbee.successcentersikar.TestSolutionActivity;
+import com.winbee.successcentersikar.activity.TestRankActivity;
+import com.winbee.successcentersikar.activity.TestSolutionActivity;
 import com.winbee.successcentersikar.Utils.OnlineTestData;
 import com.winbee.successcentersikar.model.SIACDetailsDataModel;
 

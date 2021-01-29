@@ -14,11 +14,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.winbee.successcentersikar.LocalData;
-import com.winbee.successcentersikar.McqSolutionActivity;
+import com.winbee.successcentersikar.Utils.LocalData;
+import com.winbee.successcentersikar.activity.McqSolutionActivity;
 import com.winbee.successcentersikar.R;
 import com.winbee.successcentersikar.RetrofitApiCall.ApiClient;
-import com.winbee.successcentersikar.SharedPrefManager;
+import com.winbee.successcentersikar.Utils.SharedPrefManager;
 import com.winbee.successcentersikar.WebApi.ClientApi;
 import com.winbee.successcentersikar.model.McqQuestionSolutionModel;
 import com.winbee.successcentersikar.model.QuetionDatum;

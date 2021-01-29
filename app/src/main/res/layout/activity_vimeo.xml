@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".VimeoActivity">
+    tools:context=".activity.VimeoActivity">
 
     <RelativeLayout
         android:id="@+id/title_bar_home"
@@ -30,7 +30,18 @@
             android:layout_marginBottom="10dp"
              />
 
-
+        <ImageView
+            android:id="@+id/img_noti"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/img_share"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_baseline_notifications_24"
+            />
         <ImageView
             android:id="@+id/img_share"
             android:layout_width="30dp"

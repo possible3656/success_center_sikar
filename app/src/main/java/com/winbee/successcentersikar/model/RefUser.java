@@ -22,6 +22,12 @@ public class RefUser implements Serializable {
     @SerializedName("refcode")
     @Expose
     private String refcode;
+    @SerializedName("DeviceId")
+    @Expose
+    private String deviceId;
+    @SerializedName("ReferralCode")
+    @Expose
+    private String referralCode;
     @SerializedName("Success")
     @Expose
     private Boolean success;
@@ -30,27 +36,38 @@ public class RefUser implements Serializable {
     private String message;
     @SerializedName("registration_id")
     @Expose
-    private Object registration_id;
+    private String registration_id;
     @SerializedName("OTP")
     @Expose
-    private Object oTP;
+    private String oTP;
+    @SerializedName("ReferredStatus")
+    @Expose
+    private Boolean referredStatus;
+    @SerializedName("ReferredMessage")
+    @Expose
+    private String referredMessage;
+    @SerializedName("ReferralCodeSelf")
+    @Expose
+    private String referralCodeSelf;
+    @SerializedName("Status")
+    @Expose
+    private Boolean status;
+    @SerializedName("OTPMessage")
+    @Expose
+    private String oTPMessage;
 
-    public RefUser(String name, String mobile, String email, String password, String referalcode) {
+    public RefUser(String name, String mobile, String email, String password, String refcode ,String referralCodeSelf ) {
         this.name = name;
         this.mobile = mobile;
         this.email=email;
         this.password=password;
-        this.refcode=referalcode;
+        this.refcode=refcode;
+        this.referralCodeSelf=referralCodeSelf;
 
     }
-
-
 
     public RefUser() {
-
     }
-
-
 
     public String getName() {
         return name;
@@ -92,6 +109,22 @@ public class RefUser implements Serializable {
         this.refcode = refcode;
     }
 
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public String getReferralCode() {
+        return referralCode;
+    }
+
+    public void setReferralCode(String referralCode) {
+        this.referralCode = referralCode;
+    }
+
     public Boolean getSuccess() {
         return success;
     }
@@ -108,20 +141,60 @@ public class RefUser implements Serializable {
         this.message = message;
     }
 
-    public Object getRegistration_id() {
+    public String getRegistration_id() {
         return registration_id;
     }
 
-    public void setRegistration_id(Object registration_id) {
+    public void setRegistration_id(String registration_id) {
         this.registration_id = registration_id;
     }
 
-    public Object getOTP() {
+    public String getOTP() {
         return oTP;
     }
 
-    public void setOTP(Object oTP) {
+    public void setOTP(String oTP) {
         this.oTP = oTP;
+    }
+
+    public Boolean getReferredStatus() {
+        return referredStatus;
+    }
+
+    public void setReferredStatus(Boolean referredStatus) {
+        this.referredStatus = referredStatus;
+    }
+
+    public String getReferredMessage() {
+        return referredMessage;
+    }
+
+    public void setReferredMessage(String referredMessage) {
+        this.referredMessage = referredMessage;
+    }
+
+    public String getReferralCodeSelf() {
+        return referralCodeSelf;
+    }
+
+    public void setReferralCodeSelf(String referralCodeSelf) {
+        this.referralCodeSelf = referralCodeSelf;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
+    public String getOTPMessage() {
+        return oTPMessage;
+    }
+
+    public void setOTPMessage(String oTPMessage) {
+        this.oTPMessage = oTPMessage;
     }
 
 }

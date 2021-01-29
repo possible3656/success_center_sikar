@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
+    tools:context=".activity.MainActivity"
     tools:showIn="@layout/app_bar_main"
     style="@style/parent.contentLayout"
     >
@@ -60,7 +60,18 @@
 <!--                    android:layout_marginTop="10dp"-->
 <!--                    android:layout_marginBottom="10dp" />-->
 
-
+                <ImageView
+                    android:id="@+id/img_noti"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_toLeftOf="@id/img_share"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/ic_baseline_notifications_24"
+                    />
                 <ImageView
                     android:id="@+id/img_share"
                     android:layout_width="30dp"
@@ -276,11 +287,64 @@
 
 </LinearLayout>
 
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout_course_series"
+                android:layout_below="@id/linear_layout">
+                <RelativeLayout
+                    android:id="@+id/layout_test1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/txt_courses"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textColor="#08496e"
+                            android:textStyle="bold"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/hindbold"
+                            android:text="Study Material"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+                <io.supercharge.shimmerlayout.ShimmerLayout
+                    android:id="@+id/shimmerLayout1"
+                    app:shimmer_animation_duration="1200"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/layout_test1"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <include layout="@layout/item_place_holder_layout"/>
+                    </LinearLayout>
+                </io.supercharge.shimmerlayout.ShimmerLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/gec_home_recycle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_below="@id/layout_test1"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/layout_test_series1"
-                android:layout_below="@id/linear_layout">
+                android:layout_below="@id/layout_course_series">
                 <RelativeLayout
                     android:id="@+id/layout_course1"
                     android:layout_width="match_parent"
@@ -332,61 +396,9 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/layout_course_series"
-                android:layout_below="@id/layout_test_series1">
-                <RelativeLayout
-                    android:id="@+id/layout_test1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:id="@+id/txt_courses"
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:textColor="#08496e"
-                            android:textStyle="bold"
-                            android:layout_marginStart="10dp"
-                            android:fontFamily="@font/hindbold"
-                            android:text="Study Material"/>
-
-                    </LinearLayout>
-
-                </RelativeLayout>
-                <io.supercharge.shimmerlayout.ShimmerLayout
-                    android:id="@+id/shimmerLayout1"
-                    app:shimmer_animation_duration="1200"
-                    android:layout_width="wrap_content"
-                    android:layout_below="@id/layout_test1"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <include layout="@layout/item_place_holder_layout"/>
-                    </LinearLayout>
-                </io.supercharge.shimmerlayout.ShimmerLayout>
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/gec_home_recycle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_below="@id/layout_test1"
-                    android:nestedScrollingEnabled="false"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/layout_pdf_series"
                 android:visibility="visible"
-                android:layout_below="@id/layout_course_series">
+                android:layout_below="@id/layout_test_series1">
                 <RelativeLayout
                     android:id="@+id/layout_pdf"
                     android:layout_width="match_parent"
@@ -434,7 +446,12 @@
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
             </RelativeLayout>
-
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:id="@+id/txt_flexible_progress"
+                android:visibility="gone"/>
         </RelativeLayout>
 
     </ScrollView>
@@ -465,7 +482,7 @@
                 android:id="@+id/text_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DashBoard"
+                android:text="Dashboard"
                 android:textSize="12sp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/proximanovaregular"
@@ -504,14 +521,15 @@
         <LinearLayout
             android:id="@+id/layout_home"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:orientation="vertical"
-            android:layout_marginTop="5dp"
+            android:background="@color/footer_bg"
             android:layout_weight="1">
             <ImageView
                 android:id="@+id/image_home"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
+                android:layout_marginTop="5dp"
                 android:src="@drawable/ic_home"
                 android:layout_gravity="center"
                 />
@@ -525,7 +543,7 @@
                 android:textSize="12sp"
                 android:fontFamily="@font/proximanovaregular"
                 android:layout_below="@id/image_home"
-                android:textColor="#111"/>
+                android:textColor="@color/white"/>
 
         </LinearLayout>
         <LinearLayout
@@ -567,14 +585,14 @@
                 android:id="@+id/image_notification"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:src="@drawable/ic_bell"
+                android:src="@drawable/ic_giftbox"
                 android:layout_gravity="center"
                 />
             <TextView
                 android:id="@+id/text_notification"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Notification"
+                android:text="Referral &amp; Earn"
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/proximanovaregular"
@@ -583,5 +601,6 @@
                 android:textColor="#111"/>
 
         </LinearLayout>
+
     </LinearLayout>
 </RelativeLayout>

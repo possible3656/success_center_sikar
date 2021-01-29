@@ -10,9 +10,9 @@ import androidx.core.app.NotificationManagerCompat;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.winbee.successcentersikar.MainActivity;
+import com.winbee.successcentersikar.activity.MainActivity;
 import com.winbee.successcentersikar.R;
-import com.winbee.successcentersikar.YouTubeVideoList;
+import com.winbee.successcentersikar.activity.YouTubeVideoList;
 
 
 import javax.security.auth.Subject;

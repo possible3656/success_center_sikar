@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
     <RelativeLayout
-    tools:context=".PdfWebActivity"
+    tools:context=".activity.PdfWebActivity"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -25,7 +25,18 @@
             android:layout_marginLeft="20dp"
             android:src="@drawable/ic_keyboard_backspace_black_24dp"
             />
-
+        <ImageView
+            android:id="@+id/img_noti"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/img_share"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_baseline_notifications_24"
+            />
         <ImageView
             android:id="@+id/sideBarHome"
             android:layout_width="30dp"

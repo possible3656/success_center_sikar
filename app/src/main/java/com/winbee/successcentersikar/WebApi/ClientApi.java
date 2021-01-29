@@ -13,6 +13,8 @@ import com.winbee.successcentersikar.NewModels.PaymentModel;
 import com.winbee.successcentersikar.NewModels.PdfContent;
 import com.winbee.successcentersikar.NewModels.PdfSell;
 import com.winbee.successcentersikar.NewModels.QuizFilter;
+import com.winbee.successcentersikar.NewModels.RedeemModel;
+import com.winbee.successcentersikar.NewModels.ReferalModel;
 import com.winbee.successcentersikar.NewModels.SubjectContent;
 import com.winbee.successcentersikar.NewModels.TestSeriesPayment;
 import com.winbee.successcentersikar.NewModels.TestSubscription;
@@ -33,6 +35,7 @@ import com.winbee.successcentersikar.model.McqSolutionModel;
 import com.winbee.successcentersikar.model.NewDoubtQuestion;
 import com.winbee.successcentersikar.model.NotesModel;
 import com.winbee.successcentersikar.model.OtpVerify;
+import com.winbee.successcentersikar.model.RazorPayModel;
 import com.winbee.successcentersikar.model.RefCode;
 import com.winbee.successcentersikar.model.RefUser;
 import com.winbee.successcentersikar.model.ResendOtp;
@@ -150,7 +153,8 @@ public interface ClientApi {
             @Query("mobile") String mobile,
             @Query("refcode") String refcode,
             @Query("password") String password,
-            @Query("DEVICE_ID") String DEVICE_ID
+            @Query("DEVICE_ID") String DEVICE_ID,
+            @Query("ReferralCode") String ReferralCode
     );
 
     @POST("send-otp.php")
@@ -445,7 +449,8 @@ public interface ClientApi {
             @Field("course_id") String course_id,
             @Field("user_id") String user_id,
             @Field("amount_org_id") String amount_org_id,
-            @Field("org_id") String org_id
+            @Field("org_id") String org_id,
+            @Field("PointsUsed") int PointsUsed
     );
 
     @POST("get-order-id-api.php")
@@ -465,6 +470,20 @@ public interface ClientApi {
             @Field("amount_org_id") String amount_org_id,
             @Field("org_id") String org_id,
             @Field("subscription_id") String subscription_id
+    );
+    @POST("Referral.php")
+    @FormUrlEncoded
+    Call<ReferalModel> fetchReferalData(
+            @Field("user_id") String user_id,
+            @Field("org_code") String org_code
+    );
+
+    @POST("redeem-coupan.php")
+    @FormUrlEncoded
+    Call<RedeemModel> fetchRedeemData(
+            @Field("user_id") String user_id,
+            @Field("org_code") String org_code,
+            @Field("coupan_code") String coupan_code
     );
 
     @POST("fetch_payment_data.php")
@@ -493,5 +512,9 @@ public interface ClientApi {
 
     @POST("for_filter_exam_section.php")
     Call<ArrayList<QuizFilter>> getFaculty();
+
+    @POST("ThirdPartyAPI/RazorPay/config_details.php")
+    Call<RazorPayModel> getRazorPay();
+
 
 }

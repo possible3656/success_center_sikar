@@ -13,11 +13,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.api.Distribution;
-import com.winbee.successcentersikar.InstructionsActivity;
+import com.winbee.successcentersikar.activity.InstructionsActivity;
 import com.winbee.successcentersikar.R;
-import com.winbee.successcentersikar.TestRankActivity;
-import com.winbee.successcentersikar.TestSolutionActivity;
+import com.winbee.successcentersikar.activity.TestRankActivity;
+import com.winbee.successcentersikar.activity.TestSolutionActivity;
 import com.winbee.successcentersikar.Utils.OnlineTestData;
 import com.winbee.successcentersikar.model.SIACDetailsDataModel;
 
@@ -80,7 +79,7 @@ public class DemoTestListAdapter extends RecyclerView.Adapter<DemoTestListAdapte
             viewHolder.layout_start.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    OnlineTestData.bucketIDre = siacDetailsDataModel.getBucketID();
+                    OnlineTestData.bucketID = siacDetailsDataModel.getBucketID();
                     OnlineTestData.paperID = siacDetailsDataModel.getPaperID();
                     OnlineTestData.paperName = siacDetailsDataModel.getPaperName();
                     OnlineTestData.paperSection_Encode = siacDetailsDataModel.getPaperSection_Encode();

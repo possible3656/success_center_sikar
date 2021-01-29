@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/SuccessCenterSikar.iml" filepath="$PROJECT_DIR$/.idea/SuccessCenterSikar.iml" group="SuccessCenterSikar" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="SuccessCenterSikar/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SuccessCenterSikar.iml" filepath="$PROJECT_DIR$/.idea/SuccessCenterSikar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SuccessCenterSikar.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SuccessCenterSikar.app.iml" />
     </modules>
   </component>
 </project>

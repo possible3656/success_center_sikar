@@ -15,12 +15,10 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
-import com.winbee.successcentersikar.LocalData;
-import com.winbee.successcentersikar.ProgressBarUtil;
+import com.winbee.successcentersikar.Utils.LocalData;
+import com.winbee.successcentersikar.Utils.ProgressBarUtil;
 import com.winbee.successcentersikar.R;
-import com.winbee.successcentersikar.YoutubeLibaray;
-import com.winbee.successcentersikar.YoutubeLive;
-import com.winbee.successcentersikar.YoutubePlayer;
+import com.winbee.successcentersikar.activity.YoutubeLive;
 import com.winbee.successcentersikar.model.LiveClass;
 
 import java.util.ArrayList;

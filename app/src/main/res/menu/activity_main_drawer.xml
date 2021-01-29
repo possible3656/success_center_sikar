@@ -88,12 +88,20 @@
         android:id="@+id/menu_top8"
         android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_referal"
+            android:icon="@drawable/ic_baseline_card_giftcard_24"
+            android:title="Referral &amp; Coupon" />
+    </group>
+    <group
+        android:id="@+id/menu_top9"
+        android:checkableBehavior="single">
+        <item
             android:id="@+id/nav_share"
             android:icon="@drawable/ic_share_black_24dp"
             android:title="@string/menu_share" />
     </group>
     <group
-        android:id="@+id/menu_top9"
+        android:id="@+id/menu_top12"
         android:checkableBehavior="single">
         <item
             android:id="@+id/nav_logout"

@@ -13,10 +13,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.winbee.successcentersikar.InstructionsActivity;
+import com.winbee.successcentersikar.activity.InstructionsActivity;
 import com.winbee.successcentersikar.R;
-import com.winbee.successcentersikar.TestRankActivity;
-import com.winbee.successcentersikar.TestSolutionActivity;
+import com.winbee.successcentersikar.activity.TestRankActivity;
+import com.winbee.successcentersikar.activity.TestSolutionActivity;
 import com.winbee.successcentersikar.Utils.OnlineTestData;
 import com.winbee.successcentersikar.model.SIACDetailsDataModel;
 
@@ -86,6 +86,7 @@ public class FragmentTestListAdapter extends RecyclerView.Adapter<FragmentTestLi
                     OnlineTestData.isPremium_encode = siacDetailsDataModel.getIsPremium_encode();
                     OnlineTestData.isPremium_decode = siacDetailsDataModel.getIsPremium_decode();
                     OnlineTestData.description = siacDetailsDataModel.getDescription();
+                    OnlineTestData.test_publish = siacDetailsDataModel.getIs_Instant_View_Result();
                     Intent intent = new Intent(context, InstructionsActivity.class);
                     context.startActivity(intent);
 
@@ -107,6 +108,7 @@ public class FragmentTestListAdapter extends RecyclerView.Adapter<FragmentTestLi
                     OnlineTestData.isPremium_encode = siacDetailsDataModel.getIsPremium_encode();
                     OnlineTestData.isPremium_decode = siacDetailsDataModel.getIsPremium_decode();
                     OnlineTestData.description = siacDetailsDataModel.getDescription();
+                    OnlineTestData.test_publish = siacDetailsDataModel.getIs_Instant_View_Result();
                     Intent intent = new Intent(context, InstructionsActivity.class);
                     context.startActivity(intent);
 
@@ -139,6 +141,7 @@ public class FragmentTestListAdapter extends RecyclerView.Adapter<FragmentTestLi
                     OnlineTestData.isPremium_encode = siacDetailsDataModel.getIsPremium_encode();
                     OnlineTestData.isPremium_decode = siacDetailsDataModel.getIsPremium_decode();
                     OnlineTestData.description = siacDetailsDataModel.getDescription();
+                    OnlineTestData.test_publish = siacDetailsDataModel.getIs_Instant_View_Result();
                     Intent intent = new Intent(context, TestSolutionActivity.class);
                     context.startActivity(intent);
                 }

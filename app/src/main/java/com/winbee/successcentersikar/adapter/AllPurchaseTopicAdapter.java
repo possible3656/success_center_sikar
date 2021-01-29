@@ -14,15 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.squareup.picasso.Picasso;
-import com.winbee.successcentersikar.LocalData;
+import com.winbee.successcentersikar.Utils.LocalData;
 import com.winbee.successcentersikar.NewModels.PdfContentArray;
 import com.winbee.successcentersikar.NewModels.TopicContentArray;
-import com.winbee.successcentersikar.PdfWebActivity;
-import com.winbee.successcentersikar.ProgressBarUtil;
+import com.winbee.successcentersikar.activity.PdfWebActivity;
+import com.winbee.successcentersikar.Utils.ProgressBarUtil;
 import com.winbee.successcentersikar.R;
-import com.winbee.successcentersikar.StudyMaterial;
-import com.winbee.successcentersikar.VimeoActivity;
-import com.winbee.successcentersikar.YoutubeLibaray;
+import com.winbee.successcentersikar.activity.YoutubeLibaray;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -36,21 +36,18 @@ public class CourseContentArray implements Serializable {
     @SerializedName("Description")
     @Expose
     private String description;
-    @SerializedName("Videos_Details")
+    @SerializedName("TotalPoints")
     @Expose
-    private Object videos_Details;
-    @SerializedName("Notes_Details")
+    private Integer totalPoints;
+    @SerializedName("DP_AF_RC")
     @Expose
-    private Object notes_Details;
+    private Integer dP_AF_RC;
     @SerializedName("release_status")
     @Expose
     private Integer release_status;
     @SerializedName("course_show")
     @Expose
     private Integer course_show;
-    @SerializedName("course_item")
-    @Expose
-    private Object course_item;
     @SerializedName("Bucket_Image")
     @Expose
     private String bucket_Image;
@@ -147,20 +144,20 @@ public class CourseContentArray implements Serializable {
         this.description = description;
     }
 
-    public Object getVideos_Details() {
-        return videos_Details;
+    public Integer getTotalPoints() {
+        return totalPoints;
     }
 
-    public void setVideos_Details(Object videos_Details) {
-        this.videos_Details = videos_Details;
+    public void setTotalPoints(Integer totalPoints) {
+        this.totalPoints = totalPoints;
     }
 
-    public Object getNotes_Details() {
-        return notes_Details;
+    public Integer getDP_AF_RC() {
+        return dP_AF_RC;
     }
 
-    public void setNotes_Details(Object notes_Details) {
-        this.notes_Details = notes_Details;
+    public void setDP_AF_RC(Integer dP_AF_RC) {
+        this.dP_AF_RC = dP_AF_RC;
     }
 
     public Integer getRelease_status() {
@@ -177,14 +174,6 @@ public class CourseContentArray implements Serializable {
 
     public void setCourse_show(Integer course_show) {
         this.course_show = course_show;
-    }
-
-    public Object getCourse_item() {
-        return course_item;
-    }
-
-    public void setCourse_item(Object course_item) {
-        this.course_item = course_item;
     }
 
     public String getBucket_Image() {

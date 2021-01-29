@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OnlineQuestionActivity"
+    tools:context=".activity.OnlineQuestionActivity"
     android:id="@+id/drawer_layout_question"
     android:background="@color/bg_color"
     android:orientation="vertical">

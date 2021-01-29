@@ -18,13 +18,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.razorpay.Checkout;
-import com.winbee.successcentersikar.LocalData;
+import com.winbee.successcentersikar.Utils.LocalData;
 import com.winbee.successcentersikar.NewModels.TestSeriesPayment;
 import com.winbee.successcentersikar.NewModels.TestSubscriptionArray;
-import com.winbee.successcentersikar.ProgressBarUtil;
+import com.winbee.successcentersikar.Utils.ProgressBarUtil;
 import com.winbee.successcentersikar.R;
 import com.winbee.successcentersikar.RetrofitApiCall.OnlineTestApiClient;
-import com.winbee.successcentersikar.SharedPrefManager;
+import com.winbee.successcentersikar.Utils.SharedPrefManager;
 import com.winbee.successcentersikar.WebApi.ClientApi;
 
 import org.json.JSONObject;
@@ -140,7 +140,7 @@ public class TestSubscriptionAdapter extends RecyclerView.Adapter<TestSubscripti
             final String User_id = SharedPrefManager.getInstance(context).refCode().getUserId();
             final String Amount_org_id =String.valueOf(list.get(getAdapterPosition()).getDiscountPrice());
             //final String Amount_org_id ="100";
-            final String Org_id = "WB_007";
+            final String Org_id = "WB_010";
             final String subscription_id=list.get(getAdapterPosition()).getSubscriptionId();
 
 
@@ -195,7 +195,7 @@ public class TestSubscriptionAdapter extends RecyclerView.Adapter<TestSubscripti
         public void startPayment() {
 
             Checkout checkout = new Checkout();
-            checkout.setKeyID("rzp_live_Yc76mtWthP454k");
+            checkout.setKeyID(LocalData.razorPayKeyTest);
 
             String str = String.valueOf(list.get(getAdapterPosition()).getDiscountPrice());
             Double inum = Double.parseDouble(str);

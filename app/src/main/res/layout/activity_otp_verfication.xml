@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<RelativeLayout tools:context=".OtpVerficationActivity"
+<RelativeLayout tools:context=".activity.OtpVerficationActivity"
     android:background="@color/bg_color"
     android:padding="16dp"
     android:layout_height="match_parent"

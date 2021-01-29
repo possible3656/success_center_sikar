@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-import com.winbee.successcentersikar.OnlineQuestionActivity;
+import com.winbee.successcentersikar.activity.OnlineQuestionActivity;
 import com.winbee.successcentersikar.R;
 import com.winbee.successcentersikar.Utils.OnlineTestData;
 import com.winbee.successcentersikar.model.StudentQAModel;

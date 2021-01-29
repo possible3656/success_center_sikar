@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.winbee.successcentersikar.OnlineTestActivity;
+import com.winbee.successcentersikar.activity.OnlineTestActivity;
 import com.winbee.successcentersikar.R;
 import com.winbee.successcentersikar.Utils.OnlineTestData;
 import com.winbee.successcentersikar.model.SectionDetailsDataModel;
@@ -62,6 +62,7 @@ public class AllPurchasedTest extends RecyclerView.Adapter<AllPurchasedTest.Cust
                         OnlineTestData.logData=sectionDetailsDataModelList.get(position).getLogData();
                         OnlineTestData.status=sectionDetailsDataModelList.get(position).getStatus();
                         OnlineTestData.totalTest=sectionDetailsDataModelList.get(position).getTotalTest();
+
                         Intent intent=new Intent(context, OnlineTestActivity.class);
                         context.startActivity(intent);
 

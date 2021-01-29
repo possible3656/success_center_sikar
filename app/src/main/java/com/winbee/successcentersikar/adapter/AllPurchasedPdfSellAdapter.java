@@ -15,10 +15,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
-import com.winbee.successcentersikar.LocalData;
+import com.winbee.successcentersikar.Utils.LocalData;
 import com.winbee.successcentersikar.NewModels.PdfSellArray;
-import com.winbee.successcentersikar.PdfDetailsActivity;
-import com.winbee.successcentersikar.PdfWebActivity;
+import com.winbee.successcentersikar.activity.PdfWebActivity;
 import com.winbee.successcentersikar.R;
 
 import java.util.List;

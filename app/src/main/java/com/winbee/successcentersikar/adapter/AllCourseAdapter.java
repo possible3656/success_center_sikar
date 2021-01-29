@@ -14,10 +14,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
-import com.winbee.successcentersikar.AllPurchasedCourseTestActivity;
-import com.winbee.successcentersikar.CourseDetailsActivity;
-import com.winbee.successcentersikar.LocalData;
-import com.winbee.successcentersikar.MyPurchaseSubjectActivity;
+import com.winbee.successcentersikar.activity.AllPurchasedCourseTestActivity;
+import com.winbee.successcentersikar.activity.CourseDetailsActivity;
+import com.winbee.successcentersikar.Utils.LocalData;
+import com.winbee.successcentersikar.activity.MyPurchaseSubjectActivity;
 import com.winbee.successcentersikar.NewModels.CourseContentArray;
 import com.winbee.successcentersikar.R;
 
@@ -108,6 +108,9 @@ public class AllCourseAdapter extends RecyclerView.Adapter<AllCourseAdapter.View
                     LocalData.CourseTotalPdf = list1.get(position).getTotal_Document();
                     LocalData.CourseDiscountPrice = list1.get(position).getDisplay_price();
                     LocalData.CourseId = list1.get(position).getBucket_ID();
+                    LocalData.TestBuckedId = list1.get(position).getExamSectionId();
+                    LocalData.TotalPoints = list1.get(position).getTotalPoints();
+                    LocalData.DP_AF_RC = list1.get(position).getDP_AF_RC();
                     Intent intent = new Intent(context, AllPurchasedCourseTestActivity.class);
                     context.startActivity(intent);
                 }
@@ -146,6 +149,8 @@ public class AllCourseAdapter extends RecyclerView.Adapter<AllCourseAdapter.View
                         LocalData.TotalDiscount = list1.get(position).getTotal_discount();
                         LocalData.CourseId = list1.get(position).getChild_Link();
                         LocalData.TestBuckedId = list1.get(position).getExamSectionId();
+                        LocalData.TotalPoints = list1.get(position).getTotalPoints();
+                        LocalData.DP_AF_RC = list1.get(position).getDP_AF_RC();
                         Intent intent = new Intent(context, CourseDetailsActivity.class);
                         context.startActivity(intent);
                     }
@@ -166,8 +171,10 @@ public class AllCourseAdapter extends RecyclerView.Adapter<AllCourseAdapter.View
                         LocalData.CourseTotalPdf = list1.get(position).getTotal_Document();
                         LocalData.CourseDiscountPrice = list1.get(position).getDisplay_price();
                         LocalData.CourseTotalTest = list1.get(position).getTotalPapers();
-
+                        LocalData.TestBuckedId = list1.get(position).getExamSectionId();
                         LocalData.CourseId = list1.get(position).getBucket_ID();
+                        LocalData.TotalPoints = list1.get(position).getTotalPoints();
+                        LocalData.DP_AF_RC = list1.get(position).getDP_AF_RC();
                         Intent intent = new Intent(context, MyPurchaseSubjectActivity.class);
                         context.startActivity(intent);
                     }
@@ -188,6 +195,9 @@ public class AllCourseAdapter extends RecyclerView.Adapter<AllCourseAdapter.View
                     LocalData.CourseDiscountPrice = list1.get(position).getDisplay_price();
                     LocalData.CourseTotalTest = list1.get(position).getTotalPapers();
                     LocalData.CourseId = list1.get(position).getBucket_ID();
+                    LocalData.TestBuckedId = list1.get(position).getExamSectionId();
+                    LocalData.TotalPoints = list1.get(position).getTotalPoints();
+                    LocalData.DP_AF_RC = list1.get(position).getDP_AF_RC();
                     Intent intent = new Intent(context, MyPurchaseSubjectActivity.class);
                     context.startActivity(intent);
                 }

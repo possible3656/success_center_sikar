@@ -91,6 +91,7 @@ public class DemoTestListAdapter extends RecyclerView.Adapter<DemoTestListAdapte
                     OnlineTestData.isPremium_encode = siacDetailsDataModel.getIsPremium_encode();
                     OnlineTestData.isPremium_decode = siacDetailsDataModel.getIsPremium_decode();
                     OnlineTestData.description = siacDetailsDataModel.getDescription();
+                    OnlineTestData.test_publish = siacDetailsDataModel.getIs_Instant_View_Result();
                     Intent intent = new Intent(context, InstructionsActivity.class);
                     context.startActivity(intent);
 
@@ -112,6 +113,7 @@ public class DemoTestListAdapter extends RecyclerView.Adapter<DemoTestListAdapte
                     OnlineTestData.isPremium_encode = siacDetailsDataModel.getIsPremium_encode();
                     OnlineTestData.isPremium_decode = siacDetailsDataModel.getIsPremium_decode();
                     OnlineTestData.description = siacDetailsDataModel.getDescription();
+                    OnlineTestData.test_publish = siacDetailsDataModel.getIs_Instant_View_Result();
                     Intent intent = new Intent(context, InstructionsActivity.class);
                     context.startActivity(intent);
 
@@ -144,6 +146,7 @@ public class DemoTestListAdapter extends RecyclerView.Adapter<DemoTestListAdapte
                     OnlineTestData.isPremium_encode = siacDetailsDataModel.getIsPremium_encode();
                     OnlineTestData.isPremium_decode = siacDetailsDataModel.getIsPremium_decode();
                     OnlineTestData.description = siacDetailsDataModel.getDescription();
+                    OnlineTestData.test_publish = siacDetailsDataModel.getIs_Instant_View_Result();
                     Intent intent = new Intent(context, TestSolutionActivity.class);
                     context.startActivity(intent);
                 }

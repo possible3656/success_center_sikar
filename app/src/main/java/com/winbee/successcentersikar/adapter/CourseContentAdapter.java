@@ -27,13 +27,13 @@ public class CourseContentAdapter extends RecyclerView.Adapter<CourseContentAdap
 
     @NonNull
     @Override
-    public CourseContentAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.course_content_adapter, parent, false);
-        return new CourseContentAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CourseContentAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.serial_number.setText((position+1)+".");
         holder.gec_subject.setText(list1.get(position).getCourse_Item_Name());
 

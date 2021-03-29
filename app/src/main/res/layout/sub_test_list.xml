@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:id="@+id/branch_live1"
+    android:background="@drawable/shadow"
+    android:elevation="3dp"
+    android:clickable="true">
+    <RelativeLayout
+        android:id="@+id/layout_test_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/live_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_list"
+        android:visibility="visible"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:id="@+id/online_testname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@id/live_image"
+        android:layout_marginTop="10dp"
+        android:text="Test Name"
+        android:textColor="#8EC3CF"
+        android:textSize="20sp"/>
+    <ImageView
+        android:layout_height="20dp"
+        android:layout_width="25dp"
+        android:id="@+id/img_lock"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_lock"
+        android:layout_alignParentEnd="true"
+        android:visibility="visible"
+        android:layout_marginLeft="5dp" />
+    <ImageView
+        android:layout_height="20dp"
+        android:layout_width="25dp"
+        android:id="@+id/img_Unlock"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/ic_unlock"
+        android:layout_alignParentEnd="true"
+        android:visibility="visible"
+        android:layout_marginLeft="5dp" />
+    </RelativeLayout>
+</RelativeLayout>

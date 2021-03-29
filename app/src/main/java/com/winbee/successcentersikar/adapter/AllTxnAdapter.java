@@ -28,13 +28,13 @@ public class AllTxnAdapter extends RecyclerView.Adapter<AllTxnAdapter.ViewHolder
 
     @NonNull
     @Override
-    public AllTxnAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.txn_adapter, parent, false);
-        return new AllTxnAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AllTxnAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.text_course_name.setText(list1.get(position).getBucketName());
         holder.text_type.setText(list1.get(position).getPurchased());
         holder.text_amount.setText(Html.fromHtml(list1.get(position).getAmount_order_org()));

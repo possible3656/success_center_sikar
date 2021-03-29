@@ -30,13 +30,13 @@ public class AllPdfAdapter extends RecyclerView.Adapter<AllPdfAdapter.ViewHolder
 
     @NonNull
     @Override
-    public AllPdfAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pdf_adapter,parent, false);
-        return  new AllPdfAdapter.ViewHolder(view);
+        return  new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AllPdfAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         //setting data toAd apter List
         holder.gec_subject.setText(list.get(position).getTopic());
         holder.teacher.setText(list.get(position).getFaculty());

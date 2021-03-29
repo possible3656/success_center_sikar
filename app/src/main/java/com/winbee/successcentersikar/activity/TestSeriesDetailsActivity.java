@@ -436,6 +436,7 @@ public class TestSeriesDetailsActivity extends AppCompatActivity
                     if (statusCode == 200 && response.body()!=null ) {
                         progressBarUtil.hideProgress();
                         LocalData.razorPayKeyTest=response.body().getAPI_Key();
+                        System.out.println("Suree: response code" + response.body());
 //
                     } else {
                         progressBarUtil.hideProgress();

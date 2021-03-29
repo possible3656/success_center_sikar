@@ -11,8 +11,8 @@
       "type": "SINGLE",
       "filters": [],
       "properties": [],
-      "versionCode": 12,
-      "versionName": "1.11",
+      "versionCode": 18,
+      "versionName": "1.18",
       "enabled": true,
       "outputFile": "Success Center Sikar.apk"
     }

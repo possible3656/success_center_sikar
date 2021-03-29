@@ -10,6 +10,15 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/45daa6ccdc051bef9f7ed46e609512d1/jetified-library-1.1.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/45daa6ccdc051bef9f7ed46e609512d1/jetified-library-1.1.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/45daa6ccdc051bef9f7ed46e609512d1/jetified-library-1.1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b7bd06ea02c410a822184f32d1817c1d/jetified-library-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b7bd06ea02c410a822184f32d1817c1d/jetified-library-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b7bd06ea02c410a822184f32d1817c1d/jetified-library-1.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d1381e48a3f64dcb51e0261b412593ad/jetified-library-1.1.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d1381e48a3f64dcb51e0261b412593ad/jetified-library-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d1381e48a3f64dcb51e0261b412593ad/jetified-library-1.1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a85f3026f3f73c1e0619a740068f8adc/jetified-library-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a85f3026f3f73c1e0619a740068f8adc/jetified-library-1.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a85f3026f3f73c1e0619a740068f8adc/jetified-library-1.1.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ct7ct7ct7.androidvimeoplayer/library/1.1.0/e5f8410e91f3d5b79535074be33ca64917ab3b25/library-1.1.0-javadoc.jar!/" />

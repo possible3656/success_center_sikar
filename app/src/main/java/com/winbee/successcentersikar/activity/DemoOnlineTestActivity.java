@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.balsikandar.crashreporter.CrashReporter;
+//import com.balsikandar.crashreporter.CrashReporter;
 import com.winbee.successcentersikar.R;
 import com.winbee.successcentersikar.RetrofitApiCall.OnlineTestApiClient;
 import com.winbee.successcentersikar.Utils.LocalData;
@@ -128,7 +128,7 @@ public class DemoOnlineTestActivity extends AppCompatActivity {
             getTestList();
 
         }catch (Exception e){
-            CrashReporter.logException(e);
+            //CrashReporter.logException(e);
         }
 
     }

@@ -171,6 +171,7 @@ public class TestSubscriptionAdapter extends RecyclerView.Adapter<TestSubscripti
                         LocalData.Org_id=response.body().getOrgOrderId();
                         LocalData.RazorpayOrderId=response.body().getRazorpayOrderId();
                         Log.i("tag", "onResponse: "+response.body().getRazorpayOrderId());
+                        Log.i("tag", "test api key: "+LocalData.razorPayKeyTest);
                         Toast.makeText(context,"Payment Page Loading..." , Toast.LENGTH_SHORT).show();
                         startPayment();
                         progressBarUtil.hideProgress();

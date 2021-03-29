@@ -43,8 +43,18 @@ public class SectionDetailsDataModel {
     @SerializedName("IsCommingSoon")
     @Expose
     private String isCommingSoon;
+    @SerializedName("DisplayPrice")
+    @Expose
+    private String displayPrice;
+    @SerializedName("DiscountPrice")
+    @Expose
+    private String discountPrice;
 
-    public SectionDetailsDataModel(String coachingID, String bucketID, String bucketName, String bucketInfo, String logData, String status, String totalTest, String isPremium, String decription, Integer isPaid, Integer is_Section_Live, String itemAttachment, String isCommingSoon) {
+
+    public SectionDetailsDataModel(String coachingID, String bucketID, String bucketName, String bucketInfo,
+                                   String logData, String status, String totalTest, String isPremium,
+                                   String decription, Integer isPaid, Integer is_Section_Live,
+                                   String itemAttachment, String isCommingSoon,String displayPrice,String discountPrice  ) {
         this.coachingID = coachingID;
         this.bucketID = bucketID;
         this.bucketName = bucketName;
@@ -58,6 +68,8 @@ public class SectionDetailsDataModel {
         this.is_Section_Live = is_Section_Live;
         this.itemAttachment = itemAttachment;
         this.isCommingSoon = isCommingSoon;
+        this.displayPrice = displayPrice;
+        this.discountPrice = discountPrice;
     }
 
     public String getCoachingID() {
@@ -164,4 +176,19 @@ public class SectionDetailsDataModel {
         this.isCommingSoon = isCommingSoon;
     }
 
+    public String getDisplayPrice() {
+        return displayPrice;
+    }
+
+    public void setDisplayPrice(String displayPrice) {
+        this.displayPrice = displayPrice;
+    }
+
+    public String getDiscountPrice() {
+        return discountPrice;
+    }
+
+    public void setDiscountPrice(String discountPrice) {
+        this.discountPrice = discountPrice;
+    }
 }

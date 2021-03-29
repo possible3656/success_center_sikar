@@ -775,9 +775,9 @@ public class OnlineQuestionActivity extends AppCompatActivity implements View.On
                 if(resultModel!=null) {
                     doToast("Response Submitted");
                     if (OnlineTestData.test_publish) {
-                        Intent intent = new Intent(OnlineQuestionActivity.this, ViewResultActivity.class);
-                        startActivity(intent);
-                        finish();
+                    Intent intent = new Intent(OnlineQuestionActivity.this, ViewResultActivity.class);
+                    startActivity(intent);
+                    finish();
                     } else {
                         final Dialog dialog = new Dialog(OnlineQuestionActivity.this);
                         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);

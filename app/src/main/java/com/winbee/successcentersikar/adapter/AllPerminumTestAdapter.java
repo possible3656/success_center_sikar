@@ -48,10 +48,15 @@ public class AllPerminumTestAdapter extends RecyclerView.Adapter<AllPerminumTest
           if (list1.get(position).getIsPremium().equalsIgnoreCase("1") && list1.get(position).getIsPaid().equals(0)){
               //premium hai but not purchased
               holder.txt_course.setText(list1.get(position).getBucketName());
+              holder.txt_discount.setText(list1.get(position).getDisplayPrice());
+              holder.txt_actual_price.setText(list1.get(position).getDiscountPrice());
               Picasso.get().load(list1.get(position).getItemAttachment()).placeholder(R.drawable.dummyimage).fit().into(holder.course_image);
-              holder.layout_buy.setVisibility(View.GONE);
-              holder.layout_buy_test.setVisibility(View.VISIBLE);
+              holder.layout_buy.setVisibility(View.VISIBLE);
+              holder.img_rupee.setVisibility(View.VISIBLE);
+              holder.txt_discount.setVisibility(View.VISIBLE);
+              holder.layout_buy_test.setVisibility(View.GONE);
               holder.layout_free.setVisibility(View.GONE);
+              holder.txt_type.setVisibility(View.GONE);
               holder.layout_download.setVisibility(View.GONE);
               holder.layout_view.setVisibility(View.GONE);
               holder.layout_purchased.setVisibility(View.GONE);
@@ -63,6 +68,8 @@ public class AllPerminumTestAdapter extends RecyclerView.Adapter<AllPerminumTest
                       LocalData.TestName=list1.get(position).getBucketName();
                       LocalData.TestDiscription=list1.get(position).getDecription();
                       LocalData.TotalTest=list1.get(position).getTotalTest();
+                      LocalData.TestDisplayPrice=list1.get(position).getDisplayPrice();
+                      LocalData.TestDiscountPrice=list1.get(position).getDiscountPrice();
                       Intent intent = new Intent(context, TestSubscriptionActivity.class);
                       context.startActivity(intent);
                   }
@@ -71,12 +78,15 @@ public class AllPerminumTestAdapter extends RecyclerView.Adapter<AllPerminumTest
               if ( list1.get(position).getIsPaid().equals(1)) {
                   //premium hai aur purchase also
                   holder.txt_course.setText(list1.get(position).getBucketName());
+                  holder.txt_discount.setText(list1.get(position).getDisplayPrice());
+                  holder.txt_actual_price.setText(list1.get(position).getDiscountPrice());
                   Picasso.get().load(list1.get(position).getItemAttachment()).placeholder(R.drawable.dummyimage).fit().into(holder.course_image);
                   holder.layout_buy.setVisibility(View.GONE);
                   holder.layout_buy_test.setVisibility(View.GONE);
                   holder.layout_download.setVisibility(View.GONE);
                   holder.layout_free.setVisibility(View.GONE);
                   holder.layout_view.setVisibility(View.GONE);
+                  holder.txt_type.setVisibility(View.GONE);
                   holder.layout_purchased.setVisibility(View.VISIBLE);
                   holder.layout_coming_soon.setVisibility(View.GONE);
                   holder.Course_layout.setOnClickListener(new View.OnClickListener() {
@@ -96,10 +106,15 @@ public class AllPerminumTestAdapter extends RecyclerView.Adapter<AllPerminumTest
                   });
               }else if (list1.get(position).getIsPaid().equals(0)){
                   holder.txt_course.setText(list1.get(position).getBucketName());
+                  holder.txt_discount.setText(list1.get(position).getDisplayPrice());
+                  holder.txt_actual_price.setText(list1.get(position).getDiscountPrice());
                   Picasso.get().load(list1.get(position).getItemAttachment()).placeholder(R.drawable.dummyimage).fit().into(holder.course_image);
                   holder.layout_buy_test.setVisibility(View.VISIBLE);
                   holder.layout_free.setVisibility(View.GONE);
                   holder.layout_buy.setVisibility(View.GONE);
+                  holder.img_rupee.setVisibility(View.GONE);
+                  holder.txt_type.setVisibility(View.GONE);
+                  holder.txt_discount.setVisibility(View.GONE);
                   holder.layout_download.setVisibility(View.GONE);
                   holder.layout_view.setVisibility(View.GONE);
                   holder.layout_purchased.setVisibility(View.GONE);
@@ -118,11 +133,16 @@ public class AllPerminumTestAdapter extends RecyclerView.Adapter<AllPerminumTest
           }else if (list1.get(position).getIsPremium().equalsIgnoreCase("0") && list1.get(position).getIsPaid().equals(0)){
               //free test
               holder.txt_course.setText(list1.get(position).getBucketName());
+              holder.txt_discount.setText(list1.get(position).getDisplayPrice());
+              holder.txt_actual_price.setText(list1.get(position).getDiscountPrice());
               Picasso.get().load(list1.get(position).getItemAttachment()).placeholder(R.drawable.dummyimage).fit().into(holder.course_image);
               holder.layout_buy.setVisibility(View.GONE);
               holder.layout_buy_test.setVisibility(View.GONE);
               holder.layout_free.setVisibility(View.VISIBLE);
+              holder.txt_type.setVisibility(View.GONE);
               holder.layout_view.setVisibility(View.GONE);
+              holder.img_rupee.setVisibility(View.GONE);
+              holder.txt_discount.setVisibility(View.GONE);
               holder.layout_download.setVisibility(View.GONE);
               holder.layout_purchased.setVisibility(View.GONE);
               holder.layout_coming_soon.setVisibility(View.GONE);
@@ -149,6 +169,8 @@ public class AllPerminumTestAdapter extends RecyclerView.Adapter<AllPerminumTest
           else if (list1.get(position).getIsPremium().equalsIgnoreCase("0") && list1.get(position).getIsPaid().equals(1)){
               //free test
               holder.txt_course.setText(list1.get(position).getBucketName());
+              holder.txt_discount.setText(list1.get(position).getDisplayPrice());
+              holder.txt_actual_price.setText(list1.get(position).getDiscountPrice());
               Picasso.get().load(list1.get(position).getItemAttachment()).placeholder(R.drawable.dummyimage).fit().into(holder.course_image);
               holder.layout_buy.setVisibility(View.GONE);
               holder.layout_buy_test.setVisibility(View.GONE);
@@ -156,8 +178,11 @@ public class AllPerminumTestAdapter extends RecyclerView.Adapter<AllPerminumTest
               holder.layout_purchased.setVisibility(View.GONE);
               holder.layout_coming_soon.setVisibility(View.GONE);
               holder.layout_view.setVisibility(View.GONE);
+              holder.img_rupee.setVisibility(View.GONE);
+              holder.txt_discount.setVisibility(View.GONE);
               holder.layout_download.setVisibility(View.GONE);
               holder.img_rupee1.setVisibility(View.GONE);
+              holder.txt_type.setVisibility(View.GONE);
               holder.txt_actual_price.setVisibility(View.GONE);
               holder.img_rupee.setVisibility(View.GONE);
               holder.txt_discount.setVisibility(View.GONE);
@@ -181,12 +206,18 @@ public class AllPerminumTestAdapter extends RecyclerView.Adapter<AllPerminumTest
       }else{
           holder.Course_layout.setVisibility(View.VISIBLE);
           holder.txt_course.setText(list1.get(position).getBucketName());
+          holder.txt_course.setText(list1.get(position).getBucketName());
+          holder.txt_discount.setText(list1.get(position).getDisplayPrice());
+          holder.txt_actual_price.setText(list1.get(position).getDiscountPrice());
           Picasso.get().load(list1.get(position).getItemAttachment()).placeholder(R.drawable.dummyimage).fit().into(holder.course_image);
           holder.txt_type.setText("Test Series");
           holder.layout_coming_soon.setVisibility(View.VISIBLE);
           holder.layout_free.setVisibility(View.GONE);
           holder.layout_view.setVisibility(View.GONE);
           holder.layout_buy.setVisibility(View.GONE);
+          holder.img_rupee.setVisibility(View.GONE);
+          holder.txt_type.setVisibility(View.GONE);
+          holder.txt_discount.setVisibility(View.GONE);
           holder.layout_buy_test.setVisibility(View.GONE);
           holder.layout_download.setVisibility(View.GONE);
           holder.layout_purchased.setVisibility(View.GONE);
@@ -198,153 +229,7 @@ public class AllPerminumTestAdapter extends RecyclerView.Adapter<AllPerminumTest
       }
 
 
-//
-//        if (list1.get(position).getIsPremium().equalsIgnoreCase("1")) {
-//            if (list1.get(position).getIsPaid().equals(0)){
-//                holder.Course_layout.setVisibility(View.VISIBLE);
-//                holder.txt_course.setText(list1.get(position).getBucketName());
-//                Picasso.get().load(list1.get(position).getItemAttachment())
-//                        .placeholder(R.drawable.dummyimage)
-//                        .fit().into(holder.course_image);
-//                holder.txt_type.setText("Test Series");
-//                holder.layout_coming_soon.setVisibility(View.GONE);
-//                holder.layout_free.setVisibility(View.GONE);
-//                holder.layout_buy.setVisibility(View.VISIBLE);
-//                holder.layout_purchased.setVisibility(View.GONE);
-//                holder.img_rupee1.setVisibility(View.GONE);
-//                holder.layout_view.setVisibility(View.GONE);
-//                holder.txt_actual_price.setVisibility(View.GONE);
-//                holder.img_rupee.setVisibility(View.GONE);
-//                holder.txt_discount.setVisibility(View.GONE);
-//
-//            }else if (list1.get(position).getIsPaid().equals(1)){
-//                holder.Course_layout.setVisibility(View.VISIBLE);
-//                holder.txt_course.setText(list1.get(position).getBucketName());
-//                Picasso.get().load(list1.get(position).getItemAttachment())
-//                        .placeholder(R.drawable.dummyimage)
-//                        .fit().into(holder.course_image);
-//                holder.txt_type.setText("Test Series");
-//                holder.layout_coming_soon.setVisibility(View.GONE);
-//                holder.layout_free.setVisibility(View.GONE);
-//                holder.layout_buy.setVisibility(View.GONE);
-//                holder.layout_purchased.setVisibility(View.VISIBLE);
-//                holder.img_rupee1.setVisibility(View.GONE);
-//                holder.layout_view.setVisibility(View.GONE);
-//                holder.txt_actual_price.setVisibility(View.GONE);
-//                holder.img_rupee.setVisibility(View.GONE);
-//                holder.txt_discount.setVisibility(View.GONE);
-//                holder.Course_layout.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        OnlineTestData.CoachingID=list1.get(position).getCoachingID();
-//                        OnlineTestData.bucketID=list1.get(position).getBucketID();
-//                        OnlineTestData.bucketName=list1.get(position).getBucketName();
-//                        OnlineTestData.bucketInfo=list1.get(position).getBucketInfo();
-//                        OnlineTestData.logData=list1.get(position).getLogData();
-//                        OnlineTestData.status=list1.get(position).getStatus();
-//                        OnlineTestData.totalTest=list1.get(position).getTotalTest();
-//                        Intent intent=new Intent(context, OnlineTestActivity.class);
-//                        context.startActivity(intent);
-//
-//                    }
-//                });
-//            }
-//
-//        }else if(list1.get(position).getIsPremium().equalsIgnoreCase("0")){
-//            holder.Course_layout.setVisibility(View.VISIBLE);
-//            holder.txt_course.setText(list1.get(position).getBucketName());
-//            Picasso.get().load(list1.get(position).getItemAttachment())
-//                    .placeholder(R.drawable.dummyimage)
-//                    .fit().into(holder.course_image);
-//            holder.txt_type.setText("Test Series");
-//            holder.layout_coming_soon.setVisibility(View.GONE);
-//            holder.layout_free.setVisibility(View.VISIBLE);
-//            holder.layout_purchased.setVisibility(View.GONE);
-//            holder.layout_buy.setVisibility(View.GONE);
-//            holder.img_rupee1.setVisibility(View.GONE);
-//            holder.layout_view.setVisibility(View.GONE);
-//            holder.txt_actual_price.setVisibility(View.GONE);
-//            holder.img_rupee.setVisibility(View.GONE);
-//            holder.txt_discount.setVisibility(View.GONE);
-//            holder.Course_layout.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    OnlineTestData.CoachingID=list1.get(position).getCoachingID();
-//                    OnlineTestData.bucketID=list1.get(position).getBucketID();
-//                    OnlineTestData.bucketName=list1.get(position).getBucketName();
-//                    OnlineTestData.bucketInfo=list1.get(position).getBucketInfo();
-//                    OnlineTestData.logData=list1.get(position).getLogData();
-//                    OnlineTestData.status=list1.get(position).getStatus();
-//                    OnlineTestData.totalTest=list1.get(position).getTotalTest();
-//                    Intent intent=new Intent(context, OnlineTestActivity.class);
-//                    context.startActivity(intent);
-//
-//                }
-//            });
-//
-//        }else if(list1.get(position).getIsPaid().equals(1)){
-//            holder.Course_layout.setVisibility(View.VISIBLE);
-//            holder.txt_course.setText(list1.get(position).getBucketName());
-//            Picasso.get().load(list1.get(position).getItemAttachment())
-//                    .placeholder(R.drawable.dummyimage)
-//                    .fit().into(holder.course_image);
-//            holder.txt_type.setText("Test Series");
-//            holder.layout_coming_soon.setVisibility(View.GONE);
-//            holder.layout_free.setVisibility(View.GONE);
-//            holder.layout_buy.setVisibility(View.GONE);
-//            holder.img_rupee1.setVisibility(View.GONE);
-//            holder.layout_view.setVisibility(View.GONE);
-//            holder.txt_actual_price.setVisibility(View.GONE);
-//            holder.img_rupee.setVisibility(View.GONE);
-//            holder.txt_discount.setVisibility(View.GONE);
-//            holder.Course_layout.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    OnlineTestData.CoachingID=list1.get(position).getCoachingID();
-//                    OnlineTestData.bucketID=list1.get(position).getBucketID();
-//                    OnlineTestData.bucketName=list1.get(position).getBucketName();
-//                    OnlineTestData.bucketInfo=list1.get(position).getBucketInfo();
-//                    OnlineTestData.logData=list1.get(position).getLogData();
-//                    OnlineTestData.status=list1.get(position).getStatus();
-//                    OnlineTestData.totalTest=list1.get(position).getTotalTest();
-//                    Intent intent=new Intent(context, OnlineTestActivity.class);
-//                    context.startActivity(intent);
-//
-//                }
-//            });
-//
-//        }
-//
-//        if (list1.get(position).getIsPremium().equalsIgnoreCase("1") && list1.get(position).getIsPaid().equals(0)){
-//            //premium hai but not purchased
-//            holder.Course_layout.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    LocalData.TestBuckedId=list1.get(position).getBucketID();
-//                    LocalData.TestName=list1.get(position).getBucketName();
-//                    LocalData.TestDiscription=list1.get(position).getDecription();
-//                    LocalData.TotalTest=list1.get(position).getTotalTest();
-//                    Intent intent = new Intent(context, TestSubscriptionActivity.class);
-//                    context.startActivity(intent);
-//                }
-//            });
-//        }else if (list1.get(position).getIsPremium().equalsIgnoreCase("0") && list1.get(position).getIsPaid().equals(0)){
-//            //premium hai aur purchase also
-//            holder.Course_layout.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    OnlineTestData.CoachingID=list1.get(position).getCoachingID();
-//                    OnlineTestData.bucketID=list1.get(position).getBucketID();
-//                    OnlineTestData.bucketName=list1.get(position).getBucketName();
-//                    OnlineTestData.bucketInfo=list1.get(position).getBucketInfo();
-//                    OnlineTestData.logData=list1.get(position).getLogData();
-//                    OnlineTestData.status=list1.get(position).getStatus();
-//                    OnlineTestData.totalTest=list1.get(position).getTotalTest();
-//                    Intent intent=new Intent(context, OnlineTestActivity.class);
-//                    context.startActivity(intent);
-//                }
-//            });
-//        }
+
 
     }
 
